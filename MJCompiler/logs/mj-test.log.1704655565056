@@ -1,0 +1,69 @@
+INFO  20:21:41,058 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\testOporavakOdGreske.mj
+INFO  20:21:41,672 - #2 program
+INFO  20:21:41,672 - #32 MJProgram
+INFO  20:21:41,672 - #32 int
+INFO  20:21:41,676 - #32 x
+INFO  20:21:41,677 - #12 ,
+INFO  20:21:41,680 - #32 z
+INFO  20:21:41,681 - #12 ,
+INFO  20:21:41,681 - #42 -
+ERROR 20:21:41,681 - 
+Sintaksna greska na liniji 2
+INFO  20:21:41,682 - #32 yy
+INFO  20:21:41,682 - #10 [
+INFO  20:21:41,682 - #11 ]
+INFO  20:21:41,684 - #8 ;
+INFO  20:21:41,684 - #7 const
+INFO  20:21:41,684 - #32 int
+INFO  20:21:41,684 - #32 id
+ERROR 20:21:41,685 - Oporavak od greske u 'VarDecl' konstrukciji na liniji 2 preskacemo do prvog ';'
+INFO  20:21:41,688 - #9 =
+INFO  20:21:41,692 - #42 -
+ERROR 20:21:41,692 - 
+Sintaksna greska na liniji 3
+INFO  20:21:41,693 - #34 0
+INFO  20:21:41,693 - #12 ,
+INFO  20:21:41,693 - #32 y
+INFO  20:21:41,694 - #9 =
+INFO  20:21:41,694 - #34 7
+ERROR 20:21:41,694 - Oporavak od greske u 'ConstDecl' konstrukciji na liniji 3 preskacemo do prvog ','
+INFO  20:21:41,695 - #8 ;
+INFO  20:21:41,697 - #7 const
+INFO  20:21:41,698 - #32 char
+INFO  20:21:41,698 - #32 cc
+INFO  20:21:41,699 - #9 =
+INFO  20:21:41,699 - #35 'j'
+INFO  20:21:41,699 - #8 ;
+INFO  20:21:41,699 - #3 {
+INFO  20:21:41,700 - #17 void
+INFO  20:21:41,701 - #32 main
+INFO  20:21:41,701 - #15 (
+INFO  20:21:41,701 - #32 int
+INFO  20:21:41,701 - #32 y
+INFO  20:21:41,702 - #12 ,
+INFO  20:21:41,702 - #32 int
+INFO  20:21:41,702 - #32 k
+INFO  20:21:41,703 - #12 ,
+INFO  20:21:41,703 - #42 -
+ERROR 20:21:41,703 - 
+Sintaksna greska na liniji 6
+INFO  20:21:41,703 - #32 int
+INFO  20:21:41,703 - #32 y
+INFO  20:21:41,704 - #16 )
+INFO  20:21:41,704 - #32 char
+INFO  20:21:41,704 - #32 c
+INFO  20:21:41,704 - #8 ;
+ERROR 20:21:41,704 - Oporavak od greske u 'FormPars' konstrukciji na liniji 6 preskacemo do prvog ')'
+INFO  20:21:41,707 - #3 {
+INFO  20:21:41,708 - #32 x
+INFO  20:21:41,709 - #9 =
+INFO  20:21:41,712 - #32 y
+INFO  20:21:41,713 - #41 +
+INFO  20:21:41,716 - #34 2
+INFO  20:21:41,718 - #41 +
+INFO  20:21:41,720 - #8 ;
+ERROR 20:21:41,720 - 
+Sintaksna greska na liniji 9
+INFO  20:21:41,720 - #20 if
+INFO  20:21:41,720 - #15 (
+INFO  20:21:41,721 - #32 x

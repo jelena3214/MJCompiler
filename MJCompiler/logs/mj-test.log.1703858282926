@@ -1,0 +1,146 @@
+INFO  14:56:53,766 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  14:56:53,807 - #2 program
+INFO  14:56:53,807 - #32 MJProgram
+INFO  14:56:53,807 - #33 namespace
+INFO  14:56:53,807 - #32 sizes
+INFO  14:56:53,807 - #3 {
+INFO  14:56:53,808 - #7 const
+INFO  14:56:53,810 - #32 int
+INFO  14:56:53,810 - #32 tableSize
+INFO  14:56:53,810 - #9 =
+INFO  14:56:53,810 - #34 10
+INFO  14:56:53,810 - #8 ;
+INFO  14:56:53,811 - #3 {
+INFO  14:56:53,812 - #4 }
+INFO  14:56:53,814 - #4 }
+INFO  14:56:53,814 - #32 int
+INFO  14:56:53,817 - #32 x
+INFO  14:56:53,817 - #12 ,
+INFO  14:56:53,818 - #32 z
+INFO  14:56:53,818 - #8 ;
+INFO  14:56:53,819 - #3 {
+INFO  14:56:53,819 - #17 void
+INFO  14:56:53,823 - #32 main
+INFO  14:56:53,823 - #15 (
+INFO  14:56:53,823 - #16 )
+INFO  14:56:53,823 - #3 {
+INFO  14:56:53,823 - #32 x
+INFO  14:56:53,824 - #9 =
+INFO  14:56:53,824 - #34 12
+INFO  14:56:53,827 - #41 +
+INFO  14:56:53,829 - #34 2
+INFO  14:56:53,833 - #8 ;
+INFO  14:56:53,837 - #4 }
+INFO  14:56:53,837 - #4 }
+INFO  14:56:53,838 - Program(
+ MJProgram
+  NamespacesDecl(
+    NoNamespacesDecl(
+    ) [NoNamespacesDecl]
+    NamespaceDecl(
+     namespace
+     sizes
+      DeclarationList(
+        NoDeclarationList(
+        ) [NoDeclarationList]
+        ConstElemDeclaration(
+          ConstDecl(
+            TypeIdent(
+             int
+            ) [TypeIdent]
+           tableSize
+            NumConstType(
+             10
+            ) [NumConstType]
+            NoIdentRepList(
+            ) [NoIdentRepList]
+          ) [ConstDecl]
+        ) [ConstElemDeclaration]
+      ) [DeclarationList]
+      NoMethodDecls(
+      ) [NoMethodDecls]
+    ) [NamespaceDecl]
+  ) [NamespacesDecl]
+  DeclarationList(
+    NoDeclarationList(
+    ) [NoDeclarationList]
+    VarElemDeclaration(
+      VarDecl(
+        TypeIdent(
+         int
+        ) [TypeIdent]
+       x
+        NoSquareBraces(
+        ) [NoSquareBraces]
+        IdentSquareBracesListDecl(
+          NoIdentSquareBracesListDecl(
+          ) [NoIdentSquareBracesListDecl]
+          IdentSquareBracesElem(
+           z
+            NoSquareBraces(
+            ) [NoSquareBraces]
+          ) [IdentSquareBracesElem]
+        ) [IdentSquareBracesListDecl]
+      ) [VarDecl]
+    ) [VarElemDeclaration]
+  ) [DeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDeclVoid(
+     main
+      NoFormParams(
+      ) [NoFormParams]
+      NoVarDeclList(
+      ) [NoVarDeclList]
+      Statements(
+        NoStatements(
+        ) [NoStatements]
+        DesignatorStmt(
+          DesignatorStatementAssing(
+            DesignatorIdentTwo(
+             x
+              Designator2StmtIdent(
+                NoDesignatorOrList(
+                ) [NoDesignatorOrList]
+              ) [Designator2StmtIdent]
+            ) [DesignatorIdentTwo]
+            DesignatorStatementOrAssign(
+              Assignop(
+              ) [Assignop]
+              Expr(
+                NoDashList(
+                ) [NoDashList]
+                Term(
+                  FactorNumConst(
+                   12
+                  ) [FactorNumConst]
+                  NoMulopFactorList(
+                  ) [NoMulopFactorList]
+                ) [Term]
+                AddopTermDecl(
+                  NoAddopTermList(
+                  ) [NoAddopTermList]
+                  AddopTermElem(
+                    AddopPlus(
+                    ) [AddopPlus]
+                    Term(
+                      FactorNumConst(
+                       2
+                      ) [FactorNumConst]
+                      NoMulopFactorList(
+                      ) [NoMulopFactorList]
+                    ) [Term]
+                  ) [AddopTermElem]
+                ) [AddopTermDecl]
+              ) [Expr]
+            ) [DesignatorStatementOrAssign]
+          ) [DesignatorStatementAssing]
+        ) [DesignatorStmt]
+      ) [Statements]
+    ) [MethodDeclVoid]
+  ) [MethodDecls]
+) [Program]
+INFO  14:56:53,838 - ===================================
+INFO  14:56:53,840 -  Print count calls = 0
+INFO  14:56:53,840 -  Deklarisanih promenljivih ima = 2

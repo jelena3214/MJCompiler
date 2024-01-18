@@ -1,0 +1,44 @@
+INFO  22:18:07,759 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\testp.mj
+INFO  22:18:07,809 - #2 program
+INFO  22:18:07,809 - #32 MJProgram
+INFO  22:18:07,809 - #33 namespace
+INFO  22:18:07,810 - #32 sizes
+INFO  22:18:07,810 - #3 {
+INFO  22:18:07,810 - #7 const
+INFO  22:18:07,811 - #32 int
+INFO  22:18:07,811 - #32 tableSize
+INFO  22:18:07,812 - #9 =
+INFO  22:18:07,812 - #34 10
+INFO  22:18:07,812 - #8 ;
+INFO  22:18:07,813 - #32 int
+INFO  22:18:07,813 - #32 ss
+INFO  22:18:07,816 - #8 ;
+INFO  22:18:07,818 - #32 char
+INFO  22:18:07,818 - #32 ck
+INFO  22:18:07,818 - #8 ;
+INFO  22:18:07,818 - #3 {
+INFO  22:18:07,818 - #32 int
+INFO  22:18:07,819 - #32 moja
+INFO  22:18:07,819 - #15 (
+INFO  22:18:07,819 - #16 )
+INFO  22:18:07,819 - #32 char
+INFO  22:18:07,820 - #32 t
+INFO  22:18:07,820 - #8 ;
+INFO  22:18:07,820 - #3 {
+INFO  22:18:07,820 - #26 print
+INFO  22:18:07,821 - #15 (
+INFO  22:18:07,821 - #32 t
+INFO  22:18:07,821 - #16 )
+INFO  22:18:07,824 - #8 ;
+INFO  22:18:07,824 - #24 return
+INFO  22:18:07,824 - #34 2
+INFO  22:18:07,824 - #8 ;
+INFO  22:18:07,824 - #4 }
+INFO  22:18:07,825 - #4 }
+INFO  22:18:07,826 - #4 }
+INFO  22:18:07,826 - #3 {
+INFO  22:18:07,827 - #4 }
+INFO  22:18:07,828 - #4 }
+ERROR 22:18:07,828 - 
+Sintaksna greska na liniji 19
+ERROR 22:18:07,829 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 19

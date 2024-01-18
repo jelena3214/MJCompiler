@@ -1,0 +1,63 @@
+INFO  19:05:15,040 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\prog.mj
+INFO  19:05:15,075 - #2 program
+INFO  19:05:15,075 - #32 MJProgram
+INFO  19:05:15,077 - #7 const
+INFO  19:05:15,077 - #32 char
+INFO  19:05:15,077 - #32 c
+INFO  19:05:15,077 - #9 =
+INFO  19:05:15,077 - #35 'j'
+INFO  19:05:15,077 - #12 ,
+INFO  19:05:15,078 - #8 ;
+ERROR 19:05:15,078 - 
+Sintaksna greska na liniji 2
+INFO  19:05:15,078 - #3 {
+INFO  19:05:15,078 - #17 void
+INFO  19:05:15,079 - #32 main
+ERROR 19:05:15,079 - Izvrsen oporavak za globalnu promenljivu do ; u liniji 2
+INFO  19:05:15,080 - #15 (
+INFO  19:05:15,080 - #16 )
+INFO  19:05:15,080 - #32 char
+INFO  19:05:15,082 - #32 c
+INFO  19:05:15,082 - #8 ;
+INFO  19:05:15,086 - #3 {
+INFO  19:05:15,087 - #4 }
+INFO  19:05:15,087 - #4 }
+INFO  19:05:15,088 - Program(
+ MJProgram
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    NoDeclarationList(
+    ) [NoDeclarationList]
+    GlobalElemDeclError(
+    ) [GlobalElemDeclError]
+  ) [DeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDeclVoid(
+     main
+      NoFormParams(
+      ) [NoFormParams]
+      VarDecls(
+        NoVarDeclList(
+        ) [NoVarDeclList]
+        VarDecl(
+          TypeIdent(
+           char
+          ) [TypeIdent]
+         c
+          NoSquareBraces(
+          ) [NoSquareBraces]
+          NoIdentSquareBracesListDecl(
+          ) [NoIdentSquareBracesListDecl]
+        ) [VarDecl]
+      ) [VarDecls]
+      NoStatements(
+      ) [NoStatements]
+    ) [MethodDeclVoid]
+  ) [MethodDecls]
+) [Program]
+INFO  19:05:15,089 - ===================================
+INFO  19:05:15,092 -  Print count calls = 0
+INFO  19:05:15,093 -  Deklarisanih promenljivih ima = 1

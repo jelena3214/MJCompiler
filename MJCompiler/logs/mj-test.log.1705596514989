@@ -1,0 +1,81 @@
+INFO  17:48:03,946 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\testF3.mj
+INFO  17:48:03,988 - #2 program
+INFO  17:48:03,988 - #32 Test
+INFO  17:48:03,988 - #32 int
+INFO  17:48:03,991 - #32 xx
+INFO  17:48:03,994 - #8 ;
+INFO  17:48:03,996 - #7 const
+INFO  17:48:03,996 - #32 int
+INFO  17:48:03,996 - #32 x
+INFO  17:48:03,997 - #9 =
+INFO  17:48:03,997 - #34 4
+INFO  17:48:03,997 - #12 ,
+INFO  17:48:03,999 - #32 y
+INFO  17:48:03,999 - #9 =
+INFO  17:48:03,999 - #35 'j'
+INFO  17:48:03,999 - #8 ;
+INFO  17:48:03,999 - #3 {
+INFO  17:48:03,999 - #32 int
+INFO  17:48:04,001 - #32 s
+INFO  17:48:04,001 - #15 (
+INFO  17:48:04,001 - #16 )
+INFO  17:48:04,001 - #3 {
+INFO  17:48:04,002 - #20 if
+INFO  17:48:04,006 - #15 (
+INFO  17:48:04,006 - #32 x
+INFO  17:48:04,006 - #5 ==
+INFO  17:48:04,008 - #34 5
+INFO  17:48:04,009 - #16 )
+INFO  17:48:04,011 - #24 return
+INFO  17:48:04,011 - #32 x
+INFO  17:48:04,011 - #8 ;
+INFO  17:48:04,011 - #4 }
+INFO  17:48:04,012 - #17 void
+INFO  17:48:04,014 - #32 main
+INFO  17:48:04,014 - #15 (
+INFO  17:48:04,014 - #16 )
+INFO  17:48:04,014 - #32 char
+INFO  17:48:04,014 - #32 p
+INFO  17:48:04,014 - #8 ;
+INFO  17:48:04,014 - #3 {
+INFO  17:48:04,014 - #32 p
+INFO  17:48:04,014 - #28 ++
+INFO  17:48:04,014 - #8 ;
+INFO  17:48:04,014 - #32 p
+INFO  17:48:04,014 - #9 =
+INFO  17:48:04,014 - #35 'j'
+INFO  17:48:04,015 - #8 ;
+INFO  17:48:04,015 - #23 continue
+INFO  17:48:04,015 - #8 ;
+INFO  17:48:04,015 - #27 for
+INFO  17:48:04,016 - #15 (
+INFO  17:48:04,016 - #32 int
+INFO  17:48:04,016 - #32 i
+ERROR 17:48:04,016 - 
+Sintaksna greska na liniji 19
+INFO  17:48:04,016 - #9 =
+INFO  17:48:04,016 - #34 0
+INFO  17:48:04,016 - #8 ;
+INFO  17:48:04,017 - #32 i
+INFO  17:48:04,017 - #39 <
+INFO  17:48:04,019 - #34 3
+INFO  17:48:04,019 - #8 ;
+INFO  17:48:04,019 - #32 i
+INFO  17:48:04,019 - #28 ++
+INFO  17:48:04,019 - #16 )
+ERROR 17:48:04,019 - Oporavak od greske u 'AssignOp' konstrukciji na liniji 19 preskacemo do prvog ';'
+ERROR 17:48:04,019 - 
+Sintaksna greska na liniji 19
+INFO  17:48:04,019 - #3 {
+INFO  17:48:04,019 - #26 print
+INFO  17:48:04,019 - #15 (
+INFO  17:48:04,019 - #32 i
+INFO  17:48:04,019 - #16 )
+INFO  17:48:04,020 - #8 ;
+INFO  17:48:04,020 - #4 }
+INFO  17:48:04,020 - #4 }
+INFO  17:48:04,020 - #4 }
+ERROR 17:48:04,020 - Oporavak od greske u 'AssignOp' konstrukciji na liniji 19 preskacemo do prvog ';'
+ERROR 17:48:04,020 - 
+Sintaksna greska na liniji 24
+ERROR 17:48:04,020 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 24

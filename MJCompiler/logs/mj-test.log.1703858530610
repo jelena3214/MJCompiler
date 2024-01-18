@@ -1,0 +1,178 @@
+INFO  15:02:00,447 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  15:02:00,488 - #2 program
+INFO  15:02:00,488 - #32 MJProgram
+INFO  15:02:00,488 - #33 namespace
+INFO  15:02:00,489 - #32 sizes
+INFO  15:02:00,489 - #3 {
+INFO  15:02:00,489 - #7 const
+INFO  15:02:00,491 - #32 int
+INFO  15:02:00,491 - #32 tableSize
+INFO  15:02:00,491 - #9 =
+INFO  15:02:00,491 - #34 10
+INFO  15:02:00,491 - #8 ;
+INFO  15:02:00,492 - #3 {
+INFO  15:02:00,493 - #4 }
+INFO  15:02:00,494 - #4 }
+INFO  15:02:00,494 - #32 int
+INFO  15:02:00,495 - #32 x
+INFO  15:02:00,495 - #12 ,
+INFO  15:02:00,496 - #32 z
+INFO  15:02:00,496 - #12 ,
+INFO  15:02:00,497 - #32 yy
+INFO  15:02:00,497 - #10 [
+INFO  15:02:00,497 - #11 ]
+INFO  15:02:00,497 - #8 ;
+INFO  15:02:00,497 - #7 const
+INFO  15:02:00,498 - #32 int
+INFO  15:02:00,498 - #32 id
+INFO  15:02:00,498 - #9 =
+INFO  15:02:00,498 - #34 10
+INFO  15:02:00,498 - #8 ;
+INFO  15:02:00,498 - #3 {
+INFO  15:02:00,498 - #17 void
+INFO  15:02:00,498 - #32 main
+INFO  15:02:00,498 - #15 (
+INFO  15:02:00,498 - #16 )
+INFO  15:02:00,499 - #3 {
+INFO  15:02:00,500 - #32 x
+INFO  15:02:00,500 - #9 =
+INFO  15:02:00,500 - #34 12
+INFO  15:02:00,504 - #41 +
+INFO  15:02:00,509 - #34 2
+INFO  15:02:00,511 - #8 ;
+INFO  15:02:00,512 - #4 }
+INFO  15:02:00,513 - #4 }
+INFO  15:02:00,514 - Program(
+ MJProgram
+  NamespacesDecl(
+    NoNamespacesDecl(
+    ) [NoNamespacesDecl]
+    NamespaceDecl(
+     namespace
+     sizes
+      DeclarationList(
+        NoDeclarationList(
+        ) [NoDeclarationList]
+        ConstElemDeclaration(
+          ConstDecl(
+            TypeIdent(
+             int
+            ) [TypeIdent]
+           tableSize
+            NumConstType(
+             10
+            ) [NumConstType]
+            NoIdentRepList(
+            ) [NoIdentRepList]
+          ) [ConstDecl]
+        ) [ConstElemDeclaration]
+      ) [DeclarationList]
+      NoMethodDecls(
+      ) [NoMethodDecls]
+    ) [NamespaceDecl]
+  ) [NamespacesDecl]
+  DeclarationList(
+    DeclarationList(
+      NoDeclarationList(
+      ) [NoDeclarationList]
+      VarElemDeclaration(
+        VarDecl(
+          TypeIdent(
+           int
+          ) [TypeIdent]
+         x
+          NoSquareBraces(
+          ) [NoSquareBraces]
+          IdentSquareBracesListDecl(
+            IdentSquareBracesListDecl(
+              NoIdentSquareBracesListDecl(
+              ) [NoIdentSquareBracesListDecl]
+              IdentSquareBracesElem(
+               z
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [IdentSquareBracesElem]
+            ) [IdentSquareBracesListDecl]
+            IdentSquareBracesElem(
+             yy
+              SquareBraces(
+              ) [SquareBraces]
+            ) [IdentSquareBracesElem]
+          ) [IdentSquareBracesListDecl]
+        ) [VarDecl]
+      ) [VarElemDeclaration]
+    ) [DeclarationList]
+    ConstElemDeclaration(
+      ConstDecl(
+        TypeIdent(
+         int
+        ) [TypeIdent]
+       id
+        NumConstType(
+         10
+        ) [NumConstType]
+        NoIdentRepList(
+        ) [NoIdentRepList]
+      ) [ConstDecl]
+    ) [ConstElemDeclaration]
+  ) [DeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDeclVoid(
+     main
+      NoFormParams(
+      ) [NoFormParams]
+      NoVarDeclList(
+      ) [NoVarDeclList]
+      Statements(
+        NoStatements(
+        ) [NoStatements]
+        DesignatorStmt(
+          DesignatorStatementAssing(
+            DesignatorIdentTwo(
+             x
+              Designator2StmtIdent(
+                NoDesignatorOrList(
+                ) [NoDesignatorOrList]
+              ) [Designator2StmtIdent]
+            ) [DesignatorIdentTwo]
+            DesignatorStatementOrAssign(
+              Assignop(
+              ) [Assignop]
+              Expr(
+                NoDashList(
+                ) [NoDashList]
+                Term(
+                  FactorNumConst(
+                   12
+                  ) [FactorNumConst]
+                  NoMulopFactorList(
+                  ) [NoMulopFactorList]
+                ) [Term]
+                AddopTermDecl(
+                  NoAddopTermList(
+                  ) [NoAddopTermList]
+                  AddopTermElem(
+                    AddopPlus(
+                    ) [AddopPlus]
+                    Term(
+                      FactorNumConst(
+                       2
+                      ) [FactorNumConst]
+                      NoMulopFactorList(
+                      ) [NoMulopFactorList]
+                    ) [Term]
+                  ) [AddopTermElem]
+                ) [AddopTermDecl]
+              ) [Expr]
+            ) [DesignatorStatementOrAssign]
+          ) [DesignatorStatementAssing]
+        ) [DesignatorStmt]
+      ) [Statements]
+    ) [MethodDeclVoid]
+  ) [MethodDecls]
+) [Program]
+INFO  15:02:00,514 - ===================================
+INFO  15:02:00,518 -  Print count calls = 0
+INFO  15:02:00,518 -  Deklarisanih promenljivih ima = 2

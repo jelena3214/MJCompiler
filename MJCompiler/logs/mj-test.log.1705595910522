@@ -1,0 +1,72 @@
+INFO  17:38:16,113 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\testF3.mj
+INFO  17:38:16,162 - #2 program
+INFO  17:38:16,162 - #32 Test
+INFO  17:38:16,162 - #7 const
+INFO  17:38:16,164 - #32 int
+INFO  17:38:16,164 - #32 x
+INFO  17:38:16,165 - #9 =
+INFO  17:38:16,165 - #34 4
+INFO  17:38:16,165 - #12 ,
+INFO  17:38:16,166 - #32 y
+INFO  17:38:16,166 - #9 =
+INFO  17:38:16,166 - #35 'j'
+INFO  17:38:16,166 - #8 ;
+INFO  17:38:16,167 - #3 {
+INFO  17:38:16,168 - #4 }
+INFO  17:38:16,179 - Program(
+  ProgName(
+   Test
+  ) [ProgName]
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    NoDeclarationList(
+    ) [NoDeclarationList]
+    ConstElemDeclaration(
+      ConstDeclNoErr(
+        ConstDeclType(
+          TypeIdent(
+           int
+          ) [TypeIdent]
+        ) [ConstDeclType]
+        ConstDeclarationTmpList(
+          ConstDeclarationComma(
+            ConstDeclTmp(
+             x
+              NumConstType(
+               4
+              ) [NumConstType]
+            ) [ConstDeclTmp]
+          ) [ConstDeclarationComma]
+          ConstDeclarationTmpListEnd(
+            ConstDeclarationSemi(
+              ConstDeclTmp(
+               y
+                CharConstType(
+                 'j'
+                ) [CharConstType]
+              ) [ConstDeclTmp]
+            ) [ConstDeclarationSemi]
+          ) [ConstDeclarationTmpListEnd]
+        ) [ConstDeclarationTmpList]
+      ) [ConstDeclNoErr]
+    ) [ConstElemDeclaration]
+  ) [DeclarationList]
+  NoMethodDecls(
+  ) [NoMethodDecls]
+) [Program]
+INFO  17:38:16,179 - ===================================
+INFO  17:38:16,182 - Pronadjen tip int
+INFO  17:38:16,182 - Simbolicka konstanta 4 NumConstType(
+ 4
+) [NumConstType] na liniji 2
+INFO  17:38:16,182 - Deklarisana globalna promenljiva x na liniji 2
+INFO  17:38:16,182 - Simbolicka konstanta 'j' CharConstType(
+ 'j'
+) [CharConstType] na liniji 2
+ERROR 17:38:16,182 - Konstanta y nije istog tipa kao dodeljena vrednost na liniji 2
+INFO  17:38:16,182 - Deklarisana globalna promenljiva y na liniji 2
+INFO  17:38:16,182 -  Print count calls = 0
+INFO  17:38:16,182 -  Deklarisanih promenljivih ima = 2
+INFO  17:38:16,183 - ===================================
+ERROR 17:38:16,183 - Parsiranje NIJE uspesno zavrseno!

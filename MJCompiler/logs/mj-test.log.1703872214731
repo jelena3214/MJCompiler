@@ -1,0 +1,15 @@
+INFO  18:48:53,918 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\prog.mj
+INFO  18:48:53,959 - #2 program
+INFO  18:48:53,959 - #32 MJProgram
+INFO  18:48:53,959 - #7 const
+INFO  18:48:53,961 - #32 char
+INFO  18:48:53,961 - #32 c
+INFO  18:48:53,961 - #9 =
+INFO  18:48:53,961 - #32 k
+ERROR 18:48:53,961 - 
+Sintaksna greska na liniji 2
+INFO  18:48:53,961 - #35 'j'
+INFO  18:48:53,961 - #8 ;
+INFO  18:48:53,961 - #3 {
+INFO  18:48:53,962 - #17 void
+INFO  18:48:53,962 - #32 main

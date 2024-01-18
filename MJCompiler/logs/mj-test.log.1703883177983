@@ -1,0 +1,140 @@
+INFO  21:52:36,859 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\prog.mj
+INFO  21:52:36,908 - #2 program
+INFO  21:52:36,908 - #32 MJProgram
+INFO  21:52:36,908 - #32 int
+INFO  21:52:36,909 - #32 x
+INFO  21:52:36,909 - #12 ,
+INFO  21:52:36,910 - #32 z
+INFO  21:52:36,910 - #12 ,
+INFO  21:52:36,911 - #32 yy
+INFO  21:52:36,911 - #10 [
+INFO  21:52:36,911 - #11 ]
+INFO  21:52:36,911 - #8 ;
+INFO  21:52:36,912 - #7 const
+INFO  21:52:36,912 - #32 int
+INFO  21:52:36,912 - #32 id
+INFO  21:52:36,912 - #9 =
+INFO  21:52:36,913 - #34 0
+INFO  21:52:36,913 - #12 ,
+INFO  21:52:36,913 - #32 y
+INFO  21:52:36,913 - #9 =
+INFO  21:52:36,913 - #34 7
+INFO  21:52:36,913 - #8 ;
+INFO  21:52:36,916 - #7 const
+INFO  21:52:36,919 - #32 char
+INFO  21:52:36,919 - #32 cc
+INFO  21:52:36,920 - #9 =
+INFO  21:52:36,920 - #35 'j'
+INFO  21:52:36,920 - #8 ;
+INFO  21:52:36,920 - #3 {
+INFO  21:52:36,920 - #17 void
+INFO  21:52:36,920 - #32 main
+INFO  21:52:36,921 - #15 (
+INFO  21:52:36,921 - #16 )
+INFO  21:52:36,921 - #32 char
+INFO  21:52:36,923 - #32 c
+INFO  21:52:36,924 - #8 ;
+INFO  21:52:36,924 - #3 {
+INFO  21:52:36,924 - #4 }
+INFO  21:52:36,924 - #4 }
+INFO  21:52:36,925 - Program(
+ MJProgram
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    DeclarationList(
+      DeclarationList(
+        NoDeclarationList(
+        ) [NoDeclarationList]
+        VarElemDeclaration(
+          VarDecl(
+            TypeIdent(
+             int
+            ) [TypeIdent]
+           x
+            NoSquareBraces(
+            ) [NoSquareBraces]
+            IdentSquareBracesListDecl(
+              IdentSquareBracesListDecl(
+                NoIdentSquareBracesListDecl(
+                ) [NoIdentSquareBracesListDecl]
+                IdentSquareBracesElemDecl(
+                 z
+                  NoSquareBraces(
+                  ) [NoSquareBraces]
+                ) [IdentSquareBracesElemDecl]
+              ) [IdentSquareBracesListDecl]
+              IdentSquareBracesElemDecl(
+               yy
+                SquareBraces(
+                ) [SquareBraces]
+              ) [IdentSquareBracesElemDecl]
+            ) [IdentSquareBracesListDecl]
+          ) [VarDecl]
+        ) [VarElemDeclaration]
+      ) [DeclarationList]
+      ConstElemDeclaration(
+        ConstDeclDef(
+          TypeIdent(
+           int
+          ) [TypeIdent]
+         id
+          NumConstType(
+           0
+          ) [NumConstType]
+          IdentRepList(
+            NoIdentRepList(
+            ) [NoIdentRepList]
+            IdentRepElem(
+             y
+              NumConstType(
+               7
+              ) [NumConstType]
+            ) [IdentRepElem]
+          ) [IdentRepList]
+        ) [ConstDeclDef]
+      ) [ConstElemDeclaration]
+    ) [DeclarationList]
+    ConstElemDeclaration(
+      ConstDeclDef(
+        TypeIdent(
+         char
+        ) [TypeIdent]
+       cc
+        ChatConstType(
+         'j'
+        ) [ChatConstType]
+        NoIdentRepList(
+        ) [NoIdentRepList]
+      ) [ConstDeclDef]
+    ) [ConstElemDeclaration]
+  ) [DeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDeclVoid(
+     main
+      NoFormParams(
+      ) [NoFormParams]
+      VarDecls(
+        NoVarDeclList(
+        ) [NoVarDeclList]
+        VarDecl(
+          TypeIdent(
+           char
+          ) [TypeIdent]
+         c
+          NoSquareBraces(
+          ) [NoSquareBraces]
+          NoIdentSquareBracesListDecl(
+          ) [NoIdentSquareBracesListDecl]
+        ) [VarDecl]
+      ) [VarDecls]
+      NoStatements(
+      ) [NoStatements]
+    ) [MethodDeclVoid]
+  ) [MethodDecls]
+) [Program]
+INFO  21:52:36,926 - ===================================
+INFO  21:52:36,928 -  Print count calls = 0
+INFO  21:52:36,928 -  Deklarisanih promenljivih ima = 3

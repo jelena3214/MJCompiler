@@ -1,0 +1,151 @@
+INFO  22:09:09,433 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\prog.mj
+INFO  22:09:09,477 - #2 program
+INFO  22:09:09,477 - #32 MJProgram
+INFO  22:09:09,477 - #32 int
+INFO  22:09:09,477 - #32 x
+INFO  22:09:09,477 - #12 ,
+INFO  22:09:09,479 - #32 z
+INFO  22:09:09,479 - #12 ,
+INFO  22:09:09,479 - #32 yy
+INFO  22:09:09,479 - #10 [
+INFO  22:09:09,479 - #11 ]
+INFO  22:09:09,479 - #42 -
+ERROR 22:09:09,479 - 
+Sintaksna greska na liniji 2
+INFO  22:09:09,479 - #8 ;
+INFO  22:09:09,479 - #7 const
+INFO  22:09:09,479 - #32 int
+INFO  22:09:09,482 - #32 id
+ERROR 22:09:09,482 - Oporavak od greske u 'VarDecl' konstrukciji na liniji 2 preskacemo do prvog ';'
+INFO  22:09:09,484 - #9 =
+INFO  22:09:09,488 - #34 0
+INFO  22:09:09,488 - #12 ,
+INFO  22:09:09,488 - #32 y
+INFO  22:09:09,488 - #9 =
+INFO  22:09:09,489 - #34 7
+INFO  22:09:09,489 - #8 ;
+INFO  22:09:09,490 - #7 const
+INFO  22:09:09,490 - #32 char
+INFO  22:09:09,490 - #32 cc
+INFO  22:09:09,490 - #9 =
+INFO  22:09:09,490 - #35 'j'
+INFO  22:09:09,490 - #8 ;
+INFO  22:09:09,490 - #3 {
+INFO  22:09:09,490 - #17 void
+INFO  22:09:09,491 - #32 main
+INFO  22:09:09,491 - #15 (
+INFO  22:09:09,491 - #16 )
+INFO  22:09:09,492 - #32 char
+INFO  22:09:09,493 - #32 c
+INFO  22:09:09,493 - #8 ;
+INFO  22:09:09,493 - #3 {
+INFO  22:09:09,493 - #4 }
+INFO  22:09:09,495 - #4 }
+INFO  22:09:09,497 - Program(
+ MJProgram
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    DeclarationList(
+      DeclarationList(
+        NoDeclarationList(
+        ) [NoDeclarationList]
+        VarElemDeclaration(
+          VarDecl(
+            TypeIdent(
+             int
+            ) [TypeIdent]
+            VarDeclarationTmpList(
+              VarDeclarationComma(
+                VarDeclTmp(
+                 x
+                  NoSquareBraces(
+                  ) [NoSquareBraces]
+                ) [VarDeclTmp]
+              ) [VarDeclarationComma]
+              VarDeclarationTmpList(
+                VarDeclarationComma(
+                  VarDeclTmp(
+                   z
+                    NoSquareBraces(
+                    ) [NoSquareBraces]
+                  ) [VarDeclTmp]
+                ) [VarDeclarationComma]
+                VarDeclarationTmpListEnd(
+                  ErrorVarDeclarationSemi(
+                  ) [ErrorVarDeclarationSemi]
+                ) [VarDeclarationTmpListEnd]
+              ) [VarDeclarationTmpList]
+            ) [VarDeclarationTmpList]
+          ) [VarDecl]
+        ) [VarElemDeclaration]
+      ) [DeclarationList]
+      ConstElemDeclaration(
+        ConstDeclDef(
+          TypeIdent(
+           int
+          ) [TypeIdent]
+         id
+          NumConstType(
+           0
+          ) [NumConstType]
+          IdentRepList(
+            NoIdentRepList(
+            ) [NoIdentRepList]
+            IdentRepElem(
+             y
+              NumConstType(
+               7
+              ) [NumConstType]
+            ) [IdentRepElem]
+          ) [IdentRepList]
+        ) [ConstDeclDef]
+      ) [ConstElemDeclaration]
+    ) [DeclarationList]
+    ConstElemDeclaration(
+      ConstDeclDef(
+        TypeIdent(
+         char
+        ) [TypeIdent]
+       cc
+        ChatConstType(
+         'j'
+        ) [ChatConstType]
+        NoIdentRepList(
+        ) [NoIdentRepList]
+      ) [ConstDeclDef]
+    ) [ConstElemDeclaration]
+  ) [DeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDeclVoid(
+     main
+      NoFormParams(
+      ) [NoFormParams]
+      VarDecls(
+        NoVarDeclList(
+        ) [NoVarDeclList]
+        VarDecl(
+          TypeIdent(
+           char
+          ) [TypeIdent]
+          VarDeclarationTmpListEnd(
+            VarDeclarationSemi(
+              VarDeclTmp(
+               c
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationSemi]
+          ) [VarDeclarationTmpListEnd]
+        ) [VarDecl]
+      ) [VarDecls]
+      NoStatements(
+      ) [NoStatements]
+    ) [MethodDeclVoid]
+  ) [MethodDecls]
+) [Program]
+INFO  22:09:09,498 - ===================================
+INFO  22:09:09,501 -  Print count calls = 0
+INFO  22:09:09,501 -  Deklarisanih promenljivih ima = 3

@@ -1,0 +1,89 @@
+INFO  17:39:09,341 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\testF3.mj
+INFO  17:39:09,384 - #2 program
+INFO  17:39:09,384 - #32 Test
+INFO  17:39:09,384 - #32 int
+INFO  17:39:09,385 - #32 xx
+INFO  17:39:09,386 - #8 ;
+INFO  17:39:09,387 - #7 const
+INFO  17:39:09,388 - #32 int
+INFO  17:39:09,389 - #32 x
+INFO  17:39:09,390 - #9 =
+INFO  17:39:09,390 - #34 4
+INFO  17:39:09,390 - #12 ,
+INFO  17:39:09,391 - #32 y
+INFO  17:39:09,392 - #9 =
+INFO  17:39:09,392 - #32 xx
+ERROR 17:39:09,392 - 
+Sintaksna greska na liniji 4
+INFO  17:39:09,392 - #8 ;
+INFO  17:39:09,392 - #3 {
+INFO  17:39:09,392 - #4 }
+ERROR 17:39:09,393 - Oporavak od greske u 'ConstDecl' konstrukciji na liniji 4 preskacemo do prvog ';'
+INFO  17:39:09,399 - Program(
+  ProgName(
+   Test
+  ) [ProgName]
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    DeclarationList(
+      NoDeclarationList(
+      ) [NoDeclarationList]
+      VarElemDeclaration(
+        VarDeclNoErr(
+          VarDeclType(
+            TypeIdent(
+             int
+            ) [TypeIdent]
+          ) [VarDeclType]
+          VarDeclarationTmpListEnd(
+            VarDeclarationSemi(
+              VarDeclTmp(
+               xx
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationSemi]
+          ) [VarDeclarationTmpListEnd]
+        ) [VarDeclNoErr]
+      ) [VarElemDeclaration]
+    ) [DeclarationList]
+    ConstElemDeclaration(
+      ConstDeclNoErr(
+        ConstDeclType(
+          TypeIdent(
+           int
+          ) [TypeIdent]
+        ) [ConstDeclType]
+        ConstDeclarationTmpList(
+          ConstDeclarationComma(
+            ConstDeclTmp(
+             x
+              NumConstType(
+               4
+              ) [NumConstType]
+            ) [ConstDeclTmp]
+          ) [ConstDeclarationComma]
+          ConstDeclarationTmpListEnd(
+            ErrorConstDeclarationSemi(
+            ) [ErrorConstDeclarationSemi]
+          ) [ConstDeclarationTmpListEnd]
+        ) [ConstDeclarationTmpList]
+      ) [ConstDeclNoErr]
+    ) [ConstElemDeclaration]
+  ) [DeclarationList]
+  NoMethodDecls(
+  ) [NoMethodDecls]
+) [Program]
+INFO  17:39:09,399 - ===================================
+INFO  17:39:09,403 - Pronadjen tip int
+INFO  17:39:09,403 - Deklarisana globalna promenljiva xx na liniji 3
+INFO  17:39:09,404 - Pronadjen tip int
+INFO  17:39:09,404 - Simbolicka konstanta 4 NumConstType(
+ 4
+) [NumConstType] na liniji 4
+INFO  17:39:09,404 - Deklarisana globalna promenljiva x na liniji 4
+INFO  17:39:09,404 -  Print count calls = 0
+INFO  17:39:09,404 -  Deklarisanih promenljivih ima = 2
+INFO  17:39:09,404 - ===================================
+ERROR 17:39:09,404 - Parsiranje NIJE uspesno zavrseno!

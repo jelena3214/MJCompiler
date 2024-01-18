@@ -1,0 +1,193 @@
+
+package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+import rs.ac.bg.etf.pp1.ast.*;
+
+nonterminal Program, NamespaceList, DeclList, MethodDeclList, NamespaceDecl;
+
+terminal PROG, LBRACE, RBRACE;
+terminal String IDENT;
+terminal String NAMESPACE;
+
+Program ::= (Program) PROG IDENT NamespacList DeclList LBRACE MethodDeclList RBRACE
+
+NamespaceList ::= (NamespaceDecl) NamespaceList NamespaceDecl
+			|
+			(NoNamespaceDecl) /* epsilon */
+			;
+		
+NamespaceDecl ::= (NamespaceDecl) NAMESPACE IDENT LBRACE DeclList LBRACE MethodDecList RBRACE RBRACE
+
+DeclList ::= (DeclList) DeclList DeclListElem
+			|
+			(NoDeclList)
+			;
+
+DeclListElem ::= (ConstDecl) ConstDecl
+			| (VarDecl) VarDecl
+			| (ClassDecl) ClassDecl
+			;
+
+ConstDecl ::= CONST Type IDENT EQUAL ConstType IdentRep SEMI
+
+ConstType ::= (NumConsType) NumConsType
+			| (CharConstType) CharConstType
+			| (BoolConstType) BoolConstType
+
+IdentRep ::= (IdentRep) IdentRep IdentRepElem
+
+IdentRepElem ::= (IdentRepElem) COMMA IDENT EQUAL ConstType
+			|
+			(NoIdentRepElem) /* epsilon */
+			;
+			
+VarDecl ::= (VarDecl) Type IDENT LSBRACE SquareBracesList RSBRACE IdentSquareBracesList SEMI
+
+SquareBracesList ::= (SquareBracesList) LSBRACE SquareBracesList RSBRACE
+				|
+				(NoSquareBracesList)
+				;
+
+IdentSquareBracesList ::= (IdentSquareBracesList) IdentSquareBracesList IdentSquareBracesElem
+
+
+IdentSquareBracesElem ::= (IdentSquareBracesElem) COMMA IDENT LSBRACE SquareBracesList RSBRACE SEMI
+
+StaticInitializer ::= (StaticInitializer) STATIC LBRACE StatementList RBRACE
+
+MethodDecl ::= (MethodDeclType) Type IDENT LRBRACE FormParsList RRBRACE VarDeclList LBRACE StatementList RBRACE
+			| (MethodDeclVodi) VOID IDENT LRBRACE FormParsList RRBRACE VarDeclList LBRACE StatementList RBRACE
+			
+FormParsList ::= (FormParsList) FormParsList FormPars
+				| (NoFormParsList)
+				;
+
+FormPars ::= (FormPars) Type IDENT SquareBracesList TypeIdentList
+
+TypeIdentList ::= (TypeIdentList) COMMA Type IDENT SquareBracesList
+
+Type ::= (Type) IDENT TWODV IdentTwoList IDENT
+
+IdentTwoList ::= (IdentTwoList) IDENT TWODV
+
+StatementList ::= (StatementList) StatementList Statement
+				| (NoStatementlist)
+				;
+
+Statement ::= (DesignatorStmt) DesignatorStatement SEMI
+			| (IfStmt) IF LRBRACE Condition RRBRACE Statement ElseStatementList
+			| (BreakStmt) BREAK SEMI
+			| (ContinueStmt) CONTINUE SEMI
+			| (ReturnStmt) RETURN ExprList SEMI
+			| (ReadStmt) READ LRBRACE Designator RRBRACE SEMI
+			| (PrintStmt) PRINT LRBRACE Expr COMMA NumConst NumConstList RRBRACE SEMI
+			| (ForStmt)LRBRACE DesignatorStmtList SEMI ConstFact CondFactList SEMI DesignatorStmtList RRBRACE Statement
+			| (Stmt) LBRACE StatmentList RBRACE
+			;
+
+DesignatorStatement ::= (DesignatorStatementAssing) Designator Assignop Expr
+					| (DesignatorStatementAct) LRBRACE ActPars ActParsList RRBRACE
+					| (DesignatorStatementPlusPlus) TWOPLUS
+					| (DesignatorStatementMinusMinus) TWOMINUS
+					| (DesignatorStatementExpr) LBRACE DesinatorComma MULTIPLY Designator RBRACE EQUAL Designator
+					;
+
+NumConstList ::= (NumConstList) NumConstList NumConstElem
+				| (NoNumConstList)
+				;
+				
+NumConstElem ::= (NumConstElem) COMMA NumConst
+
+
+ActPars ::= (ActPars) Expr ExprCommaList
+
+ExprCommaList ::= (ExprCommaList) ExprCommaList ExprCommaElem
+				| (NoExprCommaList)
+				;
+
+ExprCommaElem ::= (ExprCommaElem) COMMA Expr
+
+Condition ::= (Condition) CondTerm CondTermList
+
+CondTermList ::= (CondTermList) CondTermList CondTermElem
+				| (NoCondTermList)
+				;
+	
+CondTermElem ::= (CondTermElem) OR CondTerm
+
+CondTerm ::= (CondTerm) CondFact CondFactList
+
+CondFactList ::= (CondFactList) CondFactList CondFactElem
+				| (NoCondFactList)
+				;
+				
+CondFactElem ::= (CondFactElem) AND CondFact
+
+CondFact ::= (CondFact) Expr Relop Expr RelopExprList
+
+RelopExprList ::= (RelopExprList) RelopExprList RelopExprElem
+				| (NoRelopExprList)
+				;
+				
+RelopExprElem ::= (RelopExprElem) Relop Expr
+
+Expr ::= (Expr) DASH DashList Term AddopTermList
+
+DashList ::= (DashList) DashList DASH
+			| (NoDashList)
+			;
+			
+AddopTermList ::= (AddopTermList) AddopTermList AddopTermElem
+				| (NoAddopTermList)
+				;
+
+AddopTermElem ::= (AddopTermElem) Addop Term
+
+Term ::= (Term) Factor MulopFactorList
+
+MulopFactorList ::= (MulopFactorList) MulopFactorList MulopFactorElem
+				| (NoMulopFactorList)
+				;
+				
+MulopFactorElem ::= (MulopFactorElem) Mulop Factor
+
+Factor ::= (Factor) Designator ActParsList1
+		| (FactorNumConst) NumConst
+		| (FactorCharConst) CharConst
+		| (FactorBoolConst) BoolConst
+		| (FactorNew) NEW Type ExprOrActPars
+		| (FactorExpr) LRBRACE Expr RRBRACE
+		;
+		
+ExprOrActPars ::= (ExprOrActParsOne) LSBRACE Expr RSBRACE
+				| (ExprOrActParsTwo) LRBRACE ActPars ActParsList RRBRACE
+				;
+		
+		
+Label ::= (Label) IDENT
+
+Assignop ::= (Assignop) EQUAL
+
+Relop ::= (RelopTwoEqual) TWOEQUAL
+		| (RelopNoEqual) NOTEQUAL
+		| (RelopGreater) GREATER
+		| (RelopGreaterEqual) GREATEREQUAL
+		| (RelopLess) LESS
+		| (RelopLessEqual) LESSEQUAL
+		;
+		
+Addop ::= (AddopPlus) PLUS
+		| (AddopMinus) MINUS
+		;
+		
+Mulop ::= (MulopMultiply) MULTIPLY
+		| (MulopDiv) DIV
+		| (MulopMod) MOD
+		;
+
+
+
+
+

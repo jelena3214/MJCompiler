@@ -1,0 +1,243 @@
+INFO  21:19:23,105 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  21:19:23,151 - #2 program
+INFO  21:19:23,151 - #32 MJProgram
+INFO  21:19:23,151 - #32 int
+INFO  21:19:23,153 - #32 x
+INFO  21:19:23,156 - #12 ,
+INFO  21:19:23,157 - #32 z
+INFO  21:19:23,157 - #8 ;
+INFO  21:19:23,157 - #7 const
+INFO  21:19:23,159 - #32 int
+INFO  21:19:23,159 - #32 id
+INFO  21:19:23,159 - #9 =
+INFO  21:19:23,160 - #34 0
+INFO  21:19:23,160 - #12 ,
+INFO  21:19:23,160 - #32 y
+INFO  21:19:23,161 - #9 =
+INFO  21:19:23,161 - #34 7
+INFO  21:19:23,161 - #8 ;
+INFO  21:19:23,161 - #7 const
+INFO  21:19:23,164 - #32 char
+INFO  21:19:23,164 - #32 j
+INFO  21:19:23,164 - #9 =
+INFO  21:19:23,168 - #35 'j'
+INFO  21:19:23,168 - #8 ;
+INFO  21:19:23,168 - #3 {
+INFO  21:19:23,168 - #32 int
+INFO  21:19:23,169 - #32 main
+INFO  21:19:23,169 - #15 (
+INFO  21:19:23,170 - #32 int
+INFO  21:19:23,170 - #32 y
+INFO  21:19:23,170 - #12 ,
+INFO  21:19:23,170 - #32 int
+INFO  21:19:23,171 - #32 k
+INFO  21:19:23,171 - #16 )
+INFO  21:19:23,171 - #32 char
+INFO  21:19:23,172 - #32 c
+INFO  21:19:23,172 - #8 ;
+INFO  21:19:23,172 - #3 {
+INFO  21:19:23,173 - #24 return
+INFO  21:19:23,174 - #34 1
+INFO  21:19:23,174 - #41 +
+INFO  21:19:23,178 - #34 67
+INFO  21:19:23,181 - #8 ;
+INFO  21:19:23,183 - #4 }
+INFO  21:19:23,184 - #4 }
+INFO  21:19:23,197 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    DeclarationList(
+      DeclarationList(
+        NoDeclarationList(
+        ) [NoDeclarationList]
+        VarElemDeclaration(
+          VarDecl(
+            VarDeclType(
+              TypeIdent(
+               int
+              ) [TypeIdent]
+            ) [VarDeclType]
+            VarDeclarationTmpList(
+              VarDeclarationComma(
+                VarDeclTmp(
+                 x
+                  NoSquareBraces(
+                  ) [NoSquareBraces]
+                ) [VarDeclTmp]
+              ) [VarDeclarationComma]
+              VarDeclarationTmpListEnd(
+                VarDeclarationSemi(
+                  VarDeclTmp(
+                   z
+                    NoSquareBraces(
+                    ) [NoSquareBraces]
+                  ) [VarDeclTmp]
+                ) [VarDeclarationSemi]
+              ) [VarDeclarationTmpListEnd]
+            ) [VarDeclarationTmpList]
+          ) [VarDecl]
+        ) [VarElemDeclaration]
+      ) [DeclarationList]
+      ConstElemDeclaration(
+        ConstDecl(
+          ConstDeclType(
+            TypeIdent(
+             int
+            ) [TypeIdent]
+          ) [ConstDeclType]
+          ConstDeclarationTmpList(
+            ConstDeclarationComma(
+              ConstDeclTmp(
+               id
+                NumConstType(
+                 0
+                ) [NumConstType]
+              ) [ConstDeclTmp]
+            ) [ConstDeclarationComma]
+            ConstDeclarationTmpListEnd(
+              ConstDeclarationSemi(
+                ConstDeclTmp(
+                 y
+                  NumConstType(
+                   7
+                  ) [NumConstType]
+                ) [ConstDeclTmp]
+              ) [ConstDeclarationSemi]
+            ) [ConstDeclarationTmpListEnd]
+          ) [ConstDeclarationTmpList]
+        ) [ConstDecl]
+      ) [ConstElemDeclaration]
+    ) [DeclarationList]
+    ConstElemDeclaration(
+      ConstDecl(
+        ConstDeclType(
+          TypeIdent(
+           char
+          ) [TypeIdent]
+        ) [ConstDeclType]
+        ConstDeclarationTmpListEnd(
+          ConstDeclarationSemi(
+            ConstDeclTmp(
+             j
+              CharConstType(
+               'j'
+              ) [CharConstType]
+            ) [ConstDeclTmp]
+          ) [ConstDeclarationSemi]
+        ) [ConstDeclarationTmpListEnd]
+      ) [ConstDecl]
+    ) [ConstElemDeclaration]
+  ) [DeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDecl(
+      MethodTypeDecl(
+        TypeIdent(
+         int
+        ) [TypeIdent]
+       main
+      ) [MethodTypeDecl]
+      FormParamsList(
+        FormalParamsCommaList(
+          FormalParamsBasicComma(
+            FormalParamsBasic(
+              TypeIdent(
+               int
+              ) [TypeIdent]
+             y
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [FormalParamsBasic]
+          ) [FormalParamsBasicComma]
+          FormParsCommaListRightParen(
+            FormalParamsBasic(
+              TypeIdent(
+               int
+              ) [TypeIdent]
+             k
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [FormalParamsBasic]
+          ) [FormParsCommaListRightParen]
+        ) [FormalParamsCommaList]
+      ) [FormParamsList]
+      VarDecls(
+        NoVarDeclList(
+        ) [NoVarDeclList]
+        VarDecl(
+          VarDeclType(
+            TypeIdent(
+             char
+            ) [TypeIdent]
+          ) [VarDeclType]
+          VarDeclarationTmpListEnd(
+            VarDeclarationSemi(
+              VarDeclTmp(
+               c
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationSemi]
+          ) [VarDeclarationTmpListEnd]
+        ) [VarDecl]
+      ) [VarDecls]
+      Statements(
+        NoStatements(
+        ) [NoStatements]
+        ReturnStmtExpr(
+          ExprNoDash(
+            Term(
+              FactorNumConst(
+               1
+              ) [FactorNumConst]
+              NoMulopFactorList(
+              ) [NoMulopFactorList]
+            ) [Term]
+            AddopTermDecl(
+              NoAddopTermList(
+              ) [NoAddopTermList]
+              AddopTermElem(
+                AddopPlus(
+                ) [AddopPlus]
+                Term(
+                  FactorNumConst(
+                   67
+                  ) [FactorNumConst]
+                  NoMulopFactorList(
+                  ) [NoMulopFactorList]
+                ) [Term]
+              ) [AddopTermElem]
+            ) [AddopTermDecl]
+          ) [ExprNoDash]
+        ) [ReturnStmtExpr]
+      ) [Statements]
+    ) [MethodDecl]
+  ) [MethodDecls]
+) [Program]
+INFO  21:19:23,198 - ===================================
+INFO  21:19:23,210 - Pronadjen tip int
+INFO  21:19:23,211 - Deklarisana globalna promenljiva x rs.ac.bg.etf.pp1.ast.VarDeclTmp@4ba2ca36 na liniji 2
+INFO  21:19:23,211 - Deklarisana globalna promenljiva z rs.ac.bg.etf.pp1.ast.VarDeclTmp@3444d69d na liniji 2
+INFO  21:19:23,211 - Pronadjen tip int
+INFO  21:19:23,212 - Deklarisana globalna konstanta id rs.ac.bg.etf.pp1.ast.ConstDeclTmp@1372ed45 na liniji 3
+INFO  21:19:23,212 - Deklarisana globalna konstanta y rs.ac.bg.etf.pp1.ast.ConstDeclTmp@6a79c292 na liniji 3
+INFO  21:19:23,212 - Pronadjen tip char
+INFO  21:19:23,212 - Simbolicka konstanta 'j' CharConstType(
+ 'j'
+) [CharConstType] na liniji 4
+INFO  21:19:23,212 - Deklarisana globalna konstanta j rs.ac.bg.etf.pp1.ast.ConstDeclTmp@37574691 na liniji 4
+INFO  21:19:23,213 - Pronadjen tip int
+INFO  21:19:23,213 - Obradjuje se funkcija main na liniji 6
+INFO  21:19:23,213 - Pronadjen tip int
+INFO  21:19:23,213 - Pronadjen tip int
+INFO  21:19:23,213 - Pronadjen tip char
+INFO  21:19:23,213 - Deklarisana lokalna promenljiva c rs.ac.bg.etf.pp1.ast.VarDeclTmp@25359ed8 na liniji 7
+INFO  21:19:23,214 -  Print count calls = 0
+INFO  21:19:23,214 -  Deklarisanih promenljivih ima = 3
+INFO  21:19:23,214 - ===================================
+INFO  21:19:23,215 - Parsiranje uspesno zavrseno!

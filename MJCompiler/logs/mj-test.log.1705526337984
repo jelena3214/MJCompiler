@@ -1,0 +1,27 @@
+INFO  22:18:45,538 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\testp.mj
+INFO  22:18:45,580 - #2 program
+INFO  22:18:45,581 - #32 MJProgram
+INFO  22:18:45,581 - #33 namespace
+INFO  22:18:45,583 - #32 sizes
+INFO  22:18:45,583 - #3 {
+INFO  22:18:45,583 - #7 const
+INFO  22:18:45,584 - #32 int
+INFO  22:18:45,584 - #32 tableSize
+INFO  22:18:45,585 - #9 =
+INFO  22:18:45,585 - #34 10
+INFO  22:18:45,585 - #8 ;
+INFO  22:18:45,586 - #32 int
+INFO  22:18:45,587 - #32 ss
+INFO  22:18:45,587 - #8 ;
+INFO  22:18:45,589 - #32 char
+INFO  22:18:45,590 - #32 ck
+INFO  22:18:45,590 - #8 ;
+INFO  22:18:45,590 - #3 {
+INFO  22:18:45,590 - #4 }
+INFO  22:18:45,592 - #4 }
+INFO  22:18:45,592 - #3 {
+INFO  22:18:45,593 - #4 }
+INFO  22:18:45,593 - #4 }
+ERROR 22:18:45,593 - 
+Sintaksna greska na liniji 12
+ERROR 22:18:45,595 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 12

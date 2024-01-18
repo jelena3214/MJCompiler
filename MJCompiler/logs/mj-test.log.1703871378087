@@ -1,0 +1,45 @@
+INFO  18:34:36,343 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\prog.mj
+INFO  18:34:36,378 - #2 program
+INFO  18:34:36,378 - #32 MJProgram
+INFO  18:34:36,378 - #3 {
+INFO  18:34:36,379 - #17 void
+INFO  18:34:36,379 - #32 main
+INFO  18:34:36,379 - #15 (
+INFO  18:34:36,379 - #16 )
+INFO  18:34:36,380 - #32 char
+INFO  18:34:36,380 - #32 c
+INFO  18:34:36,380 - #8 ;
+INFO  18:34:36,381 - #3 {
+INFO  18:34:36,382 - #7 const
+ERROR 18:34:36,382 - 
+Sintaksna greska na liniji 6
+INFO  18:34:36,382 - #32 char
+INFO  18:34:36,382 - #32 cc
+INFO  18:34:36,382 - #9 =
+INFO  18:34:36,383 - #42 -
+INFO  18:34:36,383 - #35 'j'
+INFO  18:34:36,383 - #8 ;
+INFO  18:34:36,383 - #27 for
+INFO  18:34:36,383 - #15 (
+INFO  18:34:36,384 - #32 i
+INFO  18:34:36,384 - #9 =
+INFO  18:34:36,384 - #34 0
+INFO  18:34:36,384 - #8 ;
+INFO  18:34:36,384 - #32 i
+INFO  18:34:36,384 - #39 <
+INFO  18:34:36,384 - #34 3
+INFO  18:34:36,384 - #8 ;
+INFO  18:34:36,384 - #32 i
+INFO  18:34:36,384 - #28 ++
+INFO  18:34:36,384 - #16 )
+INFO  18:34:36,384 - #26 print
+INFO  18:34:36,384 - #15 (
+INFO  18:34:36,384 - #32 y
+INFO  18:34:36,384 - #10 [
+INFO  18:34:36,384 - #32 i
+INFO  18:34:36,384 - #11 ]
+INFO  18:34:36,384 - #16 )
+INFO  18:34:36,385 - #8 ;
+INFO  18:34:36,385 - #4 }
+INFO  18:34:36,385 - #4 }
+ERROR 18:34:36,385 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 9

@@ -1,0 +1,141 @@
+INFO  20:05:47,649 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  20:05:47,713 - #2 program
+INFO  20:05:47,714 - #32 MJProgram
+INFO  20:05:47,714 - #32 int
+INFO  20:05:47,715 - #32 x
+INFO  20:05:47,716 - #12 ,
+INFO  20:05:47,717 - #32 z
+INFO  20:05:47,717 - #8 ;
+INFO  20:05:47,718 - #3 {
+INFO  20:05:47,719 - #32 int
+INFO  20:05:47,720 - #32 main
+INFO  20:05:47,720 - #15 (
+INFO  20:05:47,720 - #32 int
+INFO  20:05:47,720 - #32 y
+INFO  20:05:47,720 - #12 ,
+INFO  20:05:47,720 - #32 int
+INFO  20:05:47,721 - #32 k
+INFO  20:05:47,721 - #16 )
+INFO  20:05:47,721 - #32 char
+INFO  20:05:47,722 - #32 c
+INFO  20:05:47,722 - #8 ;
+INFO  20:05:47,722 - #3 {
+INFO  20:05:47,726 - #24 return
+INFO  20:05:47,727 - #8 ;
+INFO  20:05:47,727 - #4 }
+INFO  20:05:47,727 - #4 }
+INFO  20:05:47,733 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    NoDeclarationList(
+    ) [NoDeclarationList]
+    VarElemDeclaration(
+      VarDecl(
+        VarDeclType(
+          TypeIdent(
+           int
+          ) [TypeIdent]
+        ) [VarDeclType]
+        VarDeclarationTmpList(
+          VarDeclarationComma(
+            VarDeclTmp(
+             x
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [VarDeclTmp]
+          ) [VarDeclarationComma]
+          VarDeclarationTmpListEnd(
+            VarDeclarationSemi(
+              VarDeclTmp(
+               z
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationSemi]
+          ) [VarDeclarationTmpListEnd]
+        ) [VarDeclarationTmpList]
+      ) [VarDecl]
+    ) [VarElemDeclaration]
+  ) [DeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDecl(
+      MethodTypeDecl(
+        TypeIdent(
+         int
+        ) [TypeIdent]
+       main
+      ) [MethodTypeDecl]
+      FormParamsList(
+        FormalParamsCommaList(
+          FormalParamsBasicComma(
+            FormalParamsBasic(
+              TypeIdent(
+               int
+              ) [TypeIdent]
+             y
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [FormalParamsBasic]
+          ) [FormalParamsBasicComma]
+          FormParsCommaListRightParen(
+            FormalParamsBasic(
+              TypeIdent(
+               int
+              ) [TypeIdent]
+             k
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [FormalParamsBasic]
+          ) [FormParsCommaListRightParen]
+        ) [FormalParamsCommaList]
+      ) [FormParamsList]
+      VarDecls(
+        NoVarDeclList(
+        ) [NoVarDeclList]
+        VarDecl(
+          VarDeclType(
+            TypeIdent(
+             char
+            ) [TypeIdent]
+          ) [VarDeclType]
+          VarDeclarationTmpListEnd(
+            VarDeclarationSemi(
+              VarDeclTmp(
+               c
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationSemi]
+          ) [VarDeclarationTmpListEnd]
+        ) [VarDecl]
+      ) [VarDecls]
+      Statements(
+        NoStatements(
+        ) [NoStatements]
+        ReturnStmt(
+        ) [ReturnStmt]
+      ) [Statements]
+    ) [MethodDecl]
+  ) [MethodDecls]
+) [Program]
+INFO  20:05:47,733 - ===================================
+INFO  20:05:47,737 - Pronadjen tip int
+INFO  20:05:47,737 - Deklarisana globalna promenljiva x na liniji 2
+INFO  20:05:47,737 - Deklarisana globalna promenljiva z na liniji 2
+INFO  20:05:47,737 - Pronadjen tip int
+INFO  20:05:47,737 - Obradjuje se funkcija main na liniji 4
+INFO  20:05:47,737 - Pronadjen tip int
+INFO  20:05:47,737 - Pronadjen tip int
+INFO  20:05:47,737 - Pronadjen tip char
+INFO  20:05:47,738 - Deklarisana lokalna promenljiva c na liniji 5
+ERROR 20:05:47,738 - Semanticka greska na liniji 4: funkcija main nema return iskaz!
+INFO  20:05:47,738 -  Print count calls = 0
+INFO  20:05:47,738 -  Deklarisanih promenljivih ima = 3
+INFO  20:05:47,738 - ===================================
+ERROR 20:05:47,738 - Parsiranje NIJE uspesno zavrseno!

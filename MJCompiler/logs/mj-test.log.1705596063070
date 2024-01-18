@@ -1,0 +1,97 @@
+INFO  17:39:42,143 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\testF3.mj
+INFO  17:39:42,188 - #2 program
+INFO  17:39:42,188 - #32 Test
+INFO  17:39:42,188 - #32 int
+INFO  17:39:42,190 - #32 xx
+INFO  17:39:42,191 - #8 ;
+INFO  17:39:42,192 - #7 const
+INFO  17:39:42,193 - #32 int
+INFO  17:39:42,193 - #32 x
+INFO  17:39:42,194 - #9 =
+INFO  17:39:42,194 - #34 4
+INFO  17:39:42,194 - #12 ,
+INFO  17:39:42,196 - #32 y
+INFO  17:39:42,197 - #9 =
+INFO  17:39:42,197 - #35 'j'
+INFO  17:39:42,197 - #8 ;
+INFO  17:39:42,198 - #3 {
+INFO  17:39:42,199 - #4 }
+INFO  17:39:42,206 - Program(
+  ProgName(
+   Test
+  ) [ProgName]
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    DeclarationList(
+      NoDeclarationList(
+      ) [NoDeclarationList]
+      VarElemDeclaration(
+        VarDeclNoErr(
+          VarDeclType(
+            TypeIdent(
+             int
+            ) [TypeIdent]
+          ) [VarDeclType]
+          VarDeclarationTmpListEnd(
+            VarDeclarationSemi(
+              VarDeclTmp(
+               xx
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationSemi]
+          ) [VarDeclarationTmpListEnd]
+        ) [VarDeclNoErr]
+      ) [VarElemDeclaration]
+    ) [DeclarationList]
+    ConstElemDeclaration(
+      ConstDeclNoErr(
+        ConstDeclType(
+          TypeIdent(
+           int
+          ) [TypeIdent]
+        ) [ConstDeclType]
+        ConstDeclarationTmpList(
+          ConstDeclarationComma(
+            ConstDeclTmp(
+             x
+              NumConstType(
+               4
+              ) [NumConstType]
+            ) [ConstDeclTmp]
+          ) [ConstDeclarationComma]
+          ConstDeclarationTmpListEnd(
+            ConstDeclarationSemi(
+              ConstDeclTmp(
+               y
+                CharConstType(
+                 'j'
+                ) [CharConstType]
+              ) [ConstDeclTmp]
+            ) [ConstDeclarationSemi]
+          ) [ConstDeclarationTmpListEnd]
+        ) [ConstDeclarationTmpList]
+      ) [ConstDeclNoErr]
+    ) [ConstElemDeclaration]
+  ) [DeclarationList]
+  NoMethodDecls(
+  ) [NoMethodDecls]
+) [Program]
+INFO  17:39:42,206 - ===================================
+INFO  17:39:42,212 - Pronadjen tip int
+INFO  17:39:42,212 - Deklarisana globalna promenljiva xx na liniji 3
+INFO  17:39:42,212 - Pronadjen tip int
+INFO  17:39:42,212 - Simbolicka konstanta 4 NumConstType(
+ 4
+) [NumConstType] na liniji 4
+INFO  17:39:42,212 - Deklarisana globalna promenljiva x na liniji 4
+INFO  17:39:42,212 - Simbolicka konstanta 'j' CharConstType(
+ 'j'
+) [CharConstType] na liniji 4
+ERROR 17:39:42,212 - Konstanta y nije istog tipa kao dodeljena vrednost na liniji 4
+INFO  17:39:42,212 - Deklarisana globalna promenljiva y na liniji 4
+INFO  17:39:42,212 -  Print count calls = 0
+INFO  17:39:42,212 -  Deklarisanih promenljivih ima = 3
+INFO  17:39:42,212 - ===================================
+ERROR 17:39:42,213 - Parsiranje NIJE uspesno zavrseno!

@@ -1,0 +1,122 @@
+INFO  16:51:35,406 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  16:51:35,468 - #2 program
+INFO  16:51:35,469 - #32 MJProgram
+INFO  16:51:35,469 - #32 int
+INFO  16:51:35,472 - #32 x
+INFO  16:51:35,475 - #12 ,
+INFO  16:51:35,478 - #32 z
+INFO  16:51:35,478 - #8 ;
+INFO  16:51:35,478 - #3 {
+INFO  16:51:35,481 - #17 void
+INFO  16:51:35,483 - #32 main
+INFO  16:51:35,483 - #15 (
+INFO  16:51:35,483 - #32 int
+INFO  16:51:35,483 - #32 y
+INFO  16:51:35,484 - #12 ,
+INFO  16:51:35,484 - #32 int
+INFO  16:51:35,484 - #32 k
+INFO  16:51:35,485 - #16 )
+INFO  16:51:35,486 - #32 char
+INFO  16:51:35,487 - #32 c
+INFO  16:51:35,487 - #8 ;
+INFO  16:51:35,488 - #3 {
+INFO  16:51:35,488 - #4 }
+INFO  16:51:35,489 - #4 }
+INFO  16:51:35,503 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    NoDeclarationList(
+    ) [NoDeclarationList]
+    VarElemDeclaration(
+      VarDecl(
+        TypeIdent(
+         int
+        ) [TypeIdent]
+        VarDeclarationTmpList(
+          VarDeclarationComma(
+            VarDeclTmp(
+             x
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [VarDeclTmp]
+          ) [VarDeclarationComma]
+          VarDeclarationTmpListEnd(
+            VarDeclarationSemi(
+              VarDeclTmp(
+               z
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationSemi]
+          ) [VarDeclarationTmpListEnd]
+        ) [VarDeclarationTmpList]
+      ) [VarDecl]
+    ) [VarElemDeclaration]
+  ) [DeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDeclVoid(
+     main
+      FormParamsList(
+        FormalParamsCommaList(
+          FormalParamsBasicComma(
+            FormalParamsBasic(
+              TypeIdent(
+               int
+              ) [TypeIdent]
+             y
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [FormalParamsBasic]
+          ) [FormalParamsBasicComma]
+          FormParsCommaListRightParen(
+            FormalParamsBasic(
+              TypeIdent(
+               int
+              ) [TypeIdent]
+             k
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [FormalParamsBasic]
+          ) [FormParsCommaListRightParen]
+        ) [FormalParamsCommaList]
+      ) [FormParamsList]
+      VarDecls(
+        NoVarDeclList(
+        ) [NoVarDeclList]
+        VarDecl(
+          TypeIdent(
+           char
+          ) [TypeIdent]
+          VarDeclarationTmpListEnd(
+            VarDeclarationSemi(
+              VarDeclTmp(
+               c
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationSemi]
+          ) [VarDeclarationTmpListEnd]
+        ) [VarDecl]
+      ) [VarDecls]
+      NoStatements(
+      ) [NoStatements]
+    ) [MethodDeclVoid]
+  ) [MethodDecls]
+) [Program]
+INFO  16:51:35,504 - ===================================
+INFO  16:51:35,511 - Pronadjen tip int
+INFO  16:51:35,514 - Deklarisana promenljiva x na liniji 2
+INFO  16:51:35,515 - Deklarisana promenljiva z na liniji 2
+INFO  16:51:35,515 - Pronadjen tip int
+INFO  16:51:35,516 - Pronadjen tip int
+INFO  16:51:35,516 - Pronadjen tip char
+INFO  16:51:35,516 - Deklarisana promenljiva c na liniji 5
+INFO  16:51:35,516 -  Print count calls = 0
+INFO  16:51:35,516 -  Deklarisanih promenljivih ima = 3
+INFO  16:51:35,516 - ===================================

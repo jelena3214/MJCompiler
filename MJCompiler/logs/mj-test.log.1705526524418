@@ -1,0 +1,39 @@
+INFO  22:19:21,018 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\testp.mj
+INFO  22:19:21,066 - #2 program
+INFO  22:19:21,066 - #32 MJProgram
+INFO  22:19:21,066 - #33 namespace
+INFO  22:19:21,067 - #32 sizes
+INFO  22:19:21,067 - #3 {
+INFO  22:19:21,068 - #3 {
+INFO  22:19:21,068 - #4 }
+INFO  22:19:21,070 - #4 }
+INFO  22:19:21,070 - #3 {
+INFO  22:19:21,072 - #4 }
+INFO  22:19:21,080 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  NamespacesDecl(
+    NoNamespacesDecl(
+    ) [NoNamespacesDecl]
+    NamespaceDecl(
+      NamespaceName(
+       namespace
+       sizes
+      ) [NamespaceName]
+      NoDeclarationList(
+      ) [NoDeclarationList]
+      NoMethodDecls(
+      ) [NoMethodDecls]
+    ) [NamespaceDecl]
+  ) [NamespacesDecl]
+  NoDeclarationList(
+  ) [NoDeclarationList]
+  NoMethodDecls(
+  ) [NoMethodDecls]
+) [Program]
+INFO  22:19:21,081 - ===================================
+INFO  22:19:21,085 - Obradjuje se namespace sizes
+INFO  22:19:21,085 -  Print count calls = 0
+INFO  22:19:21,085 -  Deklarisanih promenljivih ima = 0
+INFO  22:19:21,085 - ===================================

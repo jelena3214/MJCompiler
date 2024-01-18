@@ -1,0 +1,35 @@
+INFO  15:45:47,376 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\prog.mj
+INFO  15:45:47,419 - #2 program
+INFO  15:45:47,419 - #32 MJProgram
+INFO  15:45:47,419 - #3 {
+INFO  15:45:47,419 - #17 void
+INFO  15:45:47,420 - #32 main
+INFO  15:45:47,420 - #15 (
+INFO  15:45:47,420 - #16 )
+INFO  15:45:47,420 - #3 {
+INFO  15:45:47,421 - #27 for
+INFO  15:45:47,422 - #15 (
+INFO  15:45:47,422 - #32 i
+INFO  15:45:47,422 - #9 =
+INFO  15:45:47,422 - #34 0
+INFO  15:45:47,423 - #8 ;
+INFO  15:45:47,426 - #32 i
+ERROR 15:45:47,426 - 
+Sintaksna greska na liniji 4
+INFO  15:45:47,426 - #39 <
+INFO  15:45:47,426 - #34 3
+INFO  15:45:47,426 - #8 ;
+INFO  15:45:47,430 - #32 i
+INFO  15:45:47,430 - #28 ++
+INFO  15:45:47,433 - #16 )
+INFO  15:45:47,433 - #26 print
+INFO  15:45:47,433 - #15 (
+INFO  15:45:47,433 - #32 y
+INFO  15:45:47,433 - #10 [
+INFO  15:45:47,433 - #32 i
+INFO  15:45:47,433 - #11 ]
+INFO  15:45:47,433 - #16 )
+INFO  15:45:47,433 - #8 ;
+INFO  15:45:47,433 - #4 }
+INFO  15:45:47,433 - #4 }
+ERROR 15:45:47,433 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 6

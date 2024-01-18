@@ -1,0 +1,70 @@
+
+package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.Symbol;
+
+%%
+
+%{
+	private int charNumber = 1;
+	// ukljucivanje informacije o poziciji tokena
+	private Symbol new_symbol(int type) {
+		return new Symbol(type, yyline+1, yycolumn);
+	}
+	
+	// ukljucivanje informacije o poziciji tokena
+	private Symbol new_symbol(int type, Object value) {
+		return new Symbol(type, yyline+1, yycolumn, value);
+	}
+
+%}
+
+%cup
+%line
+%column
+
+%xstate COMMENT
+
+%eofval{
+	return new_symbol(sym.EOF);
+%eofval}
+
+%%
+
+" " 	{ charNumber++; }
+"\b" 	{ charNumber--; }
+"\t" 	{ charNumber+=4; }
+"\r\n" 	{ charNumber = 1; }
+"\f" 	{ charNumber = 1; }
+
+"program"   { charNumber+=7;return new_symbol(sym.PROG, yytext());}
+"print" 	{ charNumber+=5;return new_symbol(sym.PRINT, yytext()); }
+"return" 	{ charNumber+=6;return new_symbol(sym.RETURN, yytext()); }
+"void" 		{ charNumber+=4;return new_symbol(sym.VOID, yytext()); }
+"+" 		{ charNumber++;return new_symbol(sym.PLUS, yytext()); }
+"=" 		{ charNumber++;return new_symbol(sym.EQUAL, yytext()); }
+";" 		{ charNumber++;return new_symbol(sym.SEMI, yytext()); }
+"," 		{ charNumber++;return new_symbol(sym.COMMA, yytext()); }
+"(" 		{ charNumber++;return new_symbol(sym.LPAREN, yytext()); }
+")" 		{ charNumber++;return new_symbol(sym.RPAREN, yytext()); }
+"{" 		{ charNumber++;return new_symbol(sym.LBRACE, yytext()); }
+"}"			{ charNumber++;return new_symbol(sym.RBRACE, yytext()); }
+
+"//" {yybegin(COMMENT);}
+<COMMENT> . {yybegin(COMMENT);}
+<COMMENT> "\r\n" { yybegin(YYINITIAL); }
+
+[1-9][0-9]*  { charNumber+=yytext().length();return new_symbol(sym.NUMBER, Integer.parseInt (yytext())); }
+[a-zA-Z][a-zA-Z0-9_]* 	{charNumber+=yytext().length();return new_symbol (sym.IDENT, yytext()); }
+
+. { System.err.println("Leksicka greska ("+yytext()+") u liniji "+(yyline+1) + " i koloni " + charNumber); }
+
+
+
+
+
+
+
+
+
+

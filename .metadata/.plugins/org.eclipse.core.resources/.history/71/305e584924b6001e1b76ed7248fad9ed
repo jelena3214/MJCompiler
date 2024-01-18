@@ -1,0 +1,20 @@
+program Test
+	//Greska zbog y = 'j'
+	int xx;
+	const int x = 4, y = 'j';
+	{
+		int s(){
+			if(x == 5)return x;
+		}
+		
+		void main()
+		char p;
+		int i;
+		char pp[];
+		{
+			//greska nije dobar tip
+			
+			i = len(pp);
+		}
+	
+	}

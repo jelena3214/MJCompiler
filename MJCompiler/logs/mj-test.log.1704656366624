@@ -1,0 +1,82 @@
+INFO  20:38:40,183 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\testOporavakOdGreske.mj
+INFO  20:38:40,238 - #2 program
+INFO  20:38:40,239 - #32 MJProgram
+INFO  20:38:40,239 - #32 int
+INFO  20:38:40,240 - #32 x
+INFO  20:38:40,242 - #12 ,
+INFO  20:38:40,246 - #32 z
+INFO  20:38:40,247 - #12 ,
+INFO  20:38:40,247 - #42 -
+ERROR 20:38:40,247 - 
+Sintaksna greska na liniji 2
+INFO  20:38:40,247 - #32 yy
+INFO  20:38:40,247 - #10 [
+INFO  20:38:40,247 - #11 ]
+INFO  20:38:40,249 - #8 ;
+INFO  20:38:40,249 - #7 const
+INFO  20:38:40,249 - #32 int
+INFO  20:38:40,249 - #32 id
+ERROR 20:38:40,249 - Oporavak od greske u 'VarDecl' konstrukciji na liniji 2 preskacemo do prvog ';'
+INFO  20:38:40,252 - #9 =
+INFO  20:38:40,256 - #42 -
+ERROR 20:38:40,256 - 
+Sintaksna greska na liniji 3
+INFO  20:38:40,256 - #34 0
+INFO  20:38:40,256 - #12 ,
+INFO  20:38:40,256 - #32 y
+INFO  20:38:40,256 - #9 =
+INFO  20:38:40,256 - #34 7
+ERROR 20:38:40,256 - Oporavak od greske u 'ConstDecl' konstrukciji na liniji 3 preskacemo do prvog ','
+INFO  20:38:40,257 - #8 ;
+INFO  20:38:40,260 - #7 const
+INFO  20:38:40,260 - #32 char
+INFO  20:38:40,260 - #32 cc
+INFO  20:38:40,260 - #9 =
+INFO  20:38:40,260 - #35 'j'
+INFO  20:38:40,260 - #8 ;
+INFO  20:38:40,261 - #3 {
+INFO  20:38:40,261 - #17 void
+INFO  20:38:40,261 - #32 main
+INFO  20:38:40,261 - #15 (
+INFO  20:38:40,262 - #32 int
+INFO  20:38:40,262 - #32 y
+INFO  20:38:40,262 - #12 ,
+INFO  20:38:40,263 - #32 int
+INFO  20:38:40,264 - #32 k
+INFO  20:38:40,265 - #12 ,
+INFO  20:38:40,265 - #42 -
+ERROR 20:38:40,265 - 
+Sintaksna greska na liniji 6
+INFO  20:38:40,265 - #32 int
+INFO  20:38:40,265 - #32 y
+INFO  20:38:40,265 - #16 )
+INFO  20:38:40,265 - #32 char
+INFO  20:38:40,265 - #32 c
+INFO  20:38:40,265 - #8 ;
+ERROR 20:38:40,266 - Oporavak od greske u 'FormPars' konstrukciji na liniji 6 preskacemo do prvog ')'
+INFO  20:38:40,268 - #3 {
+INFO  20:38:40,269 - #32 x
+INFO  20:38:40,270 - #9 =
+INFO  20:38:40,271 - #32 y
+INFO  20:38:40,271 - #41 +
+INFO  20:38:40,273 - #34 2
+INFO  20:38:40,274 - #41 +
+INFO  20:38:40,275 - #8 ;
+ERROR 20:38:40,275 - 
+Sintaksna greska na liniji 9
+INFO  20:38:40,275 - #20 if
+INFO  20:38:40,276 - #15 (
+INFO  20:38:40,276 - #32 x
+INFO  20:38:40,276 - #39 <
+INFO  20:38:40,276 - #39 <
+INFO  20:38:40,276 - #16 )
+INFO  20:38:40,276 - #3 {
+INFO  20:38:40,276 - #26 print
+INFO  20:38:40,276 - #15 (
+INFO  20:38:40,276 - #32 a
+INFO  20:38:40,276 - #16 )
+INFO  20:38:40,276 - #8 ;
+INFO  20:38:40,276 - #4 }
+INFO  20:38:40,277 - #4 }
+INFO  20:38:40,277 - #4 }
+ERROR 20:38:40,277 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 14

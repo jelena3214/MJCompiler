@@ -1,0 +1,37 @@
+INFO  14:56:17,679 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  14:56:17,724 - #2 program
+INFO  14:56:17,724 - #32 MJProgram
+INFO  14:56:17,724 - #32 int
+INFO  14:56:17,726 - #32 x
+INFO  14:56:17,726 - #12 ,
+INFO  14:56:17,727 - #32 z
+INFO  14:56:17,727 - #8 ;
+INFO  14:56:17,729 - #33 namespace
+ERROR 14:56:17,729 - 
+Sintaksna greska na liniji 3
+INFO  14:56:17,729 - #32 sizes
+INFO  14:56:17,729 - #3 {
+INFO  14:56:17,729 - #7 const
+INFO  14:56:17,730 - #32 int
+INFO  14:56:17,730 - #32 tableSize
+INFO  14:56:17,730 - #9 =
+INFO  14:56:17,730 - #34 10
+INFO  14:56:17,730 - #8 ;
+INFO  14:56:17,730 - #3 {
+INFO  14:56:17,730 - #4 }
+INFO  14:56:17,730 - #4 }
+INFO  14:56:17,730 - #3 {
+INFO  14:56:17,730 - #17 void
+INFO  14:56:17,731 - #32 main
+INFO  14:56:17,731 - #15 (
+INFO  14:56:17,731 - #16 )
+INFO  14:56:17,731 - #3 {
+INFO  14:56:17,731 - #32 x
+INFO  14:56:17,731 - #9 =
+INFO  14:56:17,731 - #34 12
+INFO  14:56:17,731 - #41 +
+INFO  14:56:17,731 - #34 2
+INFO  14:56:17,731 - #8 ;
+INFO  14:56:17,731 - #4 }
+INFO  14:56:17,731 - #4 }
+ERROR 14:56:17,731 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 11

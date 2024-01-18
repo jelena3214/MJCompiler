@@ -1,0 +1,60 @@
+INFO  13:32:25,644 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  13:32:25,693 - #2 program
+INFO  13:32:25,693 - #32 MJProgram
+INFO  13:32:25,693 - #32 int
+INFO  13:32:25,694 - #32 x
+INFO  13:32:25,694 - #12 ,
+INFO  13:32:25,694 - #32 y
+INFO  13:32:25,694 - #8 ;
+INFO  13:32:25,695 - #3 {
+INFO  13:32:25,696 - #17 void
+INFO  13:32:25,697 - #32 main
+INFO  13:32:25,697 - #15 (
+INFO  13:32:25,697 - #16 )
+INFO  13:32:25,697 - #3 {
+INFO  13:32:25,698 - #4 }
+INFO  13:32:25,698 - #4 }
+INFO  13:32:25,701 - Program(
+ MJProgram
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    NoDeclarationList(
+    ) [NoDeclarationList]
+    VarElemDeclaration(
+      VarDecl(
+        TypeIdent(
+         int
+        ) [TypeIdent]
+       x
+        NoSquareBraces(
+        ) [NoSquareBraces]
+        IdentSquareBracesListDecl(
+          NoIdentSquareBracesListDecl(
+          ) [NoIdentSquareBracesListDecl]
+          IdentSquareBracesElem(
+           y
+            NoSquareBraces(
+            ) [NoSquareBraces]
+          ) [IdentSquareBracesElem]
+        ) [IdentSquareBracesListDecl]
+      ) [VarDecl]
+    ) [VarElemDeclaration]
+  ) [DeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDeclVoid(
+     main
+      NoFormParams(
+      ) [NoFormParams]
+      NoVarDeclList(
+      ) [NoVarDeclList]
+      NoStatements(
+      ) [NoStatements]
+    ) [MethodDeclVoid]
+  ) [MethodDecls]
+) [Program]
+INFO  13:32:25,704 - ===================================
+INFO  13:32:25,709 -  Print count calls = 0
+INFO  13:32:25,709 -  Deklarisanih promenljivih ima = 2

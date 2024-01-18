@@ -1,0 +1,77 @@
+INFO  23:29:37,908 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\prog.mj
+INFO  23:29:38,019 - #2 program
+INFO  23:29:38,020 - #32 MJProgram
+INFO  23:29:38,020 - #32 int
+INFO  23:29:38,022 - #32 x
+INFO  23:29:38,022 - #12 ,
+INFO  23:29:38,024 - #32 z
+INFO  23:29:38,025 - #12 ,
+INFO  23:29:38,025 - #32 yy
+INFO  23:29:38,025 - #10 [
+INFO  23:29:38,025 - #11 ]
+INFO  23:29:38,025 - #8 ;
+INFO  23:29:38,027 - #7 const
+INFO  23:29:38,029 - #32 int
+INFO  23:29:38,029 - #32 id
+INFO  23:29:38,029 - #9 =
+INFO  23:29:38,029 - #34 0
+INFO  23:29:38,029 - #12 ,
+INFO  23:29:38,029 - #32 y
+INFO  23:29:38,030 - #9 =
+INFO  23:29:38,030 - #34 7
+INFO  23:29:38,030 - #8 ;
+INFO  23:29:38,031 - #7 const
+INFO  23:29:38,034 - #32 char
+INFO  23:29:38,034 - #32 cc
+INFO  23:29:38,034 - #9 =
+INFO  23:29:38,034 - #35 'j'
+INFO  23:29:38,034 - #8 ;
+INFO  23:29:38,034 - #3 {
+INFO  23:29:38,035 - #17 void
+INFO  23:29:38,036 - #32 main
+INFO  23:29:38,036 - #15 (
+INFO  23:29:38,036 - #32 int
+INFO  23:29:38,036 - #32 y
+INFO  23:29:38,036 - #12 ,
+INFO  23:29:38,037 - #32 int
+INFO  23:29:38,037 - #32 k
+INFO  23:29:38,037 - #12 ,
+INFO  23:29:38,037 - #32 int
+INFO  23:29:38,037 - #32 y
+INFO  23:29:38,037 - #16 )
+INFO  23:29:38,037 - #32 char
+INFO  23:29:38,040 - #32 c
+INFO  23:29:38,040 - #8 ;
+INFO  23:29:38,040 - #3 {
+INFO  23:29:38,041 - #32 x
+INFO  23:29:38,042 - #9 =
+INFO  23:29:38,043 - #32 y
+INFO  23:29:38,047 - #41 +
+INFO  23:29:38,051 - #34 2
+INFO  23:29:38,053 - #41 +
+INFO  23:29:38,055 - #8 ;
+ERROR 23:29:38,055 - 
+Sintaksna greska na liniji 9
+INFO  23:29:38,055 - #20 if
+INFO  23:29:38,055 - #15 (
+INFO  23:29:38,055 - #41 +
+ERROR 23:29:38,057 - Oporavak od greske u 'Statement' konstrukciji na liniji 9 preskacemo do prvog ';'
+ERROR 23:29:38,058 - 
+Sintaksna greska na liniji 10
+INFO  23:29:38,059 - #32 x
+INFO  23:29:38,059 - #39 <
+INFO  23:29:38,059 - #34 0
+INFO  23:29:38,059 - #16 )
+INFO  23:29:38,059 - #3 {
+INFO  23:29:38,059 - #26 print
+INFO  23:29:38,059 - #15 (
+INFO  23:29:38,059 - #32 a
+INFO  23:29:38,059 - #16 )
+INFO  23:29:38,059 - #8 ;
+INFO  23:29:38,059 - #4 }
+INFO  23:29:38,060 - #4 }
+INFO  23:29:38,060 - #4 }
+ERROR 23:29:38,060 - Oporavak od greske u 'Statement' konstrukciji na liniji 10 preskacemo do prvog ';'
+ERROR 23:29:38,060 - 
+Sintaksna greska na liniji 14
+ERROR 23:29:38,060 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 14

@@ -1,0 +1,16 @@
+INFO  01:19:12,711 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  01:19:12,717 - #1 program
+INFO  01:19:12,717 - #4 MJProgram
+INFO  01:19:12,717 - #4 int
+INFO  01:19:12,717 - #4 x
+INFO  01:19:12,717 - #8 ,
+INFO  01:19:12,717 - #4 y
+INFO  01:19:12,717 - #9 ;
+INFO  01:19:12,717 - #12 {
+INFO  01:19:12,717 - #15 void
+INFO  01:19:12,717 - #4 main
+INFO  01:19:12,717 - #10 (
+INFO  01:19:12,717 - #11 )
+INFO  01:19:12,717 - #12 {
+INFO  01:19:12,717 - #13 }
+INFO  01:19:12,717 - #13 }

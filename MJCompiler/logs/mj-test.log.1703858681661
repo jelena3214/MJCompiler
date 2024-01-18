@@ -1,0 +1,193 @@
+INFO  15:03:36,177 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  15:03:36,220 - #2 program
+INFO  15:03:36,220 - #32 MJProgram
+INFO  15:03:36,220 - #33 namespace
+INFO  15:03:36,221 - #32 sizes
+INFO  15:03:36,221 - #3 {
+INFO  15:03:36,221 - #7 const
+INFO  15:03:36,222 - #32 int
+INFO  15:03:36,222 - #32 tableSize
+INFO  15:03:36,222 - #9 =
+INFO  15:03:36,222 - #34 10
+INFO  15:03:36,222 - #8 ;
+INFO  15:03:36,222 - #3 {
+INFO  15:03:36,223 - #4 }
+INFO  15:03:36,225 - #4 }
+INFO  15:03:36,225 - #32 int
+INFO  15:03:36,229 - #32 x
+INFO  15:03:36,229 - #12 ,
+INFO  15:03:36,230 - #32 z
+INFO  15:03:36,230 - #12 ,
+INFO  15:03:36,230 - #32 yy
+INFO  15:03:36,230 - #10 [
+INFO  15:03:36,234 - #11 ]
+INFO  15:03:36,234 - #8 ;
+INFO  15:03:36,234 - #7 const
+INFO  15:03:36,237 - #32 int
+INFO  15:03:36,238 - #32 id
+INFO  15:03:36,238 - #9 =
+INFO  15:03:36,238 - #34 0
+INFO  15:03:36,238 - #12 ,
+INFO  15:03:36,238 - #32 y
+INFO  15:03:36,238 - #8 ;
+ERROR 15:03:36,238 - 
+Sintaksna greska na liniji 8
+INFO  15:03:36,238 - #7 const
+INFO  15:03:36,238 - #32 char
+INFO  15:03:36,238 - #32 cc
+ERROR 15:03:36,241 - Izvrsen oporavak do ; u liniji 8
+INFO  15:03:36,241 - #9 =
+INFO  15:03:36,241 - #35 "hello"
+INFO  15:03:36,241 - #8 ;
+INFO  15:03:36,241 - #3 {
+INFO  15:03:36,241 - #17 void
+INFO  15:03:36,242 - #32 main
+INFO  15:03:36,242 - #15 (
+INFO  15:03:36,242 - #16 )
+INFO  15:03:36,242 - #3 {
+INFO  15:03:36,243 - #32 x
+INFO  15:03:36,244 - #9 =
+INFO  15:03:36,246 - #34 12
+INFO  15:03:36,248 - #41 +
+INFO  15:03:36,250 - #34 2
+INFO  15:03:36,250 - #8 ;
+INFO  15:03:36,252 - #4 }
+INFO  15:03:36,252 - #4 }
+INFO  15:03:36,253 - Program(
+ MJProgram
+  NamespacesDecl(
+    NoNamespacesDecl(
+    ) [NoNamespacesDecl]
+    NamespaceDecl(
+     namespace
+     sizes
+      DeclarationList(
+        NoDeclarationList(
+        ) [NoDeclarationList]
+        ConstElemDeclaration(
+          ConstDecl(
+            TypeIdent(
+             int
+            ) [TypeIdent]
+           tableSize
+            NumConstType(
+             10
+            ) [NumConstType]
+            NoIdentRepList(
+            ) [NoIdentRepList]
+          ) [ConstDecl]
+        ) [ConstElemDeclaration]
+      ) [DeclarationList]
+      NoMethodDecls(
+      ) [NoMethodDecls]
+    ) [NamespaceDecl]
+  ) [NamespacesDecl]
+  DeclarationList(
+    DeclarationList(
+      DeclarationList(
+        NoDeclarationList(
+        ) [NoDeclarationList]
+        VarElemDeclaration(
+          VarDecl(
+            TypeIdent(
+             int
+            ) [TypeIdent]
+           x
+            NoSquareBraces(
+            ) [NoSquareBraces]
+            IdentSquareBracesListDecl(
+              IdentSquareBracesListDecl(
+                NoIdentSquareBracesListDecl(
+                ) [NoIdentSquareBracesListDecl]
+                IdentSquareBracesElem(
+                 z
+                  NoSquareBraces(
+                  ) [NoSquareBraces]
+                ) [IdentSquareBracesElem]
+              ) [IdentSquareBracesListDecl]
+              IdentSquareBracesElem(
+               yy
+                SquareBraces(
+                ) [SquareBraces]
+              ) [IdentSquareBracesElem]
+            ) [IdentSquareBracesListDecl]
+          ) [VarDecl]
+        ) [VarElemDeclaration]
+      ) [DeclarationList]
+      GlobalVarDeclError1(
+      ) [GlobalVarDeclError1]
+    ) [DeclarationList]
+    ConstElemDeclaration(
+      ConstDecl(
+        TypeIdent(
+         char
+        ) [TypeIdent]
+       cc
+        ChatConstType(
+         "hello"
+        ) [ChatConstType]
+        NoIdentRepList(
+        ) [NoIdentRepList]
+      ) [ConstDecl]
+    ) [ConstElemDeclaration]
+  ) [DeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDeclVoid(
+     main
+      NoFormParams(
+      ) [NoFormParams]
+      NoVarDeclList(
+      ) [NoVarDeclList]
+      Statements(
+        NoStatements(
+        ) [NoStatements]
+        DesignatorStmt(
+          DesignatorStatementAssing(
+            DesignatorIdentTwo(
+             x
+              Designator2StmtIdent(
+                NoDesignatorOrList(
+                ) [NoDesignatorOrList]
+              ) [Designator2StmtIdent]
+            ) [DesignatorIdentTwo]
+            DesignatorStatementOrAssign(
+              Assignop(
+              ) [Assignop]
+              Expr(
+                NoDashList(
+                ) [NoDashList]
+                Term(
+                  FactorNumConst(
+                   12
+                  ) [FactorNumConst]
+                  NoMulopFactorList(
+                  ) [NoMulopFactorList]
+                ) [Term]
+                AddopTermDecl(
+                  NoAddopTermList(
+                  ) [NoAddopTermList]
+                  AddopTermElem(
+                    AddopPlus(
+                    ) [AddopPlus]
+                    Term(
+                      FactorNumConst(
+                       2
+                      ) [FactorNumConst]
+                      NoMulopFactorList(
+                      ) [NoMulopFactorList]
+                    ) [Term]
+                  ) [AddopTermElem]
+                ) [AddopTermDecl]
+              ) [Expr]
+            ) [DesignatorStatementOrAssign]
+          ) [DesignatorStatementAssing]
+        ) [DesignatorStmt]
+      ) [Statements]
+    ) [MethodDeclVoid]
+  ) [MethodDecls]
+) [Program]
+INFO  15:03:36,253 - ===================================
+INFO  15:03:36,259 -  Print count calls = 0
+INFO  15:03:36,259 -  Deklarisanih promenljivih ima = 2

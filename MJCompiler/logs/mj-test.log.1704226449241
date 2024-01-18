@@ -1,0 +1,211 @@
+INFO  21:13:44,578 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  21:13:44,622 - #2 program
+INFO  21:13:44,622 - #32 MJProgram
+INFO  21:13:44,622 - #32 int
+INFO  21:13:44,623 - #32 x
+INFO  21:13:44,625 - #12 ,
+INFO  21:13:44,628 - #32 z
+INFO  21:13:44,629 - #8 ;
+INFO  21:13:44,629 - #7 const
+INFO  21:13:44,632 - #32 int
+INFO  21:13:44,632 - #32 id
+INFO  21:13:44,633 - #9 =
+INFO  21:13:44,633 - #34 0
+INFO  21:13:44,633 - #12 ,
+INFO  21:13:44,634 - #32 y
+INFO  21:13:44,634 - #9 =
+INFO  21:13:44,634 - #34 7
+INFO  21:13:44,634 - #8 ;
+INFO  21:13:44,634 - #3 {
+INFO  21:13:44,637 - #32 int
+INFO  21:13:44,637 - #32 main
+INFO  21:13:44,637 - #15 (
+INFO  21:13:44,637 - #32 int
+INFO  21:13:44,645 - #32 y
+INFO  21:13:44,645 - #12 ,
+INFO  21:13:44,645 - #32 int
+INFO  21:13:44,645 - #32 k
+INFO  21:13:44,645 - #16 )
+INFO  21:13:44,645 - #32 char
+INFO  21:13:44,646 - #32 c
+INFO  21:13:44,646 - #8 ;
+INFO  21:13:44,646 - #3 {
+INFO  21:13:44,646 - #24 return
+INFO  21:13:44,648 - #34 1
+INFO  21:13:44,648 - #41 +
+INFO  21:13:44,649 - #34 67
+INFO  21:13:44,650 - #8 ;
+INFO  21:13:44,652 - #4 }
+INFO  21:13:44,653 - #4 }
+INFO  21:13:44,659 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    DeclarationList(
+      NoDeclarationList(
+      ) [NoDeclarationList]
+      VarElemDeclaration(
+        VarDecl(
+          VarDeclType(
+            TypeIdent(
+             int
+            ) [TypeIdent]
+          ) [VarDeclType]
+          VarDeclarationTmpList(
+            VarDeclarationComma(
+              VarDeclTmp(
+               x
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationComma]
+            VarDeclarationTmpListEnd(
+              VarDeclarationSemi(
+                VarDeclTmp(
+                 z
+                  NoSquareBraces(
+                  ) [NoSquareBraces]
+                ) [VarDeclTmp]
+              ) [VarDeclarationSemi]
+            ) [VarDeclarationTmpListEnd]
+          ) [VarDeclarationTmpList]
+        ) [VarDecl]
+      ) [VarElemDeclaration]
+    ) [DeclarationList]
+    ConstElemDeclaration(
+      ConstDecl(
+        ConstDeclType(
+          TypeIdent(
+           int
+          ) [TypeIdent]
+        ) [ConstDeclType]
+        ConstDeclarationTmpList(
+          ConstDeclarationComma(
+            ConstDeclTmp(
+             id
+              NumConstType(
+               0
+              ) [NumConstType]
+            ) [ConstDeclTmp]
+          ) [ConstDeclarationComma]
+          ConstDeclarationTmpListEnd(
+            ConstDeclarationSemi(
+              ConstDeclTmp(
+               y
+                NumConstType(
+                 7
+                ) [NumConstType]
+              ) [ConstDeclTmp]
+            ) [ConstDeclarationSemi]
+          ) [ConstDeclarationTmpListEnd]
+        ) [ConstDeclarationTmpList]
+      ) [ConstDecl]
+    ) [ConstElemDeclaration]
+  ) [DeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDecl(
+      MethodTypeDecl(
+        TypeIdent(
+         int
+        ) [TypeIdent]
+       main
+      ) [MethodTypeDecl]
+      FormParamsList(
+        FormalParamsCommaList(
+          FormalParamsBasicComma(
+            FormalParamsBasic(
+              TypeIdent(
+               int
+              ) [TypeIdent]
+             y
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [FormalParamsBasic]
+          ) [FormalParamsBasicComma]
+          FormParsCommaListRightParen(
+            FormalParamsBasic(
+              TypeIdent(
+               int
+              ) [TypeIdent]
+             k
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [FormalParamsBasic]
+          ) [FormParsCommaListRightParen]
+        ) [FormalParamsCommaList]
+      ) [FormParamsList]
+      VarDecls(
+        NoVarDeclList(
+        ) [NoVarDeclList]
+        VarDecl(
+          VarDeclType(
+            TypeIdent(
+             char
+            ) [TypeIdent]
+          ) [VarDeclType]
+          VarDeclarationTmpListEnd(
+            VarDeclarationSemi(
+              VarDeclTmp(
+               c
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationSemi]
+          ) [VarDeclarationTmpListEnd]
+        ) [VarDecl]
+      ) [VarDecls]
+      Statements(
+        NoStatements(
+        ) [NoStatements]
+        ReturnStmtExpr(
+          ExprNoDash(
+            Term(
+              FactorNumConst(
+               1
+              ) [FactorNumConst]
+              NoMulopFactorList(
+              ) [NoMulopFactorList]
+            ) [Term]
+            AddopTermDecl(
+              NoAddopTermList(
+              ) [NoAddopTermList]
+              AddopTermElem(
+                AddopPlus(
+                ) [AddopPlus]
+                Term(
+                  FactorNumConst(
+                   67
+                  ) [FactorNumConst]
+                  NoMulopFactorList(
+                  ) [NoMulopFactorList]
+                ) [Term]
+              ) [AddopTermElem]
+            ) [AddopTermDecl]
+          ) [ExprNoDash]
+        ) [ReturnStmtExpr]
+      ) [Statements]
+    ) [MethodDecl]
+  ) [MethodDecls]
+) [Program]
+INFO  21:13:44,659 - ===================================
+INFO  21:13:44,664 - Pronadjen tip int
+INFO  21:13:44,664 - Deklarisana globalna promenljiva x na liniji 2
+INFO  21:13:44,665 - Deklarisana globalna promenljiva z na liniji 2
+INFO  21:13:44,665 - Pronadjen tip int
+INFO  21:13:44,665 - Deklarisana globalna konstanta id na liniji 3
+INFO  21:13:44,665 - Deklarisana globalna konstanta y na liniji 3
+INFO  21:13:44,665 - Pronadjen tip int
+INFO  21:13:44,665 - Obradjuje se funkcija main na liniji 5
+INFO  21:13:44,665 - Pronadjen tip int
+INFO  21:13:44,665 - Pronadjen tip int
+INFO  21:13:44,667 - Pronadjen tip char
+INFO  21:13:44,667 - Deklarisana lokalna promenljiva c na liniji 6
+INFO  21:13:44,667 -  Print count calls = 0
+INFO  21:13:44,667 -  Deklarisanih promenljivih ima = 3
+INFO  21:13:44,667 - ===================================
+INFO  21:13:44,667 - Parsiranje uspesno zavrseno!

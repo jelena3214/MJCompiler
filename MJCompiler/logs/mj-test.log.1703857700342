@@ -1,0 +1,96 @@
+INFO  14:46:45,700 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  14:46:45,743 - #2 program
+INFO  14:46:45,743 - #32 MJProgram
+INFO  14:46:45,743 - #32 int
+INFO  14:46:45,744 - #32 x
+INFO  14:46:45,744 - #44 /
+ERROR 14:46:45,744 - 
+Sintaksna greska na liniji 2
+INFO  14:46:45,744 - #12 ,
+INFO  14:46:45,744 - #32 z
+INFO  14:46:45,744 - #8 ;
+INFO  14:46:45,745 - #3 {
+INFO  14:46:45,745 - #17 void
+INFO  14:46:45,746 - #32 main
+ERROR 14:46:45,746 - Izvrsen oporavak do ; u liniji 2
+INFO  14:46:45,748 - #15 (
+INFO  14:46:45,749 - #16 )
+INFO  14:46:45,750 - #3 {
+INFO  14:46:45,751 - #32 x
+INFO  14:46:45,752 - #9 =
+INFO  14:46:45,752 - #34 12
+INFO  14:46:45,754 - #41 +
+INFO  14:46:45,759 - #34 2
+INFO  14:46:45,762 - #8 ;
+INFO  14:46:45,769 - #4 }
+INFO  14:46:45,769 - #4 }
+INFO  14:46:45,770 - Program(
+ MJProgram
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    NoDeclarationList(
+    ) [NoDeclarationList]
+    GlobalVarDeclError2(
+    ) [GlobalVarDeclError2]
+  ) [DeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDeclVoid(
+     main
+      NoFormParams(
+      ) [NoFormParams]
+      NoVarDeclList(
+      ) [NoVarDeclList]
+      Statements(
+        NoStatements(
+        ) [NoStatements]
+        DesignatorStmt(
+          DesignatorStatementAssing(
+            DesignatorIdentTwo(
+             x
+              Designator2StmtIdent(
+                NoDesignatorOrList(
+                ) [NoDesignatorOrList]
+              ) [Designator2StmtIdent]
+            ) [DesignatorIdentTwo]
+            DesignatorStatementOrAssign(
+              Assignop(
+              ) [Assignop]
+              Expr(
+                NoDashList(
+                ) [NoDashList]
+                Term(
+                  FactorNumConst(
+                   12
+                  ) [FactorNumConst]
+                  NoMulopFactorList(
+                  ) [NoMulopFactorList]
+                ) [Term]
+                AddopTermDecl(
+                  NoAddopTermList(
+                  ) [NoAddopTermList]
+                  AddopTermElem(
+                    AddopPlus(
+                    ) [AddopPlus]
+                    Term(
+                      FactorNumConst(
+                       2
+                      ) [FactorNumConst]
+                      NoMulopFactorList(
+                      ) [NoMulopFactorList]
+                    ) [Term]
+                  ) [AddopTermElem]
+                ) [AddopTermDecl]
+              ) [Expr]
+            ) [DesignatorStatementOrAssign]
+          ) [DesignatorStatementAssing]
+        ) [DesignatorStmt]
+      ) [Statements]
+    ) [MethodDeclVoid]
+  ) [MethodDecls]
+) [Program]
+INFO  14:46:45,770 - ===================================
+INFO  14:46:45,773 -  Print count calls = 0
+INFO  14:46:45,774 -  Deklarisanih promenljivih ima = 0

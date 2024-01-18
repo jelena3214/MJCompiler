@@ -1,0 +1,54 @@
+INFO  00:07:31,063 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\prog.mj
+INFO  00:07:31,147 - #2 program
+INFO  00:07:31,147 - #32 MJProgram
+INFO  00:07:31,147 - #32 int
+INFO  00:07:31,149 - #32 x
+INFO  00:07:31,150 - #12 ,
+INFO  00:07:31,153 - #32 z
+INFO  00:07:31,153 - #12 ,
+INFO  00:07:31,153 - #42 -
+ERROR 00:07:31,155 - 
+Sintaksna greska na liniji 2
+INFO  00:07:31,155 - #32 yy
+INFO  00:07:31,155 - #10 [
+INFO  00:07:31,155 - #11 ]
+INFO  00:07:31,156 - #8 ;
+INFO  00:07:31,156 - #7 const
+INFO  00:07:31,156 - #32 int
+INFO  00:07:31,156 - #32 id
+ERROR 00:07:31,157 - Oporavak od greske u 'VarDecl' konstrukciji na liniji 2 preskacemo do prvog ';'
+INFO  00:07:31,160 - #9 =
+INFO  00:07:31,164 - #42 -
+ERROR 00:07:31,164 - 
+Sintaksna greska na liniji 3
+INFO  00:07:31,164 - #34 0
+INFO  00:07:31,164 - #12 ,
+INFO  00:07:31,164 - #32 y
+INFO  00:07:31,164 - #9 =
+INFO  00:07:31,165 - #34 7
+ERROR 00:07:31,165 - Oporavak od greske u 'ConstDecl' konstrukciji na liniji 3 preskacemo do prvog ','
+INFO  00:07:31,166 - #8 ;
+INFO  00:07:31,166 - #7 const
+INFO  00:07:31,168 - #32 char
+INFO  00:07:31,168 - #32 cc
+INFO  00:07:31,168 - #9 =
+INFO  00:07:31,168 - #35 'j'
+INFO  00:07:31,168 - #8 ;
+INFO  00:07:31,169 - #3 {
+INFO  00:07:31,169 - #17 void
+INFO  00:07:31,169 - #32 main
+INFO  00:07:31,169 - #15 (
+INFO  00:07:31,169 - #32 int
+INFO  00:07:31,170 - #32 y
+INFO  00:07:31,170 - #12 ,
+INFO  00:07:31,170 - #32 int
+INFO  00:07:31,170 - #32 k
+INFO  00:07:31,171 - #12 ,
+INFO  00:07:31,171 - #32 int
+INFO  00:07:31,171 - #32 y
+INFO  00:07:31,171 - #16 )
+INFO  00:07:31,171 - #32 char
+INFO  00:07:31,172 - #42 -
+ERROR 00:07:31,173 - 
+Sintaksna greska na liniji 7
+ERROR 00:07:31,173 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 7

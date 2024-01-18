@@ -1,0 +1,137 @@
+INFO  17:36:49,371 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  17:36:49,416 - #2 program
+INFO  17:36:49,416 - #32 MJProgram
+INFO  17:36:49,416 - #32 int
+INFO  17:36:49,417 - #32 x
+INFO  17:36:49,419 - #12 ,
+INFO  17:36:49,420 - #32 z
+INFO  17:36:49,420 - #12 ,
+INFO  17:36:49,420 - #32 z
+INFO  17:36:49,420 - #8 ;
+INFO  17:36:49,420 - #3 {
+INFO  17:36:49,421 - #17 void
+INFO  17:36:49,421 - #32 main
+INFO  17:36:49,421 - #15 (
+INFO  17:36:49,423 - #32 int
+INFO  17:36:49,423 - #32 y
+INFO  17:36:49,423 - #12 ,
+INFO  17:36:49,423 - #32 int
+INFO  17:36:49,424 - #32 k
+INFO  17:36:49,424 - #16 )
+INFO  17:36:49,424 - #32 char
+INFO  17:36:49,425 - #32 c
+INFO  17:36:49,430 - #8 ;
+INFO  17:36:49,430 - #3 {
+INFO  17:36:49,430 - #4 }
+INFO  17:36:49,430 - #4 }
+INFO  17:36:49,436 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    NoDeclarationList(
+    ) [NoDeclarationList]
+    VarElemDeclaration(
+      VarDecl(
+        VarDeclType(
+          TypeIdent(
+           int
+          ) [TypeIdent]
+        ) [VarDeclType]
+        VarDeclarationTmpList(
+          VarDeclarationComma(
+            VarDeclTmp(
+             x
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [VarDeclTmp]
+          ) [VarDeclarationComma]
+          VarDeclarationTmpList(
+            VarDeclarationComma(
+              VarDeclTmp(
+               z
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationComma]
+            VarDeclarationTmpListEnd(
+              VarDeclarationSemi(
+                VarDeclTmp(
+                 z
+                  NoSquareBraces(
+                  ) [NoSquareBraces]
+                ) [VarDeclTmp]
+              ) [VarDeclarationSemi]
+            ) [VarDeclarationTmpListEnd]
+          ) [VarDeclarationTmpList]
+        ) [VarDeclarationTmpList]
+      ) [VarDecl]
+    ) [VarElemDeclaration]
+  ) [DeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDecl(
+      MethodTypeVoid(
+       main
+      ) [MethodTypeVoid]
+      FormParamsList(
+        FormalParamsCommaList(
+          FormalParamsBasicComma(
+            FormalParamsBasic(
+              TypeIdent(
+               int
+              ) [TypeIdent]
+             y
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [FormalParamsBasic]
+          ) [FormalParamsBasicComma]
+          FormParsCommaListRightParen(
+            FormalParamsBasic(
+              TypeIdent(
+               int
+              ) [TypeIdent]
+             k
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [FormalParamsBasic]
+          ) [FormParsCommaListRightParen]
+        ) [FormalParamsCommaList]
+      ) [FormParamsList]
+      VarDecls(
+        NoVarDeclList(
+        ) [NoVarDeclList]
+        VarDecl(
+          VarDeclType(
+            TypeIdent(
+             char
+            ) [TypeIdent]
+          ) [VarDeclType]
+          VarDeclarationTmpListEnd(
+            VarDeclarationSemi(
+              VarDeclTmp(
+               c
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationSemi]
+          ) [VarDeclarationTmpListEnd]
+        ) [VarDecl]
+      ) [VarDecls]
+      NoStatements(
+      ) [NoStatements]
+    ) [MethodDecl]
+  ) [MethodDecls]
+) [Program]
+INFO  17:36:49,437 - ===================================
+INFO  17:36:49,446 - Pronadjen tip int
+INFO  17:36:49,447 - Deklarisana globalna promenljiva x na liniji 2
+INFO  17:36:49,447 - Deklarisana globalna promenljiva z na liniji 2
+ERROR 17:36:49,447 - Promeljiva z se opet deklarise na liniji 2
+INFO  17:36:49,447 - Pronadjen tip int
+INFO  17:36:49,447 - Pronadjen tip int
+INFO  17:36:49,447 - Pronadjen tip char
+INFO  17:36:49,447 - Deklarisana globalna promenljiva c na liniji 5

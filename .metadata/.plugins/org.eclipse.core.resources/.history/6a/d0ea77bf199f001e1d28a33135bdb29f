@@ -1,0 +1,60 @@
+
+package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+import rs.ac.bg.etf.pp1.ast.*;
+
+nonterminal Program, NamespaceList, DeclList, MethodDeclList, NamespaceDecl;
+
+terminal PROG, LBRACE, RBRACE;
+terminal String IDENT;
+terminal String NAMESPACE;
+
+Program ::= (Program) PROG IDENT NamespacList DeclList LBRACE MethodDeclList RBRACE
+
+NamespaceList ::= (NamespaceDecl) NamespaceList NamespaceDecl
+			|
+			(NoNamespaceDecl) /* epsilon */
+			;
+		
+NamespaceDecl ::= (NamespaceDecl) NAMESPACE IDENT LBRACE DeclList LBRACE MethodDecList RBRACE RBRACE
+
+DeclList ::= (DeclList) DeclList DeclListElem
+			|
+			(NoDeclList)
+			;
+
+DeclListElem ::= (ConstDecl) ConstDecl
+			| (VarDecl) VarDecl
+			| (ClassDecl) ClassDecl
+			;
+
+ConstDecl ::= CONST Type IDENT EQUAL ConstType IdentRep SEMI
+
+ConstType ::= (NumConsType) NumConsType
+			| (CharConstType) CharConstType
+			| (BoolConstType) BoolConstType
+
+IdentRep ::= (IdentRep) IdentRep IdentRepElem
+
+IdentRepElem ::= (IdentRepElem) COMMA IDENT EQUAL ConstType
+			|
+			(NoIdentRepElem) /* epsilon */
+			;
+			
+VarDecl ::= (VarDecl) Type IDENT LSBRACE SquareBracesList RSBRACE IdentSquareBracesList SEMI
+
+SquareBracesList ::= (SquareBracesList) LSBRACE SquareBracesList RSBRACE
+				|
+				(NoSquareBracesList)
+				;
+
+IdentSquareBracesList ::= (IdentSquareBracesList) IdentSquareBracesList IdentSquareBracesElem
+
+
+IdentSquareBracesElem ::= (IdentSquareBracesElem) COMMA IDENT LSBRACE SquareBracesList RSBRACE SEMI
+
+StaticInitializer ::= STATIC LBRACE Statement RBRACE
+
+MethodDecl ::= 

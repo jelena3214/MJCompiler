@@ -1,0 +1,154 @@
+INFO  20:26:27,465 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  20:26:27,510 - #2 program
+INFO  20:26:27,510 - #32 MJProgram
+INFO  20:26:27,510 - #32 int
+INFO  20:26:27,513 - #32 x
+INFO  20:26:27,513 - #12 ,
+INFO  20:26:27,515 - #32 z
+INFO  20:26:27,515 - #8 ;
+INFO  20:26:27,515 - #3 {
+INFO  20:26:27,516 - #32 bool
+INFO  20:26:27,516 - #32 main
+INFO  20:26:27,517 - #15 (
+INFO  20:26:27,517 - #32 int
+INFO  20:26:27,517 - #32 y
+INFO  20:26:27,517 - #12 ,
+INFO  20:26:27,518 - #32 int
+INFO  20:26:27,518 - #32 k
+INFO  20:26:27,518 - #16 )
+INFO  20:26:27,518 - #32 char
+INFO  20:26:27,520 - #32 c
+INFO  20:26:27,520 - #8 ;
+INFO  20:26:27,520 - #3 {
+INFO  20:26:27,524 - #24 return
+INFO  20:26:27,524 - #36 true
+INFO  20:26:27,524 - #8 ;
+INFO  20:26:27,525 - #4 }
+INFO  20:26:27,525 - #4 }
+INFO  20:26:27,531 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    NoDeclarationList(
+    ) [NoDeclarationList]
+    VarElemDeclaration(
+      VarDecl(
+        VarDeclType(
+          TypeIdent(
+           int
+          ) [TypeIdent]
+        ) [VarDeclType]
+        VarDeclarationTmpList(
+          VarDeclarationComma(
+            VarDeclTmp(
+             x
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [VarDeclTmp]
+          ) [VarDeclarationComma]
+          VarDeclarationTmpListEnd(
+            VarDeclarationSemi(
+              VarDeclTmp(
+               z
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationSemi]
+          ) [VarDeclarationTmpListEnd]
+        ) [VarDeclarationTmpList]
+      ) [VarDecl]
+    ) [VarElemDeclaration]
+  ) [DeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDecl(
+      MethodTypeDecl(
+        TypeIdent(
+         bool
+        ) [TypeIdent]
+       main
+      ) [MethodTypeDecl]
+      FormParamsList(
+        FormalParamsCommaList(
+          FormalParamsBasicComma(
+            FormalParamsBasic(
+              TypeIdent(
+               int
+              ) [TypeIdent]
+             y
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [FormalParamsBasic]
+          ) [FormalParamsBasicComma]
+          FormParsCommaListRightParen(
+            FormalParamsBasic(
+              TypeIdent(
+               int
+              ) [TypeIdent]
+             k
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [FormalParamsBasic]
+          ) [FormParsCommaListRightParen]
+        ) [FormalParamsCommaList]
+      ) [FormParamsList]
+      VarDecls(
+        NoVarDeclList(
+        ) [NoVarDeclList]
+        VarDecl(
+          VarDeclType(
+            TypeIdent(
+             char
+            ) [TypeIdent]
+          ) [VarDeclType]
+          VarDeclarationTmpListEnd(
+            VarDeclarationSemi(
+              VarDeclTmp(
+               c
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationSemi]
+          ) [VarDeclarationTmpListEnd]
+        ) [VarDecl]
+      ) [VarDecls]
+      Statements(
+        NoStatements(
+        ) [NoStatements]
+        ReturnStmtExpr(
+          ExprNoDash(
+            Term(
+              FactorBoolConst(
+               true
+              ) [FactorBoolConst]
+              NoMulopFactorList(
+              ) [NoMulopFactorList]
+            ) [Term]
+            NoAddopTermList(
+            ) [NoAddopTermList]
+          ) [ExprNoDash]
+        ) [ReturnStmtExpr]
+      ) [Statements]
+    ) [MethodDecl]
+  ) [MethodDecls]
+) [Program]
+INFO  20:26:27,532 - ===================================
+INFO  20:26:27,534 - Pronadjen tip int
+INFO  20:26:27,534 - Deklarisana globalna promenljiva x na liniji 2
+INFO  20:26:27,534 - Deklarisana globalna promenljiva z na liniji 2
+INFO  20:26:27,535 - Pronadjen tip bool
+INFO  20:26:27,535 - Obradjuje se funkcija main na liniji 4
+INFO  20:26:27,535 - Pronadjen tip int
+INFO  20:26:27,535 - Pronadjen tip int
+INFO  20:26:27,535 - Pronadjen tip char
+INFO  20:26:27,535 - Deklarisana lokalna promenljiva c na liniji 5
+ERROR 20:26:27,535 - Greska na liniji 7 : tip mora biti int
+ERROR 20:26:27,535 - Greska na liniji 7 : tipovi moraju biti kompatibilni
+INFO  20:26:27,535 -  Print count calls = 0
+INFO  20:26:27,535 -  Deklarisanih promenljivih ima = 3
+INFO  20:26:27,535 - ===================================
+ERROR 20:26:27,536 - Parsiranje NIJE uspesno zavrseno!

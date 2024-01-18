@@ -1,0 +1,174 @@
+INFO  18:48:08,216 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\prog.mj
+INFO  18:48:08,253 - #2 program
+INFO  18:48:08,253 - #32 MJProgram
+INFO  18:48:08,253 - #32 int
+INFO  18:48:08,254 - #32 x
+INFO  18:48:08,254 - #12 ,
+INFO  18:48:08,255 - #32 z
+INFO  18:48:08,255 - #12 ,
+INFO  18:48:08,256 - #32 yy
+INFO  18:48:08,256 - #10 [
+INFO  18:48:08,256 - #11 ]
+INFO  18:48:08,256 - #8 ;
+INFO  18:48:08,256 - #7 const
+INFO  18:48:08,257 - #32 int
+INFO  18:48:08,257 - #32 id
+INFO  18:48:08,257 - #9 =
+INFO  18:48:08,257 - #34 0
+INFO  18:48:08,257 - #12 ,
+INFO  18:48:08,257 - #32 y
+INFO  18:48:08,258 - #9 =
+INFO  18:48:08,258 - #34 7
+INFO  18:48:08,258 - #8 ;
+INFO  18:48:08,258 - #7 const
+INFO  18:48:08,262 - #32 char
+INFO  18:48:08,262 - #32 cc
+INFO  18:48:08,262 - #9 =
+INFO  18:48:08,262 - #35 'j'
+INFO  18:48:08,262 - #8 ;
+INFO  18:48:08,262 - #3 {
+INFO  18:48:08,262 - #17 void
+INFO  18:48:08,263 - #32 main
+INFO  18:48:08,263 - #15 (
+INFO  18:48:08,263 - #16 )
+INFO  18:48:08,264 - #3 {
+INFO  18:48:08,264 - #32 x
+INFO  18:48:08,264 - #9 =
+INFO  18:48:08,265 - #34 12
+INFO  18:48:08,267 - #41 +
+INFO  18:48:08,269 - #34 2
+INFO  18:48:08,269 - #8 ;
+INFO  18:48:08,270 - #4 }
+INFO  18:48:08,270 - #4 }
+INFO  18:48:08,272 - Program(
+ MJProgram
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    DeclarationList(
+      DeclarationList(
+        NoDeclarationList(
+        ) [NoDeclarationList]
+        VarElemDeclaration(
+          VarDecl(
+            TypeIdent(
+             int
+            ) [TypeIdent]
+           x
+            NoSquareBraces(
+            ) [NoSquareBraces]
+            IdentSquareBracesListDecl(
+              IdentSquareBracesListDecl(
+                NoIdentSquareBracesListDecl(
+                ) [NoIdentSquareBracesListDecl]
+                IdentSquareBracesElem(
+                 z
+                  NoSquareBraces(
+                  ) [NoSquareBraces]
+                ) [IdentSquareBracesElem]
+              ) [IdentSquareBracesListDecl]
+              IdentSquareBracesElem(
+               yy
+                SquareBraces(
+                ) [SquareBraces]
+              ) [IdentSquareBracesElem]
+            ) [IdentSquareBracesListDecl]
+          ) [VarDecl]
+        ) [VarElemDeclaration]
+      ) [DeclarationList]
+      ConstElemDeclaration(
+        ConstDeclDef(
+          TypeIdent(
+           int
+          ) [TypeIdent]
+         id
+          NumConstType(
+           0
+          ) [NumConstType]
+          IdentRepList(
+            NoIdentRepList(
+            ) [NoIdentRepList]
+            IdentRepElem(
+             y
+              NumConstType(
+               7
+              ) [NumConstType]
+            ) [IdentRepElem]
+          ) [IdentRepList]
+        ) [ConstDeclDef]
+      ) [ConstElemDeclaration]
+    ) [DeclarationList]
+    ConstElemDeclaration(
+      ConstDeclDef(
+        TypeIdent(
+         char
+        ) [TypeIdent]
+       cc
+        ChatConstType(
+         'j'
+        ) [ChatConstType]
+        NoIdentRepList(
+        ) [NoIdentRepList]
+      ) [ConstDeclDef]
+    ) [ConstElemDeclaration]
+  ) [DeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDeclVoid(
+     main
+      NoFormParams(
+      ) [NoFormParams]
+      NoVarDeclList(
+      ) [NoVarDeclList]
+      Statements(
+        NoStatements(
+        ) [NoStatements]
+        DesignatorStmt(
+          DesignatorStatementAssing(
+            DesignatorIdentTwo(
+             x
+              Designator2StmtIdent(
+                NoDesignatorOrList(
+                ) [NoDesignatorOrList]
+              ) [Designator2StmtIdent]
+            ) [DesignatorIdentTwo]
+            DesignatorStatementOrAssign(
+              Assignop(
+              ) [Assignop]
+              Expr(
+                NoDashList(
+                ) [NoDashList]
+                Term(
+                  FactorNumConst(
+                   12
+                  ) [FactorNumConst]
+                  NoMulopFactorList(
+                  ) [NoMulopFactorList]
+                ) [Term]
+                AddopTermDecl(
+                  NoAddopTermList(
+                  ) [NoAddopTermList]
+                  AddopTermElem(
+                    AddopPlus(
+                    ) [AddopPlus]
+                    Term(
+                      FactorNumConst(
+                       2
+                      ) [FactorNumConst]
+                      NoMulopFactorList(
+                      ) [NoMulopFactorList]
+                    ) [Term]
+                  ) [AddopTermElem]
+                ) [AddopTermDecl]
+              ) [Expr]
+            ) [DesignatorStatementOrAssign]
+          ) [DesignatorStatementAssing]
+        ) [DesignatorStmt]
+      ) [Statements]
+    ) [MethodDeclVoid]
+  ) [MethodDecls]
+) [Program]
+INFO  18:48:08,272 - ===================================
+INFO  18:48:08,276 -  Print count calls = 0
+INFO  18:48:08,276 -  Deklarisanih promenljivih ima = 2

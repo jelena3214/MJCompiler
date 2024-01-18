@@ -1,0 +1,139 @@
+INFO  17:12:30,205 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  17:12:30,252 - #2 program
+INFO  17:12:30,253 - #32 MJProgram
+INFO  17:12:30,253 - #32 int
+INFO  17:12:30,254 - #32 x
+INFO  17:12:30,255 - #12 ,
+INFO  17:12:30,260 - #32 z
+INFO  17:12:30,261 - #12 ,
+INFO  17:12:30,261 - #32 z
+INFO  17:12:30,261 - #8 ;
+INFO  17:12:30,261 - #3 {
+INFO  17:12:30,262 - #17 void
+INFO  17:12:30,263 - #32 main
+INFO  17:12:30,263 - #15 (
+INFO  17:12:30,263 - #32 int
+INFO  17:12:30,263 - #32 y
+INFO  17:12:30,263 - #12 ,
+INFO  17:12:30,263 - #32 int
+INFO  17:12:30,263 - #32 k
+INFO  17:12:30,263 - #16 )
+INFO  17:12:30,263 - #32 char
+INFO  17:12:30,265 - #32 c
+INFO  17:12:30,265 - #8 ;
+INFO  17:12:30,265 - #3 {
+INFO  17:12:30,265 - #4 }
+INFO  17:12:30,265 - #4 }
+INFO  17:12:30,269 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    NoDeclarationList(
+    ) [NoDeclarationList]
+    VarElemDeclaration(
+      VarDecl(
+        VarDeclType(
+          TypeIdent(
+           int
+          ) [TypeIdent]
+        ) [VarDeclType]
+        VarDeclarationTmpList(
+          VarDeclarationComma(
+            VarDeclTmp(
+             x
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [VarDeclTmp]
+          ) [VarDeclarationComma]
+          VarDeclarationTmpList(
+            VarDeclarationComma(
+              VarDeclTmp(
+               z
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationComma]
+            VarDeclarationTmpListEnd(
+              VarDeclarationSemi(
+                VarDeclTmp(
+                 z
+                  NoSquareBraces(
+                  ) [NoSquareBraces]
+                ) [VarDeclTmp]
+              ) [VarDeclarationSemi]
+            ) [VarDeclarationTmpListEnd]
+          ) [VarDeclarationTmpList]
+        ) [VarDeclarationTmpList]
+      ) [VarDecl]
+    ) [VarElemDeclaration]
+  ) [DeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDeclVoid(
+     main
+      FormParamsList(
+        FormalParamsCommaList(
+          FormalParamsBasicComma(
+            FormalParamsBasic(
+              TypeIdent(
+               int
+              ) [TypeIdent]
+             y
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [FormalParamsBasic]
+          ) [FormalParamsBasicComma]
+          FormParsCommaListRightParen(
+            FormalParamsBasic(
+              TypeIdent(
+               int
+              ) [TypeIdent]
+             k
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [FormalParamsBasic]
+          ) [FormParsCommaListRightParen]
+        ) [FormalParamsCommaList]
+      ) [FormParamsList]
+      VarDecls(
+        NoVarDeclList(
+        ) [NoVarDeclList]
+        VarDecl(
+          VarDeclType(
+            TypeIdent(
+             char
+            ) [TypeIdent]
+          ) [VarDeclType]
+          VarDeclarationTmpListEnd(
+            VarDeclarationSemi(
+              VarDeclTmp(
+               c
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationSemi]
+          ) [VarDeclarationTmpListEnd]
+        ) [VarDecl]
+      ) [VarDecls]
+      NoStatements(
+      ) [NoStatements]
+    ) [MethodDeclVoid]
+  ) [MethodDecls]
+) [Program]
+INFO  17:12:30,269 - ===================================
+INFO  17:12:30,271 - Pronadjen tip int
+INFO  17:12:30,271 - Deklarisana globalna promenljiva x na liniji 2
+INFO  17:12:30,271 - Deklarisana globalna promenljiva z na liniji 2
+ERROR 17:12:30,271 - Promeljiva z se opet deklarise na liniji 2
+INFO  17:12:30,271 - Pronadjen tip int
+INFO  17:12:30,271 - Pronadjen tip int
+INFO  17:12:30,271 - Pronadjen tip char
+INFO  17:12:30,271 - Deklarisana globalna promenljiva c na liniji 5
+INFO  17:12:30,271 -  Print count calls = 0
+INFO  17:12:30,271 -  Deklarisanih promenljivih ima = 4
+INFO  17:12:30,271 - ===================================
+ERROR 17:12:30,272 - Parsiranje NIJE uspesno zavrseno!

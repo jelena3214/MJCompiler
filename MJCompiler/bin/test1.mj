@@ -1,0 +1,45 @@
+program MJProgram
+	namespace sizes{
+		const int tableSize = 10;
+		{}
+	}
+	
+	namespace sizes2{
+		int y;
+		{
+			int mojaFunk(int x, int y[])
+				int z;
+			{
+				val = new Table();
+				if(x > 0)
+				{
+					x = 5;
+				}else{
+					x = 4;
+				}
+				print(x, 5);
+				read(sizes2::y);
+				
+				for (i=0; i<3; i++) print(y[i]);
+				
+				for (; j<=19; j--)
+				{
+					if(j == 7)break;
+					else continue;
+					print(y[j]);
+				}
+				f(c, h);
+				x = rows;
+				return x;
+			}
+		}
+	}
+	
+	int x, z, yy[];
+	const int id = 0, y = 7;
+	const char cc = 'j';
+{
+	void main() {
+		x = 12+2;
+	}
+}

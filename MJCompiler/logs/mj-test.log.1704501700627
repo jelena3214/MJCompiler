@@ -1,0 +1,17 @@
+INFO  01:39:13,277 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  01:39:13,331 - #2 program
+INFO  01:39:13,331 - #32 MJProgram
+INFO  01:39:13,331 - #33 namespace
+INFO  01:39:13,332 - #32 sizes
+INFO  01:39:13,332 - #3 {
+INFO  01:39:13,333 - #7 const
+INFO  01:39:13,334 - #32 int
+INFO  01:39:13,334 - #32 a
+INFO  01:39:13,334 - #9 =
+INFO  01:39:13,334 - #34 10
+INFO  01:39:13,335 - #8 ;
+INFO  01:39:13,335 - #32 int
+INFO  01:39:13,337 - #8 ;
+ERROR 01:39:13,337 - 
+Sintaksna greska na liniji 5
+ERROR 01:39:13,337 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 5

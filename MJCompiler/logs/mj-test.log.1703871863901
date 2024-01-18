@@ -1,0 +1,49 @@
+INFO  18:43:02,773 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\prog.mj
+INFO  18:43:02,812 - #2 program
+INFO  18:43:02,812 - #32 MJProgram
+INFO  18:43:02,812 - #3 {
+INFO  18:43:02,813 - #7 const
+ERROR 18:43:02,813 - 
+Sintaksna greska na liniji 3
+INFO  18:43:02,813 - #32 char
+INFO  18:43:02,813 - #32 c
+INFO  18:43:02,813 - #9 =
+INFO  18:43:02,814 - #35 'j'
+INFO  18:43:02,814 - #8 ;
+INFO  18:43:02,814 - #3 {
+INFO  18:43:02,814 - #17 void
+INFO  18:43:02,814 - #32 main
+ERROR 18:43:02,814 - Izvrsen oporavak do ; u liniji 2
+INFO  18:43:02,815 - #15 (
+INFO  18:43:02,815 - #16 )
+INFO  18:43:02,816 - #32 char
+INFO  18:43:02,816 - #32 c
+INFO  18:43:02,817 - #8 ;
+INFO  18:43:02,818 - #3 {
+INFO  18:43:02,819 - #27 for
+INFO  18:43:02,819 - #15 (
+INFO  18:43:02,819 - #32 i
+INFO  18:43:02,819 - #9 =
+INFO  18:43:02,821 - #34 0
+INFO  18:43:02,822 - #8 ;
+INFO  18:43:02,824 - #32 i
+INFO  18:43:02,825 - #39 <
+INFO  18:43:02,825 - #34 3
+INFO  18:43:02,826 - #8 ;
+INFO  18:43:02,826 - #32 i
+INFO  18:43:02,827 - #28 ++
+INFO  18:43:02,827 - #16 )
+INFO  18:43:02,827 - #26 print
+INFO  18:43:02,827 - #15 (
+INFO  18:43:02,827 - #32 y
+INFO  18:43:02,827 - #10 [
+INFO  18:43:02,827 - #32 i
+INFO  18:43:02,827 - #11 ]
+INFO  18:43:02,828 - #16 )
+INFO  18:43:02,828 - #8 ;
+INFO  18:43:02,828 - #4 }
+INFO  18:43:02,829 - #4 }
+INFO  18:43:02,829 - #4 }
+ERROR 18:43:02,829 - 
+Sintaksna greska na liniji 11
+ERROR 18:43:02,829 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 11

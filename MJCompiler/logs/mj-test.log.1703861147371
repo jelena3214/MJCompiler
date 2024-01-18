@@ -1,0 +1,69 @@
+INFO  15:43:15,108 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\prog.mj
+INFO  15:43:15,150 - #2 program
+INFO  15:43:15,151 - #32 MJProgram
+INFO  15:43:15,151 - #3 {
+INFO  15:43:15,151 - #17 void
+INFO  15:43:15,152 - #32 main
+INFO  15:43:15,152 - #15 (
+INFO  15:43:15,152 - #16 )
+INFO  15:43:15,152 - #3 {
+INFO  15:43:15,153 - #27 for
+INFO  15:43:15,153 - #15 (
+INFO  15:43:15,153 - #32 i
+INFO  15:43:15,153 - #9 =
+INFO  15:43:15,154 - #34 0
+INFO  15:43:15,155 - #8 ;
+INFO  15:43:15,157 - #32 i
+ERROR 15:43:15,157 - 
+Sintaksna greska na liniji 4
+INFO  15:43:15,157 - #39 <
+INFO  15:43:15,157 - #34 3
+INFO  15:43:15,157 - #8 ;
+INFO  15:43:15,158 - #32 i
+INFO  15:43:15,158 - #28 ++
+INFO  15:43:15,161 - #16 )
+ERROR 15:43:15,161 - Izvrsen oporavak do ; u liniji 4
+ERROR 15:43:15,164 - 
+Sintaksna greska na liniji 4
+INFO  15:43:15,164 - #26 print
+INFO  15:43:15,164 - #15 (
+INFO  15:43:15,164 - #32 y
+INFO  15:43:15,164 - #10 [
+INFO  15:43:15,164 - #32 i
+INFO  15:43:15,164 - #11 ]
+INFO  15:43:15,164 - #16 )
+INFO  15:43:15,164 - #8 ;
+INFO  15:43:15,164 - #4 }
+INFO  15:43:15,164 - #4 }
+ERROR 15:43:15,164 - Izvrsen oporavak do ; u liniji 4
+INFO  15:43:15,166 - Program(
+ MJProgram
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  NoDeclarationList(
+  ) [NoDeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDeclVoid(
+     main
+      NoFormParams(
+      ) [NoFormParams]
+      NoVarDeclList(
+      ) [NoVarDeclList]
+      Statements(
+        Statements(
+          NoStatements(
+          ) [NoStatements]
+          DesignatorError(
+          ) [DesignatorError]
+        ) [Statements]
+        DesignatorError(
+        ) [DesignatorError]
+      ) [Statements]
+    ) [MethodDeclVoid]
+  ) [MethodDecls]
+) [Program]
+INFO  15:43:15,166 - ===================================
+INFO  15:43:15,170 -  Print count calls = 0
+INFO  15:43:15,170 -  Deklarisanih promenljivih ima = 0

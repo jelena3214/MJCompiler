@@ -1,0 +1,297 @@
+INFO  23:34:17,976 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\prog.mj
+INFO  23:34:18,017 - #2 program
+INFO  23:34:18,017 - #32 MJProgram
+INFO  23:34:18,017 - #32 int
+INFO  23:34:18,018 - #32 x
+INFO  23:34:18,018 - #12 ,
+INFO  23:34:18,020 - #32 z
+INFO  23:34:18,020 - #12 ,
+INFO  23:34:18,020 - #32 yy
+INFO  23:34:18,020 - #10 [
+INFO  23:34:18,020 - #11 ]
+INFO  23:34:18,020 - #8 ;
+INFO  23:34:18,021 - #7 const
+INFO  23:34:18,021 - #32 int
+INFO  23:34:18,021 - #32 id
+INFO  23:34:18,021 - #9 =
+INFO  23:34:18,022 - #34 0
+INFO  23:34:18,022 - #12 ,
+INFO  23:34:18,022 - #32 y
+INFO  23:34:18,022 - #9 =
+INFO  23:34:18,022 - #34 7
+INFO  23:34:18,022 - #8 ;
+INFO  23:34:18,022 - #7 const
+INFO  23:34:18,027 - #32 char
+INFO  23:34:18,027 - #32 cc
+INFO  23:34:18,027 - #9 =
+INFO  23:34:18,027 - #35 'j'
+INFO  23:34:18,027 - #8 ;
+INFO  23:34:18,027 - #3 {
+INFO  23:34:18,027 - #17 void
+INFO  23:34:18,028 - #32 main
+INFO  23:34:18,028 - #15 (
+INFO  23:34:18,028 - #32 int
+INFO  23:34:18,028 - #32 y
+INFO  23:34:18,028 - #12 ,
+INFO  23:34:18,029 - #32 int
+INFO  23:34:18,029 - #32 k
+INFO  23:34:18,029 - #12 ,
+INFO  23:34:18,029 - #32 int
+INFO  23:34:18,029 - #32 y
+INFO  23:34:18,029 - #16 )
+INFO  23:34:18,029 - #32 char
+INFO  23:34:18,030 - #32 c
+INFO  23:34:18,030 - #8 ;
+INFO  23:34:18,030 - #3 {
+INFO  23:34:18,030 - #32 x
+INFO  23:34:18,030 - #9 =
+INFO  23:34:18,031 - #32 y
+INFO  23:34:18,032 - #41 +
+INFO  23:34:18,033 - #34 2
+INFO  23:34:18,034 - #41 +
+INFO  23:34:18,034 - #8 ;
+ERROR 23:34:18,035 - 
+Sintaksna greska na liniji 9
+INFO  23:34:18,035 - #20 if
+INFO  23:34:18,035 - #15 (
+INFO  23:34:18,035 - #32 x
+ERROR 23:34:18,035 - Oporavak od greske u 'Statement' konstrukciji na liniji 9 preskacemo do prvog ';'
+INFO  23:34:18,036 - #16 )
+INFO  23:34:18,042 - #3 {
+INFO  23:34:18,042 - #26 print
+INFO  23:34:18,042 - #15 (
+INFO  23:34:18,042 - #32 a
+INFO  23:34:18,042 - #16 )
+INFO  23:34:18,042 - #8 ;
+INFO  23:34:18,043 - #4 }
+INFO  23:34:18,043 - #4 }
+INFO  23:34:18,043 - #4 }
+INFO  23:34:18,045 - Program(
+ MJProgram
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    DeclarationList(
+      DeclarationList(
+        NoDeclarationList(
+        ) [NoDeclarationList]
+        VarElemDeclaration(
+          VarDecl(
+            TypeIdent(
+             int
+            ) [TypeIdent]
+            VarDeclarationTmpList(
+              VarDeclarationComma(
+                VarDeclTmp(
+                 x
+                  NoSquareBraces(
+                  ) [NoSquareBraces]
+                ) [VarDeclTmp]
+              ) [VarDeclarationComma]
+              VarDeclarationTmpList(
+                VarDeclarationComma(
+                  VarDeclTmp(
+                   z
+                    NoSquareBraces(
+                    ) [NoSquareBraces]
+                  ) [VarDeclTmp]
+                ) [VarDeclarationComma]
+                VarDeclarationTmpListEnd(
+                  VarDeclarationSemi(
+                    VarDeclTmp(
+                     yy
+                      SquareBraces(
+                      ) [SquareBraces]
+                    ) [VarDeclTmp]
+                  ) [VarDeclarationSemi]
+                ) [VarDeclarationTmpListEnd]
+              ) [VarDeclarationTmpList]
+            ) [VarDeclarationTmpList]
+          ) [VarDecl]
+        ) [VarElemDeclaration]
+      ) [DeclarationList]
+      ConstElemDeclaration(
+        ConstDecl(
+          TypeIdent(
+           int
+          ) [TypeIdent]
+          ConstDeclarationTmpList(
+            ConstDeclarationComma(
+              ConstDeclarationTmp(
+               id
+                NumConstType(
+                 0
+                ) [NumConstType]
+              ) [ConstDeclarationTmp]
+            ) [ConstDeclarationComma]
+            ConstDeclarationTmpListEnd(
+              ConstDeclarationSemi(
+                ConstDeclarationTmp(
+                 y
+                  NumConstType(
+                   7
+                  ) [NumConstType]
+                ) [ConstDeclarationTmp]
+              ) [ConstDeclarationSemi]
+            ) [ConstDeclarationTmpListEnd]
+          ) [ConstDeclarationTmpList]
+        ) [ConstDecl]
+      ) [ConstElemDeclaration]
+    ) [DeclarationList]
+    ConstElemDeclaration(
+      ConstDecl(
+        TypeIdent(
+         char
+        ) [TypeIdent]
+        ConstDeclarationTmpListEnd(
+          ConstDeclarationSemi(
+            ConstDeclarationTmp(
+             cc
+              ChatConstType(
+               'j'
+              ) [ChatConstType]
+            ) [ConstDeclarationTmp]
+          ) [ConstDeclarationSemi]
+        ) [ConstDeclarationTmpListEnd]
+      ) [ConstDecl]
+    ) [ConstElemDeclaration]
+  ) [DeclarationList]
+  MethodDecls(
+    NoMethodDecls(
+    ) [NoMethodDecls]
+    MethodDeclVoid(
+     main
+      FormParamsList(
+        FormalParamsCommaList(
+          FormalParamsBasicComma(
+            FormalParamsBasic(
+              TypeIdent(
+               int
+              ) [TypeIdent]
+             y
+              NoSquareBraces(
+              ) [NoSquareBraces]
+            ) [FormalParamsBasic]
+          ) [FormalParamsBasicComma]
+          FormalParamsCommaList(
+            FormalParamsBasicComma(
+              FormalParamsBasic(
+                TypeIdent(
+                 int
+                ) [TypeIdent]
+               k
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [FormalParamsBasic]
+            ) [FormalParamsBasicComma]
+            FormParsCommaListRightParen(
+              FormalParamsBasic(
+                TypeIdent(
+                 int
+                ) [TypeIdent]
+               y
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [FormalParamsBasic]
+            ) [FormParsCommaListRightParen]
+          ) [FormalParamsCommaList]
+        ) [FormalParamsCommaList]
+      ) [FormParamsList]
+      VarDecls(
+        NoVarDeclList(
+        ) [NoVarDeclList]
+        VarDecl(
+          TypeIdent(
+           char
+          ) [TypeIdent]
+          VarDeclarationTmpListEnd(
+            VarDeclarationSemi(
+              VarDeclTmp(
+               c
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationSemi]
+          ) [VarDeclarationTmpListEnd]
+        ) [VarDecl]
+      ) [VarDecls]
+      Statements(
+        Statements(
+          NoStatements(
+          ) [NoStatements]
+          ErrorStatement(
+          ) [ErrorStatement]
+        ) [Statements]
+        IfStmt(
+          ConditionNoErr(
+            CondTerm(
+              CondFact(
+                Expr(
+                  NoDashList(
+                  ) [NoDashList]
+                  Term(
+                    FactorDesignator(
+                      DesignatorIdentTwo(
+                       x
+                        Designator2StmtIdent(
+                          NoDesignatorOrList(
+                          ) [NoDesignatorOrList]
+                        ) [Designator2StmtIdent]
+                      ) [DesignatorIdentTwo]
+                      NoActParsList1(
+                      ) [NoActParsList1]
+                    ) [FactorDesignator]
+                    NoMulopFactorList(
+                    ) [NoMulopFactorList]
+                  ) [Term]
+                  NoAddopTermList(
+                  ) [NoAddopTermList]
+                ) [Expr]
+                NoRelopExprList(
+                ) [NoRelopExprList]
+              ) [CondFact]
+              NoCondFactList(
+              ) [NoCondFactList]
+            ) [CondTerm]
+            NoCondTermList(
+            ) [NoCondTermList]
+          ) [ConditionNoErr]
+          Stmt(
+            PrintStmt(
+              Expr(
+                NoDashList(
+                ) [NoDashList]
+                Term(
+                  FactorDesignator(
+                    DesignatorIdentTwo(
+                     a
+                      Designator2StmtIdent(
+                        NoDesignatorOrList(
+                        ) [NoDesignatorOrList]
+                      ) [Designator2StmtIdent]
+                    ) [DesignatorIdentTwo]
+                    NoActParsList1(
+                    ) [NoActParsList1]
+                  ) [FactorDesignator]
+                  NoMulopFactorList(
+                  ) [NoMulopFactorList]
+                ) [Term]
+                NoAddopTermList(
+                ) [NoAddopTermList]
+              ) [Expr]
+              NoNumConstList(
+              ) [NoNumConstList]
+            ) [PrintStmt]
+            NoStatements(
+            ) [NoStatements]
+          ) [Stmt]
+          NoElseStatement(
+          ) [NoElseStatement]
+        ) [IfStmt]
+      ) [Statements]
+    ) [MethodDeclVoid]
+  ) [MethodDecls]
+) [Program]
+INFO  23:34:18,045 - ===================================
+INFO  23:34:18,048 -  Print count calls = 1
+INFO  23:34:18,048 -  Deklarisanih promenljivih ima = 3

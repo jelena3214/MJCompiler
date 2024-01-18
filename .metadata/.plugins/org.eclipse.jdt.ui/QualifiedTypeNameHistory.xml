@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.VarElemDeclaration"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.VarDeclTmp"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.SemanticAnalyzer"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.MethodDeclType"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.MethodTypeVoid"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.TypeNamespaceIdent"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.ReturnStmt"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.ExprDash"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.FactorBoolConst"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.NoAddopTermList"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.BoolConstType"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.ConstDeclTmp"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.NamespaceName"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.NamespaceDecl"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.DesignatorCommaDecls"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.DesignatorDecl"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.DesignatorDeclNamespace"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.DesignatorStatementDec"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.RelopNoEqual"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.ContinueStmt"/>
+    <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.CondTerm"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="rs.etf.pp1.symboltable.concepts.Struct"/>
+</qualifiedTypeNameHistroy>

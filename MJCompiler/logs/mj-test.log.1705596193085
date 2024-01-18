@@ -1,0 +1,260 @@
+INFO  17:41:36,250 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\testF3.mj
+INFO  17:41:36,347 - #2 program
+INFO  17:41:36,347 - #32 Test
+INFO  17:41:36,347 - #32 int
+INFO  17:41:36,348 - #32 xx
+INFO  17:41:36,349 - #8 ;
+INFO  17:41:36,351 - #7 const
+INFO  17:41:36,353 - #32 int
+INFO  17:41:36,353 - #32 x
+INFO  17:41:36,355 - #9 =
+INFO  17:41:36,355 - #34 4
+INFO  17:41:36,355 - #12 ,
+INFO  17:41:36,357 - #32 y
+INFO  17:41:36,357 - #9 =
+INFO  17:41:36,357 - #35 'j'
+INFO  17:41:36,357 - #8 ;
+INFO  17:41:36,358 - #3 {
+INFO  17:41:36,360 - #32 int
+INFO  17:41:36,362 - #32 s
+INFO  17:41:36,362 - #15 (
+INFO  17:41:36,362 - #16 )
+INFO  17:41:36,362 - #3 {
+INFO  17:41:36,363 - #20 if
+INFO  17:41:36,364 - #15 (
+INFO  17:41:36,364 - #32 x
+INFO  17:41:36,364 - #5 ==
+INFO  17:41:36,367 - #34 5
+INFO  17:41:36,399 - #16 )
+INFO  17:41:36,474 - #24 return
+INFO  17:41:36,474 - #32 x
+INFO  17:41:36,474 - #8 ;
+INFO  17:41:36,474 - #4 }
+INFO  17:41:36,485 - #17 void
+INFO  17:41:36,485 - #32 main
+INFO  17:41:36,486 - #15 (
+INFO  17:41:36,486 - #16 )
+INFO  17:41:36,486 - #3 {
+INFO  17:41:36,486 - #32 p
+INFO  17:41:36,486 - #9 =
+INFO  17:41:36,486 - #34 3
+INFO  17:41:36,486 - #8 ;
+INFO  17:41:36,487 - #4 }
+INFO  17:41:36,488 - #4 }
+INFO  17:41:36,497 - Program(
+  ProgName(
+   Test
+  ) [ProgName]
+  NoNamespacesDecl(
+  ) [NoNamespacesDecl]
+  DeclarationList(
+    DeclarationList(
+      NoDeclarationList(
+      ) [NoDeclarationList]
+      VarElemDeclaration(
+        VarDeclNoErr(
+          VarDeclType(
+            TypeIdent(
+             int
+            ) [TypeIdent]
+          ) [VarDeclType]
+          VarDeclarationTmpListEnd(
+            VarDeclarationSemi(
+              VarDeclTmp(
+               xx
+                NoSquareBraces(
+                ) [NoSquareBraces]
+              ) [VarDeclTmp]
+            ) [VarDeclarationSemi]
+          ) [VarDeclarationTmpListEnd]
+        ) [VarDeclNoErr]
+      ) [VarElemDeclaration]
+    ) [DeclarationList]
+    ConstElemDeclaration(
+      ConstDeclNoErr(
+        ConstDeclType(
+          TypeIdent(
+           int
+          ) [TypeIdent]
+        ) [ConstDeclType]
+        ConstDeclarationTmpList(
+          ConstDeclarationComma(
+            ConstDeclTmp(
+             x
+              NumConstType(
+               4
+              ) [NumConstType]
+            ) [ConstDeclTmp]
+          ) [ConstDeclarationComma]
+          ConstDeclarationTmpListEnd(
+            ConstDeclarationSemi(
+              ConstDeclTmp(
+               y
+                CharConstType(
+                 'j'
+                ) [CharConstType]
+              ) [ConstDeclTmp]
+            ) [ConstDeclarationSemi]
+          ) [ConstDeclarationTmpListEnd]
+        ) [ConstDeclarationTmpList]
+      ) [ConstDeclNoErr]
+    ) [ConstElemDeclaration]
+  ) [DeclarationList]
+  MethodDecls(
+    MethodDecls(
+      NoMethodDecls(
+      ) [NoMethodDecls]
+      MethodDecl(
+        MethodTypeDecl(
+          TypeIdent(
+           int
+          ) [TypeIdent]
+         s
+        ) [MethodTypeDecl]
+        FormParamsEmpty(
+        ) [FormParamsEmpty]
+        NoVarDeclList(
+        ) [NoVarDeclList]
+        Statements(
+          NoStatements(
+          ) [NoStatements]
+          IfStmt(
+            IfNoErr(
+              Condition(
+                CondTerm(
+                  CondFactExprRelop(
+                    ExprNoDash(
+                      Term(
+                        FactorDesignator(
+                          Designator(
+                            DesignatorDeclBasic(
+                             x
+                            ) [DesignatorDeclBasic]
+                            NoDesignatorOrList(
+                            ) [NoDesignatorOrList]
+                          ) [Designator]
+                        ) [FactorDesignator]
+                        NoMulopFactorList(
+                        ) [NoMulopFactorList]
+                      ) [Term]
+                      NoAddopTermList(
+                      ) [NoAddopTermList]
+                    ) [ExprNoDash]
+                    RelopTwoEqual(
+                    ) [RelopTwoEqual]
+                    ExprNoDash(
+                      Term(
+                        FactorNumConst(
+                         5
+                        ) [FactorNumConst]
+                        NoMulopFactorList(
+                        ) [NoMulopFactorList]
+                      ) [Term]
+                      NoAddopTermList(
+                      ) [NoAddopTermList]
+                    ) [ExprNoDash]
+                  ) [CondFactExprRelop]
+                  NoCondFactList(
+                  ) [NoCondFactList]
+                ) [CondTerm]
+                NoCondTermList(
+                ) [NoCondTermList]
+              ) [Condition]
+              ReturnStmtExpr(
+                ExprNoDash(
+                  Term(
+                    FactorDesignator(
+                      Designator(
+                        DesignatorDeclBasic(
+                         x
+                        ) [DesignatorDeclBasic]
+                        NoDesignatorOrList(
+                        ) [NoDesignatorOrList]
+                      ) [Designator]
+                    ) [FactorDesignator]
+                    NoMulopFactorList(
+                    ) [NoMulopFactorList]
+                  ) [Term]
+                  NoAddopTermList(
+                  ) [NoAddopTermList]
+                ) [ExprNoDash]
+              ) [ReturnStmtExpr]
+              NoElseStatement(
+              ) [NoElseStatement]
+            ) [IfNoErr]
+          ) [IfStmt]
+        ) [Statements]
+      ) [MethodDecl]
+    ) [MethodDecls]
+    MethodDecl(
+      MethodTypeVoid(
+       main
+      ) [MethodTypeVoid]
+      FormParamsEmpty(
+      ) [FormParamsEmpty]
+      NoVarDeclList(
+      ) [NoVarDeclList]
+      Statements(
+        NoStatements(
+        ) [NoStatements]
+        DesignatorStmt(
+          DesignatorStatementSemicolin(
+            DesignatorStatementAssign(
+              Designator(
+                DesignatorDeclBasic(
+                 p
+                ) [DesignatorDeclBasic]
+                NoDesignatorOrList(
+                ) [NoDesignatorOrList]
+              ) [Designator]
+              Assignop(
+              ) [Assignop]
+              ExprNoDash(
+                Term(
+                  FactorNumConst(
+                   3
+                  ) [FactorNumConst]
+                  NoMulopFactorList(
+                  ) [NoMulopFactorList]
+                ) [Term]
+                NoAddopTermList(
+                ) [NoAddopTermList]
+              ) [ExprNoDash]
+            ) [DesignatorStatementAssign]
+          ) [DesignatorStatementSemicolin]
+        ) [DesignatorStmt]
+      ) [Statements]
+    ) [MethodDecl]
+  ) [MethodDecls]
+) [Program]
+INFO  17:41:36,497 - ===================================
+INFO  17:41:36,506 - Pronadjen tip int
+INFO  17:41:36,506 - Deklarisana globalna promenljiva xx na liniji 3
+INFO  17:41:36,507 - Pronadjen tip int
+INFO  17:41:36,507 - Simbolicka konstanta 4 NumConstType(
+ 4
+) [NumConstType] na liniji 4
+INFO  17:41:36,507 - Deklarisana globalna promenljiva x na liniji 4
+INFO  17:41:36,507 - Simbolicka konstanta 'j' CharConstType(
+ 'j'
+) [CharConstType] na liniji 4
+ERROR 17:41:36,507 - Konstanta y nije istog tipa kao dodeljena vrednost na liniji 4
+INFO  17:41:36,507 - Deklarisana globalna promenljiva y na liniji 4
+INFO  17:41:36,507 - Pronadjen tip int
+INFO  17:41:36,508 - Obradjuje se funkcija s na liniji 6
+INFO  17:41:36,508 - Koriscenje promenljive x na liniji 7
+INFO  17:41:36,508 - Simbolicka konstanta 5 FactorNumConst(
+ 5
+) [FactorNumConst] na liniji 7
+INFO  17:41:36,508 - Koriscenje promenljive x na liniji 7
+INFO  17:41:36,509 - Obradjuje se funkcija main na liniji 11
+ERROR 17:41:36,509 - Greska: Ime p nije deklarisano! na liniji 12
+INFO  17:41:36,509 - Koriscenje promenljive noObj na liniji 12
+INFO  17:41:36,509 - Simbolicka konstanta 3 FactorNumConst(
+ 3
+) [FactorNumConst] na liniji 12
+ERROR 17:41:36,509 - Tipovi nisu kompatibilni pri dodeli 
+INFO  17:41:36,509 -  Print count calls = 0
+INFO  17:41:36,510 -  Deklarisanih promenljivih ima = 3
+INFO  17:41:36,510 - ===================================
+ERROR 17:41:36,511 - Parsiranje NIJE uspesno zavrseno!
