@@ -1,4 +1,0 @@
-program Test
-	//Greska zbog 'j'
-	const int x = 4, y = 'j';
-	{}

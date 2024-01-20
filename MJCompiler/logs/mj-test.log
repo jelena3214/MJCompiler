@@ -1,188 +1,199 @@
-INFO  22:27:01,068 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\program.mj
-INFO  22:27:01,112 - #2 program
-INFO  22:27:01,112 - #32 MJProgram
-INFO  22:27:01,112 - #33 namespace
-INFO  22:27:01,114 - #32 sizes
-INFO  22:27:01,114 - #3 {
-INFO  22:27:01,114 - #7 const
-INFO  22:27:01,116 - #32 int
-INFO  22:27:01,116 - #32 tableSize
-INFO  22:27:01,116 - #9 =
-INFO  22:27:01,116 - #34 10
-INFO  22:27:01,116 - #8 ;
-INFO  22:27:01,118 - #32 int
-INFO  22:27:01,119 - #32 ss
-INFO  22:27:01,119 - #8 ;
-INFO  22:27:01,120 - #32 char
-INFO  22:27:01,121 - #32 ck
-INFO  22:27:01,121 - #8 ;
-INFO  22:27:01,121 - #3 {
-INFO  22:27:01,121 - #32 int
-INFO  22:27:01,122 - #32 moja
-INFO  22:27:01,122 - #15 (
-INFO  22:27:01,122 - #16 )
-INFO  22:27:01,122 - #32 char
-INFO  22:27:01,123 - #32 t
-INFO  22:27:01,123 - #8 ;
-INFO  22:27:01,123 - #3 {
-INFO  22:27:01,123 - #26 print
-INFO  22:27:01,124 - #15 (
-INFO  22:27:01,124 - #32 t
-INFO  22:27:01,124 - #16 )
-INFO  22:27:01,129 - #8 ;
-INFO  22:27:01,129 - #24 return
-INFO  22:27:01,129 - #34 2
-INFO  22:27:01,129 - #8 ;
-INFO  22:27:01,129 - #4 }
-INFO  22:27:01,129 - #4 }
-INFO  22:27:01,130 - #4 }
-INFO  22:27:01,130 - #32 int
-INFO  22:27:01,131 - #32 x
-INFO  22:27:01,131 - #12 ,
-INFO  22:27:01,132 - #32 u
-INFO  22:27:01,132 - #12 ,
-INFO  22:27:01,132 - #32 z
-INFO  22:27:01,132 - #10 [
-INFO  22:27:01,132 - #11 ]
-INFO  22:27:01,132 - #12 ,
-INFO  22:27:01,133 - #32 uu
-INFO  22:27:01,133 - #10 [
-INFO  22:27:01,133 - #11 ]
-INFO  22:27:01,133 - #8 ;
-INFO  22:27:01,133 - #7 const
-INFO  22:27:01,133 - #32 int
-INFO  22:27:01,133 - #32 id
-INFO  22:27:01,133 - #9 =
-INFO  22:27:01,133 - #34 0
-INFO  22:27:01,133 - #12 ,
-INFO  22:27:01,133 - #32 y
-INFO  22:27:01,134 - #9 =
-INFO  22:27:01,134 - #34 7
-INFO  22:27:01,134 - #8 ;
-INFO  22:27:01,134 - #7 const
-INFO  22:27:01,134 - #32 char
-INFO  22:27:01,134 - #32 j
-INFO  22:27:01,134 - #9 =
-INFO  22:27:01,134 - #35 'j'
-INFO  22:27:01,134 - #8 ;
-INFO  22:27:01,134 - #3 {
-INFO  22:27:01,134 - #32 int
-INFO  22:27:01,134 - #32 k
-INFO  22:27:01,134 - #15 (
-INFO  22:27:01,134 - #32 int
-INFO  22:27:01,134 - #32 u
-INFO  22:27:01,134 - #12 ,
-INFO  22:27:01,135 - #32 int
-INFO  22:27:01,135 - #32 uu
-INFO  22:27:01,135 - #16 )
-INFO  22:27:01,135 - #3 {
-INFO  22:27:01,135 - #20 if
-INFO  22:27:01,135 - #15 (
-INFO  22:27:01,135 - #32 j
-INFO  22:27:01,135 - #5 ==
-INFO  22:27:01,135 - #35 'c'
-INFO  22:27:01,136 - #16 )
-INFO  22:27:01,138 - #3 {
-INFO  22:27:01,138 - #32 x
-INFO  22:27:01,138 - #9 =
-INFO  22:27:01,138 - #34 2
-INFO  22:27:01,139 - #8 ;
-INFO  22:27:01,139 - #4 }
-INFO  22:27:01,139 - #21 else
-INFO  22:27:01,139 - #3 {
-INFO  22:27:01,139 - #20 if
-INFO  22:27:01,139 - #15 (
-INFO  22:27:01,139 - #32 x
-INFO  22:27:01,140 - #5 ==
-INFO  22:27:01,140 - #34 0
-INFO  22:27:01,140 - #16 )
-INFO  22:27:01,140 - #3 {
-INFO  22:27:01,140 - #3 {
-INFO  22:27:01,140 - #4 }
-INFO  22:27:01,140 - #4 }
-INFO  22:27:01,140 - #32 x
-INFO  22:27:01,141 - #9 =
-INFO  22:27:01,141 - #34 1
-INFO  22:27:01,141 - #8 ;
-INFO  22:27:01,141 - #4 }
-INFO  22:27:01,141 - #24 return
-INFO  22:27:01,141 - #34 1
-INFO  22:27:01,141 - #8 ;
-INFO  22:27:01,141 - #4 }
-INFO  22:27:01,141 - #32 int
-INFO  22:27:01,142 - #32 neka_funks
-INFO  22:27:01,142 - #15 (
-INFO  22:27:01,142 - #32 int
-INFO  22:27:01,142 - #32 uu
-INFO  22:27:01,142 - #16 )
-INFO  22:27:01,142 - #3 {
-INFO  22:27:01,142 - #24 return
-INFO  22:27:01,142 - #32 ord
-INFO  22:27:01,142 - #15 (
-INFO  22:27:01,142 - #35 '1'
-INFO  22:27:01,142 - #16 )
-INFO  22:27:01,143 - #8 ;
-INFO  22:27:01,144 - #4 }
-INFO  22:27:01,144 - #17 void
-INFO  22:27:01,144 - #32 main
-INFO  22:27:01,144 - #15 (
-INFO  22:27:01,144 - #16 )
-INFO  22:27:01,144 - #32 char
-INFO  22:27:01,144 - #32 c
-INFO  22:27:01,144 - #8 ;
-INFO  22:27:01,144 - #3 {
-INFO  22:27:01,144 - #10 [
-INFO  22:27:01,144 - #32 u
-INFO  22:27:01,144 - #12 ,
-INFO  22:27:01,144 - #32 u
-INFO  22:27:01,144 - #12 ,
-INFO  22:27:01,144 - #32 z
-INFO  22:27:01,144 - #10 [
-INFO  22:27:01,146 - #34 1
-INFO  22:27:01,146 - #11 ]
-INFO  22:27:01,146 - #12 ,
-INFO  22:27:01,146 - #43 *
-INFO  22:27:01,146 - #32 z
-INFO  22:27:01,146 - #11 ]
-INFO  22:27:01,146 - #9 =
-INFO  22:27:01,146 - #32 uu
-INFO  22:27:01,146 - #8 ;
-INFO  22:27:01,147 - #32 z
-INFO  22:27:01,147 - #10 [
-INFO  22:27:01,147 - #34 2
-INFO  22:27:01,147 - #11 ]
-INFO  22:27:01,147 - #28 ++
-INFO  22:27:01,147 - #8 ;
-INFO  22:27:01,147 - #32 z
-INFO  22:27:01,147 - #10 [
-INFO  22:27:01,147 - #34 1
-INFO  22:27:01,147 - #11 ]
-INFO  22:27:01,148 - #9 =
-INFO  22:27:01,148 - #34 1
-INFO  22:27:01,148 - #8 ;
-INFO  22:27:01,148 - #20 if
-INFO  22:27:01,148 - #15 (
-INFO  22:27:01,148 - #32 y
-INFO  22:27:01,148 - #5 ==
-INFO  22:27:01,148 - #32 z
-INFO  22:27:01,148 - #10 [
-INFO  22:27:01,148 - #34 1
-INFO  22:27:01,149 - #11 ]
-INFO  22:27:01,149 - #16 )
-INFO  22:27:01,149 - #24 return
-INFO  22:27:01,149 - #8 ;
-INFO  22:27:01,149 - #32 k
-INFO  22:27:01,150 - #15 (
-INFO  22:27:01,150 - #32 id
-INFO  22:27:01,150 - #12 ,
-INFO  22:27:01,150 - #32 u
-INFO  22:27:01,150 - #16 )
-INFO  22:27:01,151 - #8 ;
-INFO  22:27:01,151 - #24 return
-INFO  22:27:01,151 - #8 ;
-INFO  22:27:01,151 - #4 }
-INFO  22:27:01,151 - #4 }
-INFO  22:27:01,157 - Program(
+INFO  14:52:11,636 - Compiling source file: C:\Users\Lenovo\OneDrive\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  14:52:11,682 - #2 program
+INFO  14:52:11,682 - #32 MJProgram
+INFO  14:52:11,682 - #33 namespace
+INFO  14:52:11,682 - #32 sizes
+INFO  14:52:11,683 - #3 {
+INFO  14:52:11,684 - #7 const
+INFO  14:52:11,685 - #32 int
+INFO  14:52:11,685 - #32 tableSize
+INFO  14:52:11,687 - #9 =
+INFO  14:52:11,687 - #34 10
+INFO  14:52:11,687 - #8 ;
+INFO  14:52:11,688 - #32 int
+INFO  14:52:11,689 - #32 ss
+INFO  14:52:11,690 - #8 ;
+INFO  14:52:11,691 - #32 char
+INFO  14:52:11,692 - #32 ck
+INFO  14:52:11,692 - #8 ;
+INFO  14:52:11,692 - #3 {
+INFO  14:52:11,692 - #32 int
+INFO  14:52:11,694 - #32 moja
+INFO  14:52:11,694 - #15 (
+INFO  14:52:11,694 - #16 )
+INFO  14:52:11,694 - #32 char
+INFO  14:52:11,696 - #32 t
+INFO  14:52:11,696 - #8 ;
+INFO  14:52:11,696 - #3 {
+INFO  14:52:11,696 - #26 print
+INFO  14:52:11,696 - #15 (
+INFO  14:52:11,696 - #32 t
+INFO  14:52:11,696 - #16 )
+INFO  14:52:11,700 - #8 ;
+INFO  14:52:11,700 - #24 return
+INFO  14:52:11,700 - #34 2
+INFO  14:52:11,700 - #8 ;
+INFO  14:52:11,700 - #4 }
+INFO  14:52:11,701 - #4 }
+INFO  14:52:11,704 - #4 }
+INFO  14:52:11,704 - #32 int
+INFO  14:52:11,705 - #32 x
+INFO  14:52:11,705 - #12 ,
+INFO  14:52:11,705 - #32 u
+INFO  14:52:11,706 - #12 ,
+INFO  14:52:11,706 - #32 z
+INFO  14:52:11,706 - #10 [
+INFO  14:52:11,706 - #11 ]
+INFO  14:52:11,706 - #12 ,
+INFO  14:52:11,706 - #32 uu
+INFO  14:52:11,706 - #10 [
+INFO  14:52:11,706 - #11 ]
+INFO  14:52:11,706 - #8 ;
+INFO  14:52:11,707 - #7 const
+INFO  14:52:11,707 - #32 int
+INFO  14:52:11,707 - #32 id
+INFO  14:52:11,707 - #9 =
+INFO  14:52:11,707 - #34 0
+INFO  14:52:11,707 - #12 ,
+INFO  14:52:11,707 - #32 y
+INFO  14:52:11,707 - #9 =
+INFO  14:52:11,707 - #34 7
+INFO  14:52:11,707 - #8 ;
+INFO  14:52:11,707 - #7 const
+INFO  14:52:11,708 - #32 char
+INFO  14:52:11,708 - #32 j
+INFO  14:52:11,708 - #9 =
+INFO  14:52:11,708 - #35 'j'
+INFO  14:52:11,708 - #8 ;
+INFO  14:52:11,708 - #3 {
+INFO  14:52:11,708 - #32 int
+INFO  14:52:11,708 - #32 k
+INFO  14:52:11,708 - #15 (
+INFO  14:52:11,708 - #32 int
+INFO  14:52:11,708 - #32 u
+INFO  14:52:11,709 - #12 ,
+INFO  14:52:11,709 - #32 int
+INFO  14:52:11,709 - #32 uu
+INFO  14:52:11,709 - #16 )
+INFO  14:52:11,710 - #32 char
+INFO  14:52:11,710 - #32 uj
+INFO  14:52:11,710 - #8 ;
+INFO  14:52:11,710 - #3 {
+INFO  14:52:11,710 - #32 uj
+INFO  14:52:11,710 - #9 =
+INFO  14:52:11,710 - #35 '1'
+INFO  14:52:11,711 - #8 ;
+INFO  14:52:11,711 - #32 u
+INFO  14:52:11,712 - #9 =
+INFO  14:52:11,712 - #34 4
+INFO  14:52:11,712 - #8 ;
+INFO  14:52:11,712 - #20 if
+INFO  14:52:11,712 - #15 (
+INFO  14:52:11,712 - #32 j
+INFO  14:52:11,712 - #5 ==
+INFO  14:52:11,712 - #35 'c'
+INFO  14:52:11,713 - #16 )
+INFO  14:52:11,715 - #3 {
+INFO  14:52:11,715 - #32 x
+INFO  14:52:11,715 - #9 =
+INFO  14:52:11,715 - #34 2
+INFO  14:52:11,715 - #8 ;
+INFO  14:52:11,716 - #4 }
+INFO  14:52:11,716 - #21 else
+INFO  14:52:11,716 - #3 {
+INFO  14:52:11,716 - #20 if
+INFO  14:52:11,716 - #15 (
+INFO  14:52:11,716 - #32 x
+INFO  14:52:11,716 - #5 ==
+INFO  14:52:11,716 - #34 0
+INFO  14:52:11,716 - #16 )
+INFO  14:52:11,716 - #3 {
+INFO  14:52:11,716 - #3 {
+INFO  14:52:11,716 - #4 }
+INFO  14:52:11,716 - #4 }
+INFO  14:52:11,716 - #32 x
+INFO  14:52:11,717 - #9 =
+INFO  14:52:11,717 - #34 1
+INFO  14:52:11,717 - #8 ;
+INFO  14:52:11,717 - #4 }
+INFO  14:52:11,717 - #24 return
+INFO  14:52:11,717 - #34 1
+INFO  14:52:11,717 - #8 ;
+INFO  14:52:11,717 - #4 }
+INFO  14:52:11,718 - #32 int
+INFO  14:52:11,718 - #32 neka_funks
+INFO  14:52:11,718 - #15 (
+INFO  14:52:11,718 - #32 int
+INFO  14:52:11,718 - #32 uu
+INFO  14:52:11,718 - #16 )
+INFO  14:52:11,719 - #3 {
+INFO  14:52:11,719 - #24 return
+INFO  14:52:11,719 - #32 ord
+INFO  14:52:11,719 - #15 (
+INFO  14:52:11,719 - #35 '1'
+INFO  14:52:11,719 - #16 )
+INFO  14:52:11,722 - #8 ;
+INFO  14:52:11,723 - #4 }
+INFO  14:52:11,723 - #17 void
+INFO  14:52:11,723 - #32 main
+INFO  14:52:11,723 - #15 (
+INFO  14:52:11,723 - #16 )
+INFO  14:52:11,723 - #32 char
+INFO  14:52:11,723 - #32 c
+INFO  14:52:11,723 - #8 ;
+INFO  14:52:11,723 - #3 {
+INFO  14:52:11,723 - #10 [
+INFO  14:52:11,723 - #32 u
+INFO  14:52:11,723 - #12 ,
+INFO  14:52:11,723 - #32 u
+INFO  14:52:11,723 - #12 ,
+INFO  14:52:11,723 - #32 z
+INFO  14:52:11,723 - #10 [
+INFO  14:52:11,723 - #34 1
+INFO  14:52:11,724 - #11 ]
+INFO  14:52:11,724 - #12 ,
+INFO  14:52:11,724 - #43 *
+INFO  14:52:11,724 - #32 z
+INFO  14:52:11,724 - #11 ]
+INFO  14:52:11,724 - #9 =
+INFO  14:52:11,724 - #32 uu
+INFO  14:52:11,724 - #8 ;
+INFO  14:52:11,724 - #32 z
+INFO  14:52:11,724 - #10 [
+INFO  14:52:11,724 - #34 2
+INFO  14:52:11,724 - #11 ]
+INFO  14:52:11,724 - #28 ++
+INFO  14:52:11,724 - #8 ;
+INFO  14:52:11,724 - #32 z
+INFO  14:52:11,725 - #10 [
+INFO  14:52:11,725 - #34 1
+INFO  14:52:11,725 - #11 ]
+INFO  14:52:11,725 - #9 =
+INFO  14:52:11,725 - #34 1
+INFO  14:52:11,725 - #8 ;
+INFO  14:52:11,725 - #20 if
+INFO  14:52:11,725 - #15 (
+INFO  14:52:11,725 - #32 y
+INFO  14:52:11,725 - #5 ==
+INFO  14:52:11,725 - #32 z
+INFO  14:52:11,725 - #10 [
+INFO  14:52:11,725 - #34 1
+INFO  14:52:11,726 - #11 ]
+INFO  14:52:11,726 - #16 )
+INFO  14:52:11,726 - #24 return
+INFO  14:52:11,726 - #8 ;
+INFO  14:52:11,726 - #32 k
+INFO  14:52:11,727 - #15 (
+INFO  14:52:11,727 - #32 id
+INFO  14:52:11,727 - #12 ,
+INFO  14:52:11,727 - #32 u
+INFO  14:52:11,727 - #16 )
+INFO  14:52:11,728 - #8 ;
+INFO  14:52:11,728 - #24 return
+INFO  14:52:11,728 - #8 ;
+INFO  14:52:11,728 - #4 }
+INFO  14:52:11,729 - #4 }
+INFO  14:52:11,734 - Program(
   ProgName(
    MJProgram
   ) [ProgName]
@@ -470,12 +481,86 @@ INFO  22:27:01,157 - Program(
               ) [FormParsCommaListRightParen]
             ) [FormalParamsCommaList]
           ) [FormParamsList]
-          NoVarDeclList(
-          ) [NoVarDeclList]
+          VarDecls(
+            NoVarDeclList(
+            ) [NoVarDeclList]
+            VarDeclNoErr(
+              VarDeclType(
+                TypeIdent(
+                 char
+                ) [TypeIdent]
+              ) [VarDeclType]
+              VarDeclarationTmpListEnd(
+                VarDeclarationSemi(
+                  VarDeclTmp(
+                   uj
+                    NoSquareBraces(
+                    ) [NoSquareBraces]
+                  ) [VarDeclTmp]
+                ) [VarDeclarationSemi]
+              ) [VarDeclarationTmpListEnd]
+            ) [VarDeclNoErr]
+          ) [VarDecls]
           Statements(
             Statements(
-              NoStatements(
-              ) [NoStatements]
+              Statements(
+                Statements(
+                  NoStatements(
+                  ) [NoStatements]
+                  DesignatorStmt(
+                    DesignatorStatementSemicolin(
+                      DesignatorStatementAssign(
+                        Designator(
+                          DesignatorDeclBasic(
+                           uj
+                          ) [DesignatorDeclBasic]
+                          NoDesignatorOrList(
+                          ) [NoDesignatorOrList]
+                        ) [Designator]
+                        Assignop(
+                        ) [Assignop]
+                        ExprNoDash(
+                          Term(
+                            FactorCharConst(
+                             '1'
+                            ) [FactorCharConst]
+                            NoMulopFactorList(
+                            ) [NoMulopFactorList]
+                          ) [Term]
+                          NoAddopTermList(
+                          ) [NoAddopTermList]
+                        ) [ExprNoDash]
+                      ) [DesignatorStatementAssign]
+                    ) [DesignatorStatementSemicolin]
+                  ) [DesignatorStmt]
+                ) [Statements]
+                DesignatorStmt(
+                  DesignatorStatementSemicolin(
+                    DesignatorStatementAssign(
+                      Designator(
+                        DesignatorDeclBasic(
+                         u
+                        ) [DesignatorDeclBasic]
+                        NoDesignatorOrList(
+                        ) [NoDesignatorOrList]
+                      ) [Designator]
+                      Assignop(
+                      ) [Assignop]
+                      ExprNoDash(
+                        Term(
+                          FactorNumConst(
+                           4
+                          ) [FactorNumConst]
+                          NoMulopFactorList(
+                          ) [NoMulopFactorList]
+                        ) [Term]
+                        NoAddopTermList(
+                        ) [NoAddopTermList]
+                      ) [ExprNoDash]
+                    ) [DesignatorStatementAssign]
+                  ) [DesignatorStatementSemicolin]
+                ) [DesignatorStmt]
+              ) [Statements]
               IfStmt(
                 IfNoErr(
                   Condition(
@@ -1020,77 +1105,84 @@ INFO  22:27:01,157 - Program(
     ) [MethodDecl]
   ) [MethodDecls]
 ) [Program]
-INFO  22:27:01,158 - ===================================
-INFO  22:27:01,163 - Obradjuje se namespace sizes
-INFO  22:27:01,163 - Pronadjen tip int
-INFO  22:27:01,163 - Simbolicka konstanta  10 na liniji 4
-INFO  22:27:01,163 - Deklarisana globalna konstanta tableSize iz namespace-a sizes na liniji 4
-INFO  22:27:01,163 - Pronadjen tip int
-INFO  22:27:01,163 - Deklarisana globalna promenljiva ss iz namespace-a sizes na liniji 5
-INFO  22:27:01,163 - Pronadjen tip char
-INFO  22:27:01,164 - Deklarisana globalna promenljiva ck iz namespace-a sizes na liniji 6
-INFO  22:27:01,164 - Pronadjen tip int
-INFO  22:27:01,164 - Obradjuje se funkcija moja na liniji 8
-INFO  22:27:01,164 - Pronadjen tip char
-INFO  22:27:01,164 - Deklarisana lokalna promenljiva t u metodi moja na liniji 9
-INFO  22:27:01,164 - Koriscenje promenljive t na liniji 11
-INFO  22:27:01,164 - Simbolicka konstanta 2 na liniji 12
-INFO  22:27:01,164 - Pronadjen tip int
-INFO  22:27:01,164 - Deklarisana globalna promenljiva x na liniji 17
-INFO  22:27:01,164 - Deklarisana globalna promenljiva u na liniji 17
-INFO  22:27:01,165 - Deklarisana globalna promenljiva z na liniji 17
-INFO  22:27:01,165 - Deklarisana globalna promenljiva uu na liniji 17
-INFO  22:27:01,165 - Pronadjen tip int
-INFO  22:27:01,165 - Simbolicka konstanta  0 na liniji 18
-INFO  22:27:01,165 - Deklarisana globalna konstanta id na liniji 18
-INFO  22:27:01,165 - Simbolicka konstanta  7 na liniji 18
-INFO  22:27:01,165 - Deklarisana globalna konstanta y na liniji 18
-INFO  22:27:01,165 - Pronadjen tip char
-INFO  22:27:01,165 - Simbolicka konstanta 'j' na liniji 19
-INFO  22:27:01,165 - Deklarisana globalna konstanta j na liniji 19
-INFO  22:27:01,165 - Pronadjen tip int
-INFO  22:27:01,165 - Obradjuje se funkcija k na liniji 23
-INFO  22:27:01,165 - Pronadjen tip int
-INFO  22:27:01,165 - Pronadjen tip int
-INFO  22:27:01,165 - Koriscenje promenljive j na liniji 25
-INFO  22:27:01,165 - Simbolicka konstanta 'c' na liniji 25
-INFO  22:27:01,166 - Koriscenje promenljive x na liniji 26
-INFO  22:27:01,166 - Simbolicka konstanta 2 na liniji 26
-INFO  22:27:01,166 - Koriscenje promenljive x na liniji 28
-INFO  22:27:01,166 - Simbolicka konstanta 0 na liniji 28
-INFO  22:27:01,166 - Koriscenje promenljive x na liniji 31
-INFO  22:27:01,166 - Simbolicka konstanta 1 na liniji 31
-INFO  22:27:01,166 - Simbolicka konstanta 1 na liniji 33
-INFO  22:27:01,166 - Pronadjen tip int
-INFO  22:27:01,166 - Obradjuje se funkcija neka_funks na liniji 36
-INFO  22:27:01,166 - Pronadjen tip int
-INFO  22:27:01,166 - Simbolicka konstanta '1' na liniji 37
-INFO  22:27:01,166 - Poziv globalne funkcije ord na liniji 37
-INFO  22:27:01,166 - Obradjuje se funkcija main na liniji 40
-INFO  22:27:01,166 - Pronadjen tip char
-INFO  22:27:01,166 - Deklarisana lokalna promenljiva c u metodi main na liniji 41
-INFO  22:27:01,166 - Koriscenje promenljive u na liniji 43
-INFO  22:27:01,166 - Koriscenje promenljive u na liniji 43
-INFO  22:27:01,166 - Simbolicka konstanta 1 na liniji 43
-INFO  22:27:01,166 - Pristup elementu niza z
-INFO  22:27:01,166 - Koriscenje promenljive z na liniji 43
-INFO  22:27:01,166 - Koriscenje promenljive z na liniji 43
-INFO  22:27:01,167 - Koriscenje promenljive uu na liniji 43
-INFO  22:27:01,167 - Simbolicka konstanta 2 na liniji 44
-INFO  22:27:01,167 - Pristup elementu niza z
-INFO  22:27:01,167 - Koriscenje promenljive z na liniji 44
-INFO  22:27:01,167 - Simbolicka konstanta 1 na liniji 45
-INFO  22:27:01,167 - Pristup elementu niza z
-INFO  22:27:01,167 - Koriscenje promenljive z na liniji 45
-INFO  22:27:01,167 - Simbolicka konstanta 1 na liniji 45
-INFO  22:27:01,167 - Koriscenje promenljive y na liniji 46
-INFO  22:27:01,167 - Simbolicka konstanta 1 na liniji 46
-INFO  22:27:01,167 - Pristup elementu niza z
-INFO  22:27:01,167 - Koriscenje promenljive z na liniji 46
-INFO  22:27:01,167 - Koriscenje promenljive id na liniji 47
-INFO  22:27:01,167 - Koriscenje promenljive u na liniji 47
-INFO  22:27:01,167 - Poziv globalne funkcije k na liniji 47
-INFO  22:27:01,167 -  Print count calls = 1
-INFO  22:27:01,167 -  Deklarisanih promenljivih ima = 12
-INFO  22:27:01,167 - ===================================
-INFO  22:27:01,168 - Parsiranje uspesno zavrseno!
+INFO  14:52:11,735 - ===================================
+INFO  14:52:11,740 - Obradjuje se namespace sizes
+INFO  14:52:11,741 - Pronadjen tip int
+INFO  14:52:11,741 - Simbolicka konstanta  10 na liniji 4
+INFO  14:52:11,741 - Deklarisana globalna konstanta tableSize iz namespace-a sizes na liniji 4
+INFO  14:52:11,741 - Pronadjen tip int
+INFO  14:52:11,741 - Deklarisana globalna promenljiva ss iz namespace-a sizes na liniji 5
+INFO  14:52:11,741 - Pronadjen tip char
+INFO  14:52:11,741 - Deklarisana globalna promenljiva ck iz namespace-a sizes na liniji 6
+INFO  14:52:11,741 - Pronadjen tip int
+INFO  14:52:11,741 - Obradjuje se funkcija moja na liniji 8
+INFO  14:52:11,741 - Pronadjen tip char
+INFO  14:52:11,741 - Deklarisana lokalna promenljiva t u metodi moja na liniji 9
+INFO  14:52:11,741 - Koriscenje promenljive t na liniji 11
+INFO  14:52:11,741 - Simbolicka konstanta 2 na liniji 12
+INFO  14:52:11,742 - Pronadjen tip int
+INFO  14:52:11,742 - Deklarisana globalna promenljiva x na liniji 17
+INFO  14:52:11,742 - Deklarisana globalna promenljiva u na liniji 17
+INFO  14:52:11,742 - Deklarisana globalna promenljiva z na liniji 17
+INFO  14:52:11,742 - Deklarisana globalna promenljiva uu na liniji 17
+INFO  14:52:11,742 - Pronadjen tip int
+INFO  14:52:11,742 - Simbolicka konstanta  0 na liniji 18
+INFO  14:52:11,742 - Deklarisana globalna konstanta id na liniji 18
+INFO  14:52:11,742 - Simbolicka konstanta  7 na liniji 18
+INFO  14:52:11,742 - Deklarisana globalna konstanta y na liniji 18
+INFO  14:52:11,742 - Pronadjen tip char
+INFO  14:52:11,742 - Simbolicka konstanta 'j' na liniji 19
+INFO  14:52:11,742 - Deklarisana globalna konstanta j na liniji 19
+INFO  14:52:11,742 - Pronadjen tip int
+INFO  14:52:11,742 - Obradjuje se funkcija k na liniji 23
+INFO  14:52:11,742 - Pronadjen tip int
+INFO  14:52:11,742 - Pronadjen tip int
+INFO  14:52:11,742 - Pronadjen tip char
+INFO  14:52:11,742 - Deklarisana lokalna promenljiva uj u metodi k na liniji 24
+INFO  14:52:11,742 - Koriscenje promenljive uj na liniji 26
+INFO  14:52:11,743 - Simbolicka konstanta '1' na liniji 26
+INFO  14:52:11,743 - Koriscenje parametra u funkcije k na liniji 27
+INFO  14:52:11,743 - Koriscenje promenljive u na liniji 27
+INFO  14:52:11,743 - Simbolicka konstanta 4 na liniji 27
+INFO  14:52:11,743 - Koriscenje promenljive j na liniji 28
+INFO  14:52:11,743 - Simbolicka konstanta 'c' na liniji 28
+INFO  14:52:11,743 - Koriscenje promenljive x na liniji 29
+INFO  14:52:11,743 - Simbolicka konstanta 2 na liniji 29
+INFO  14:52:11,743 - Koriscenje promenljive x na liniji 31
+INFO  14:52:11,743 - Simbolicka konstanta 0 na liniji 31
+INFO  14:52:11,743 - Koriscenje promenljive x na liniji 34
+INFO  14:52:11,743 - Simbolicka konstanta 1 na liniji 34
+INFO  14:52:11,743 - Simbolicka konstanta 1 na liniji 36
+INFO  14:52:11,743 - Pronadjen tip int
+INFO  14:52:11,743 - Obradjuje se funkcija neka_funks na liniji 39
+INFO  14:52:11,744 - Pronadjen tip int
+INFO  14:52:11,744 - Simbolicka konstanta '1' na liniji 40
+INFO  14:52:11,744 - Poziv globalne funkcije ord na liniji 40
+INFO  14:52:11,744 - Obradjuje se funkcija main na liniji 43
+INFO  14:52:11,744 - Pronadjen tip char
+INFO  14:52:11,744 - Deklarisana lokalna promenljiva c u metodi main na liniji 44
+INFO  14:52:11,744 - Koriscenje promenljive u na liniji 46
+INFO  14:52:11,744 - Koriscenje promenljive u na liniji 46
+INFO  14:52:11,744 - Simbolicka konstanta 1 na liniji 46
+INFO  14:52:11,744 - Pristup elementu niza z
+INFO  14:52:11,744 - Koriscenje promenljive z na liniji 46
+INFO  14:52:11,744 - Koriscenje promenljive z na liniji 46
+INFO  14:52:11,744 - Koriscenje promenljive uu na liniji 46
+INFO  14:52:11,744 - Simbolicka konstanta 2 na liniji 47
+INFO  14:52:11,744 - Pristup elementu niza z
+INFO  14:52:11,744 - Koriscenje promenljive z na liniji 47
+INFO  14:52:11,744 - Simbolicka konstanta 1 na liniji 48
+INFO  14:52:11,744 - Pristup elementu niza z
+INFO  14:52:11,744 - Koriscenje promenljive z na liniji 48
+INFO  14:52:11,744 - Simbolicka konstanta 1 na liniji 48
+INFO  14:52:11,745 - Koriscenje promenljive y na liniji 49
+INFO  14:52:11,745 - Simbolicka konstanta 1 na liniji 49
+INFO  14:52:11,745 - Pristup elementu niza z
+INFO  14:52:11,745 - Koriscenje promenljive z na liniji 49
+INFO  14:52:11,745 - Koriscenje promenljive id na liniji 50
+INFO  14:52:11,745 - Koriscenje promenljive u na liniji 50
+INFO  14:52:11,745 - Poziv globalne funkcije k na liniji 50
+INFO  14:52:11,745 -  Print count calls = 1
+INFO  14:52:11,745 -  Deklarisanih promenljivih ima = 13
+INFO  14:52:11,745 - ===================================
+INFO  14:52:11,746 - Parsiranje uspesno zavrseno!

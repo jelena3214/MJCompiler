@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;MJCompiler/test/prog.mj&apos; to &apos;testOporavakOdGreske.mj&apos;" description="Rename resource &apos;prog.mj&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="test/prog.mj" name="testOporavakOdGreske.mj" stamp="1704150536480" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;MJCompiler/test/program.mj&apos; to &apos;test1.mj&apos;" description="Rename resource &apos;program.mj&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="test/program.mj" name="test1.mj" stamp="1704150550544" updateReferences="true"/>
-</session>

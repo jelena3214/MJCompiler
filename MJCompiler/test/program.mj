@@ -21,7 +21,10 @@ program MJProgram
 {
 	
 	int k(int u, int uu) 
+		char uj;
 	{
+		uj = '1';
+		u = 4;
 		if(j == 'c'){
 			x = 2;
 		}else{

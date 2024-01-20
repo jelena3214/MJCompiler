@@ -1,7 +1,9 @@
 package rs.ac.bg.etf.pp1;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.Stack;
 
 import org.apache.log4j.Logger;
@@ -31,6 +33,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	Map<String, Map<Integer, Integer>> methodParams = new HashMap<>();
 	Map<Integer, Integer> currMethodMap;
 	int currParamInd, calledParamInd;
+	Set<String> currentMethodParamNames;
 	
 	//red pozvanih metoda
 	Stack<Obj> calledMethodStack = new Stack<>();
@@ -74,7 +77,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 				}
 				report_info(message, varDecl);
 			}else {
-				// TODO Provera da li se neki parametar vec zove tako
+				// TODO Provera da li se neki parametar u funkciji vec zove tako
+				if(currentMethodParamNames != null && currentMethodParamNames.contains(varNode.getName())) {
+					report_error("Ime lokalne promenljive se poklapa sa imenom fomrmalnog parametra.", varDecl);
+				}
 				report_info("Deklarisana lokalna promenljiva "+ varDecl.getVarName() + " u metodi " + currentMethod.getName(), varDecl);
 			}
 			Struct type = currType;
@@ -85,7 +91,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 				isCurrVarArray = false;
 			}
 			
-			Tab.insert(Obj.Var, varDecl.getVarName(), type);
+			Obj n = Tab.insert(Obj.Var, varDecl.getVarName(), type);
+			
+			//lokalna promenljiva
+			if(currentMethod != null) {
+				n.setLevel(1);
+			}
 		}else {
 			report_error("Promeljiva " + varDecl.getVarName() + " se opet deklarise", varDecl);
 		}
@@ -136,6 +147,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		Tab.openScope();
 		currParamInd = 0;
 		currMethodMap = new HashMap<>();
+		currentMethodParamNames = new HashSet<>();
 		return currentMethod;
 	}
 	
@@ -165,10 +177,13 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	if(currParamInd == 0) currMethodMap = null;
     	methodParams.put(currentMethod.getName(), currMethodMap);
     	
+    	currentMethod.setLevel(currParamInd);
+    	
     	returnFound = false;
     	currentMethod = null;
     	currParamInd = 0;
     	currMethodMap = null;
+    	currentMethodParamNames = null;
     }
     
     
@@ -253,9 +268,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     
     //TODO proveri za level
     public void visit(FormalParamsBasic form) {
-    	Obj varNode = Tab.find(form.getVarName());
     	// Proveravamo da nije promenljiva metode ili vec definisan parametar funkcije sa istim imenom
-		if(varNode == Tab.noObj || (varNode.getLevel() != currentMethod.getLevel() + 2 && varNode.getLevel() != currentMethod.getLevel() + 1)) {
+		if(!currentMethodParamNames.contains(form.getVarName())) {
+			currentMethodParamNames.add(form.getVarName());
 			Struct type = form.getType().struct;
 			int kind = type.getKind();
 			if(isCurrVarArray) {
@@ -266,13 +281,14 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			}
 			Obj ob = Tab.insert(Obj.Var, form.getVarName(), type);
 			
-			ob.setLevel(currentMethod.getLevel() + 2);
+			ob.setLevel(1);
 			
 			currMethodMap.put(currParamInd, kind);
-			currParamInd++;
 		}else {
 			report_error("Parametar " + form.getVarName() + " se opet deklarise u funkciji " + currentMethod.getName(), form);
+			currMethodMap.put(currParamInd, Obj.NO_VALUE);
 		}
+		currParamInd++;
     }
     
     
@@ -434,7 +450,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     // TODO promeri level globalne funkcije
     public void visit(DesignatorStatementAct des) {
 //    	System.out.println("level " + des.getDesignator().obj.getLevel());
-    	if(des.getDesignator().obj.getKind() != Obj.Meth && des.getDesignator().obj.getLevel() != 1) {
+    	if(des.getDesignator().obj.getKind() != Obj.Meth && des.getDesignator().obj.getLevel() != 0) {
     		report_error("Metoda mora biti globalna funkcija", null);
     		return;
     	}
@@ -707,7 +723,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     
     // TODO promeri level globalne funkcije
     public void visit(FactorDesignatorMethod des) {
-    	if(des.getDesignator().obj.getKind() != Obj.Meth && des.getDesignator().obj.getLevel() != 1) {
+    	if(des.getDesignator().obj.getKind() != Obj.Meth && des.getDesignator().obj.getLevel() != 0) {
     		report_error("Metoda mora biti globalna funkcija", null);
     		return;
     	}
@@ -821,7 +837,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	//act pars for method
     	
     	if(currentMethod != null) {
-    		if(node.getLevel() == currentMethod.getLevel() + 2) {
+    		if(currentMethodParamNames.contains(designatorType.getVarName())) {
     			report_info("Koriscenje parametra " + designatorType.getVarName() + " funkcije " + currentMethod.getName(), designatorType);
     		}
     	}

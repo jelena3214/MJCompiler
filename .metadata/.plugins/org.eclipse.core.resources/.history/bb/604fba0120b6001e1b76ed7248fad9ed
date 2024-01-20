@@ -1,3 +1,0 @@
-program Test
-	const int x = 4, y = 'j';
-	{}

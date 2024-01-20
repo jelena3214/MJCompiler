@@ -1,3 +1,8 @@
 *bin/* 
 *logs/* 
 *.class
+MJCompiler/logs/mj-test.log.*
+.metadata/.plugins
+.metadata/.mylyn
+.metadata/.log
+.metdata/version.ini
