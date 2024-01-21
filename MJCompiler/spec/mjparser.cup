@@ -50,8 +50,8 @@ scan with {:
 :}
 
 nonterminal NamespaceList, DeclList, MethodDeclList, NamespaceDecl;
-nonterminal DeclListElem, ConstDecl, VarDecl;
-nonterminal SquareBracesList, NumConstList, ElseStatementList;
+nonterminal DeclListElem, ConstDecl, VarDecl, ArrayDesignatorDecl;
+nonterminal SquareBracesList, ElseStatementList;
 nonterminal StaticInitializer, Statement;
 nonterminal VarDeclList, StatementList, FormPars;
 nonterminal DesignatorStmtList, CondFactList, ActPars, Assignop;
@@ -63,7 +63,7 @@ nonterminal VarDeclTmpList, VarDeclComma, VarDeclSemi, VarDeclTmp, ConstDeclTmpL
 nonterminal FormParsBasic, FormParsCommaList, FormParsComma, AssignOperation, IfStatement, VarDeclType, ConstDeclType, ForStmtBegin, DesignatorStatementSemi;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Expr, Term, Factor, ConstType, NamespaceName, CondFact, CondFactElem, CondTermElem, CondTerm, Condition;
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodTypeName, MethodDecl, Designator, DesignatorStatement, DesignatorDecl;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodTypeName, MethodDecl, Designator, DesignatorStatement, DesignatorDecl, NumConstList;
 
 terminal PROG, LBRACE, RBRACE, TWOEQUAL, NOTEQUAL, CONST, SEMI, EQUAL, LSBRACE, RSBRACE, COMMA, OR, AND;
 terminal LPAREN, RPAREN, VOID, DOT, TWODOT, IF, ELSE, BREAK, CONTINUE, RETURN, READ, PRINT, FOR, TWOPLUS, TWOMINUS, NEW, STATIC;
@@ -207,7 +207,8 @@ Statement ::= (IfStmt) IfStatement
 			| (ReturnStmtExpr) RETURN Expr:type SEMI
 			| (ReturnStmt) RETURN SEMI
 			| (ReadStmt) READ LPAREN Designator RPAREN SEMI
-			| (PrintStmt) PRINT LPAREN Expr:t NumConstList RPAREN SEMI
+			| (PrintStmtNoWidth) PRINT LPAREN Expr:t RPAREN SEMI
+			| (PrintStmtWidth) PRINT LPAREN Expr:t COMMA NUMBERCONST RPAREN SEMI
 			| (ForStmtCondFact) ForStmtBegin DesignatorStmtList SEMI CondFact SEMI DesignatorStmtList RPAREN Statement
 			| (ForStmtNoCondFact) ForStmtBegin DesignatorStmtList SEMI SEMI DesignatorStmtList RPAREN Statement
 			| (EmptyStmt) LBRACE RBRACE
@@ -255,10 +256,6 @@ DesignatorCommaList ::= (DesignatorCommaDecls) DesignatorCommaList DesignatorCom
 DesignatorCommaElem ::= (DesignatorCommaElem1) Designator COMMA
 					| (DesignatorCommaElem2) COMMA
 					;
-
-NumConstList ::= (NumConstDecl) COMMA NUMBERCONST
-				| (NoNumConstList)
-				;
 
 ActPars ::= (ActParsDecl) Expr:t ExprCommaList
 		| (NoActPars)
@@ -317,18 +314,15 @@ Factor ::= (FactorDesignator) Designator
 		| (FactorExpr) LPAREN Expr:t RPAREN
 		;
 		
-Designator ::= (Designator) DesignatorDecl DesignatorOrList;
+Designator ::= (DesignatorBasicDecl) DesignatorDecl
+			| (DesignatorObjectField) Designator DOT IDENT:fieldName
+			| (DesignatorIndexing) ArrayDesignatorDecl LSBRACE Expr:t RSBRACE
+			;
+			
+ArrayDesignatorDecl ::= (ArrayDesignatorDecl) Designator;
 			
 DesignatorDecl ::= (DesignatorDeclNamespace) IDENT:namespaceName TWODOT IDENT:varName
 				| (DesignatorDeclBasic) IDENT:varName
-				;
-
-DesignatorOr ::= (DesignatorOrArrayIndex) LSBRACE Expr:t RSBRACE
-				| (DesignatorOrObjectField) DOT IDENT:fieldName
-				;
-
-DesignatorOrList ::= (DesignatorOrListDecl) DesignatorOrList DesignatorOr
-				| (NoDesignatorOrList)
 				;
 
 ExprOrActPars ::= (ExprOrActParsExpr) LSBRACE Expr:t RSBRACE

@@ -1,20 +1,19 @@
 // generated with ast extension for cup
 // version 0.8
-// 17/0/2024 20:36:30
+// 21/0/2024 21:47:4
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class PrintStmt extends Statement {
+public class PrintStmtWidth extends Statement {
 
     private Expr Expr;
-    private NumConstList NumConstList;
+    private Integer N1;
 
-    public PrintStmt (Expr Expr, NumConstList NumConstList) {
+    public PrintStmtWidth (Expr Expr, Integer N1) {
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
-        this.NumConstList=NumConstList;
-        if(NumConstList!=null) NumConstList.setParent(this);
+        this.N1=N1;
     }
 
     public Expr getExpr() {
@@ -25,12 +24,12 @@ public class PrintStmt extends Statement {
         this.Expr=Expr;
     }
 
-    public NumConstList getNumConstList() {
-        return NumConstList;
+    public Integer getN1() {
+        return N1;
     }
 
-    public void setNumConstList(NumConstList NumConstList) {
-        this.NumConstList=NumConstList;
+    public void setN1(Integer N1) {
+        this.N1=N1;
     }
 
     public void accept(Visitor visitor) {
@@ -39,25 +38,22 @@ public class PrintStmt extends Statement {
 
     public void childrenAccept(Visitor visitor) {
         if(Expr!=null) Expr.accept(visitor);
-        if(NumConstList!=null) NumConstList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
-        if(NumConstList!=null) NumConstList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Expr!=null) Expr.traverseBottomUp(visitor);
-        if(NumConstList!=null) NumConstList.traverseBottomUp(visitor);
         accept(visitor);
     }
 
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("PrintStmt(\n");
+        buffer.append("PrintStmtWidth(\n");
 
         if(Expr!=null)
             buffer.append(Expr.toString("  "+tab));
@@ -65,14 +61,11 @@ public class PrintStmt extends Statement {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(NumConstList!=null)
-            buffer.append(NumConstList.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
+        buffer.append(" "+tab+N1);
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [PrintStmt]");
+        buffer.append(") [PrintStmtWidth]");
         return buffer.toString();
     }
 }

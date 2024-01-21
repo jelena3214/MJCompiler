@@ -14,7 +14,11 @@ public class RuleVisitor extends VisitorAdaptor{
 		varDeclCount++;
 	}
 	
-    public void visit(PrintStmt print) {
+    public void visit(PrintStmtNoWidth print) {
+		printCallCount++;
+	}
+    
+    public void visit(PrintStmtWidth print) {
 		printCallCount++;
 	}
 

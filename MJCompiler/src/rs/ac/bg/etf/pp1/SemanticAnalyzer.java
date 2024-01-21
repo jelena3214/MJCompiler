@@ -85,9 +85,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			}
 			Struct type = currType;
 			if(isCurrVarArray) {
-				int kind = Tab.find("array").getType().getKind();
-				type = new Struct(kind);
-				type.setElementType(currType);
+				type = new Struct(Struct.Array, currType);
 				isCurrVarArray = false;
 			}
 			
@@ -114,6 +112,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	currType = constType.getType().struct;
     }
 	
+    
 	public void visit(ConstDeclTmp constDecl){
 		varDeclCount++;
 		if(!constDecl.getConstType().struct.equals(currType)) {
@@ -122,16 +121,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		
 		Obj constNode = Tab.find(constDecl.getTypeName());
 		if(constNode == Tab.noObj || constNode.getLevel() != nVars) {
-			if(currentMethod == null) {
-				String message = "Deklarisana globalna konstanta "+ constDecl.getTypeName();
-				if(currentNamespace != null) {
-					message += " iz namespace-a " + currentNamespace.getName();
-				}
-				report_info(message, constDecl);
-			}else {
-				report_info("Deklarisana lokalna konstanta "+ constDecl.getTypeName() + " u metodi " + currentMethod.getName(), constDecl);
+			String message = "Deklarisana globalna konstanta "+ constDecl.getTypeName();
+			if(currentNamespace != null) {
+				message += " iz namespace-a " + currentNamespace.getName();
 			}
-		
+			report_info(message, constDecl);
+			
 			Tab.insert(Obj.Con, constDecl.getTypeName(), currType);
 		}else {
 			report_error("Konstanta " + constDecl.getTypeName() + " se opet deklarise", constDecl);
@@ -371,13 +366,11 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
     
     public void visit(ReadStmt read) {
-    	boolean elem = read.getDesignator().obj.getKind() == Obj.Var &&
-    			read.getDesignator().obj.getType().getKind() == Struct.Array &&
-    			read.getDesignator().getDesignatorOrList() instanceof DesignatorOrListDecl;
+    	boolean elem = read.getDesignator().obj.getKind() == Obj.Elem;
     	
     	// Provera da li je samo niz u pitanju
     	boolean array = read.getDesignator().obj.getType().getKind() == Struct.Array &&
-    			read.getDesignator().getDesignatorOrList() instanceof NoDesignatorOrList;
+    			read.getDesignator().obj.getKind() == Obj.Var;
     	
     	if(!elem && read.getDesignator().obj.getKind() != Obj.Var || array) {
     		report_error("Izraz u read funkciji mora budu element niza ili promenljiva!", read);
@@ -395,7 +388,16 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     }
     
-    public void visit(PrintStmt print) {
+    public void visit(PrintStmtNoWidth print) {
+    	printCallCount++;
+    	int kind = print.getExpr().struct.getKind();
+    	if(kind != Struct.Bool && kind != Struct.Char && kind != Struct.Int) {
+    		report_error("Izraz u print funkciji mora biti tipa int, char ili bool", print);
+    		return;
+    	}
+    }
+    
+    public void visit(PrintStmtWidth print) {
     	printCallCount++;
     	int kind = print.getExpr().struct.getKind();
     	if(kind != Struct.Bool && kind != Struct.Char && kind != Struct.Int) {
@@ -420,7 +422,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     
     public void visit(DesignatorStatementInc des) {
     	Obj desObj = des.getDesignator().obj;
-    	if((desObj.getType().getKind() == Struct.Array && desObj.getType().getElemType().getKind() == Struct.None) || desObj.getKind() != Obj.Var) {
+    	if(desObj.getKind() != Obj.Var && desObj.getKind() != Obj.Elem && desObj.getType().getKind() != Struct.Array) {
     		report_error("Promenljiva nije odgovarajuceg tipa za operator ++", null);
     		return;
     	}
@@ -434,7 +436,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     
     public void visit(DesignatorStatementDec des) {
     	Obj desObj = des.getDesignator().obj;
-    	if((desObj.getType().getKind() == Struct.Array && desObj.getType().getElemType().getKind() == Struct.None) || desObj.getKind() != Obj.Var) {
+    	if(desObj.getKind() != Obj.Var && desObj.getKind() != Obj.Elem && desObj.getType().getKind() != Struct.Array) {
     		report_error("Promenljiva nije odgovarajuceg tipa za operator --", null);
     		return;
     	}
@@ -481,7 +483,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     
     public void visit(DesignatorStatementAssign designator) {
     	Obj desObj = designator.getDesignator().obj;
-    	if((desObj.getType().getKind() == Struct.Array && desObj.getType().getElemType().getKind() == Struct.None) || desObj.getKind() != Obj.Var) {
+    	if(desObj.getKind() != Obj.Elem && desObj.getKind() != Obj.Var) {
     		report_error("Leva strana dodele nije odgovarajuceg tipa", null);
     		return;
     	}
@@ -535,27 +537,18 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     
     
     public void visit(DesignatorCommaElem1 des) {
+    	//promenljiva ili el niza
+		if(des.getDesignator().obj.getKind() != Obj.Var && des.getDesignator().obj.getKind() != Obj.Elem) {
+			report_error("Designator u listi mora biti promenljiva ili element niza!", des);
+			return;
+		}
+		
     	if(firstDesignatorElem == null) {
-    		//promenljiva ili el niza
-    		if(des.getDesignator().obj.getKind() != Obj.Var && !(des.getDesignator().obj.getType().getKind() == Struct.Array && des.getDesignator().getDesignatorOrList() instanceof DesignatorOrListDecl)) {
-    			report_error("Designator u listi mora biti promenljiva ili element niza!", des);
-    			return;
-    		}
     		firstDesignatorElem = des.getDesignator().obj.getType();
-    		if(des.getDesignator().obj.getType().getKind() == Struct.Array) {
-    			firstDesignatorElem = des.getDesignator().obj.getType().getElemType();
-    		}
     	}else {
-    		if(des.getDesignator().obj.getType().getKind() != Struct.Array) {
-	    		if(firstDesignatorElem.getKind() != des.getDesignator().obj.getType().getKind()) {
-	    			report_error("Svi Designatori moraju biti istog tipa", des);
-	    			return;
-	    		}
-    		}else {
-    			if(firstDesignatorElem.getKind() != des.getDesignator().obj.getType().getElemType().getKind()) {
-	    			report_error("Svi Designatori moraju biti istog tipa", des);
-	    			return;
-	    		}
+    		if(des.getDesignator().obj.getType().getKind() != firstDesignatorElem.getKind()) {
+    			report_error("Svi Designatori moraju biti istog tipa", des);
+    			return;
     		}
     	}
     }
@@ -710,15 +703,13 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
    
     public void visit(FactorDesignator designator) {
-    	if(designator.getDesignator().obj.getKind() != Obj.Var && designator.getDesignator().obj.getKind() != Obj.Con) {
+    	int kind = designator.getDesignator().obj.getKind();
+    	if(kind != Obj.Var && kind != Obj.Con && kind != Obj.Elem) {
     		report_error("Nije u pitanju promenljiva " + designator.getDesignator().obj.getName(), designator);
     		return;
     	}
-    	if(designator.getDesignator().obj.getType().getKind() == Struct.Array && designator.getDesignator().getDesignatorOrList() instanceof DesignatorOrListDecl) {
-    		designator.struct = designator.getDesignator().obj.getType().getElemType();
-    	}else {
-    		designator.struct = designator.getDesignator().obj.getType();
-    	}
+    	
+    	designator.struct = designator.getDesignator().obj.getType();
     }
     
     // TODO promeri level globalne funkcije
@@ -875,23 +866,27 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		currDesignator = typeNode;
     }
     
+    
     //TODO PROVERI!!!
-    public void visit(DesignatorOrArrayIndex designator) {
+    public void visit(DesignatorIndexing designator) {
+    	Obj des = designator.getArrayDesignatorDecl().getDesignator().obj;
     	if(designator.getExpr().struct != Tab.intType) {
     		report_error("Promenljiva za indeksiranje niza nije odgovarajuceg tipa " + designator.getExpr(), null);
     		return;
     	}
-    	Designator dd = (Designator) designator.getParent().getParent();
-    	if(dd.getDesignatorDecl().obj.getType().getKind() != Struct.Array) {
-    		report_error("Promenljiva " + dd.getDesignatorDecl().obj.getName() + " nije tipa niza", null);
+    	if(des.getType().getKind() != Struct.Array) {
+    		report_error("Promenljiva " + des.getName() + " nije tipa nizaAAA", null);
     		return;
     	}
 
-    	report_info("Pristup elementu niza "+ dd.getDesignatorDecl().obj.getName(), null);
+    	Obj arrayElem = new Obj(Obj.Elem, des.getName(), des.getType().getElemType());
+    	designator.obj = arrayElem;
+    	
+    	report_info("Pristup elementu niza "+ des.getName(), null);
     }
 
     
-    public void visit(Designator designator) {
+    public void visit(DesignatorBasicDecl designator) {
     	designator.obj = designator.getDesignatorDecl().obj;
     	if(designator.obj.getKind() == Obj.Meth) {
     		calledMethodStack.push(designator.obj);
@@ -901,6 +896,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     	//currDesignator = null;
     }
+    
  
     public boolean passed(){
     	return !errorDetected;

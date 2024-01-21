@@ -2,13 +2,19 @@ program MJProgram
 
 	namespace sizes{
 		const int tableSize = 10;
-		int ss;
+		int sg;
 		char ck;
 		{
-			int moja()
-				char t;
+			void tvoja()
+				char sg;
 			{
-				print(t);
+			
+			}
+			
+			int moja()
+			{
+				tvoja();
+				print(sg);
 				return 2;
 			}
 		}
@@ -23,6 +29,7 @@ program MJProgram
 	int k(int u, int uu) 
 		char uj;
 	{
+		sizes::moja();
 		uj = '1';
 		u = 4;
 		if(j == 'c'){

@@ -56,8 +56,8 @@ nonterminal NamespaceDecl NamespaceDecl;
 nonterminal DeclListElem DeclListElem;
 nonterminal ConstDecl ConstDecl;
 nonterminal VarDecl VarDecl;
+nonterminal ArrayDesignatorDecl ArrayDesignatorDecl;
 nonterminal SquareBracesList SquareBracesList;
-nonterminal NumConstList NumConstList;
 nonterminal ElseStatementList ElseStatementList;
 nonterminal StaticInitializer StaticInitializer;
 nonterminal Statement Statement;
@@ -106,7 +106,7 @@ nonterminal ForStmtBegin ForStmtBegin;
 nonterminal DesignatorStatementSemi DesignatorStatementSemi;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Expr, Term, Factor, ConstType, NamespaceName, CondFact, CondFactElem, CondTermElem, CondTerm, Condition;
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodTypeName, MethodDecl, Designator, DesignatorStatement, DesignatorDecl;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodTypeName, MethodDecl, Designator, DesignatorStatement, DesignatorDecl, NumConstList;
 
 terminal PROG, LBRACE, RBRACE, TWOEQUAL, NOTEQUAL, CONST, SEMI, EQUAL, LSBRACE, RSBRACE, COMMA, OR, AND;
 terminal LPAREN, RPAREN, VOID, DOT, TWODOT, IF, ELSE, BREAK, CONTINUE, RETURN, READ, PRINT, FOR, TWOPLUS, TWOMINUS, NEW, STATIC;
@@ -250,7 +250,8 @@ Statement ::= (IfStmt) IfStatement:I1 {: RESULT=new IfStmt(I1); RESULT.setLine(I
 			| (ReturnStmtExpr) RETURN Expr:type SEMI {: RESULT=new ReturnStmtExpr(type); RESULT.setLine(typeleft); :}
 			| (ReturnStmt) RETURN SEMI {: RESULT=new ReturnStmt(); :}
 			| (ReadStmt) READ LPAREN Designator:D1 RPAREN SEMI {: RESULT=new ReadStmt(D1); RESULT.setLine(D1left); :}
-			| (PrintStmt) PRINT LPAREN Expr:t NumConstList:N1 RPAREN SEMI {: RESULT=new PrintStmt(t, N1); RESULT.setLine(tleft); :}
+			| (PrintStmtNoWidth) PRINT LPAREN Expr:t RPAREN SEMI {: RESULT=new PrintStmtNoWidth(t); RESULT.setLine(tleft); :}
+			| (PrintStmtWidth) PRINT LPAREN Expr:t COMMA NUMBERCONST:N1 RPAREN SEMI {: RESULT=new PrintStmtWidth(t, N1); RESULT.setLine(tleft); :}
 			| (ForStmtCondFact) ForStmtBegin:F1 DesignatorStmtList:D2 SEMI CondFact:C3 SEMI DesignatorStmtList:D4 RPAREN Statement:S5 {: RESULT=new ForStmtCondFact(F1, D2, C3, D4, S5); RESULT.setLine(F1left); :}
 			| (ForStmtNoCondFact) ForStmtBegin:F1 DesignatorStmtList:D2 SEMI SEMI DesignatorStmtList:D3 RPAREN Statement:S4 {: RESULT=new ForStmtNoCondFact(F1, D2, D3, S4); RESULT.setLine(F1left); :}
 			| (EmptyStmt) LBRACE RBRACE {: RESULT=new EmptyStmt(); :}
@@ -298,10 +299,6 @@ DesignatorCommaList ::= (DesignatorCommaDecls) DesignatorCommaList:D1 Designator
 DesignatorCommaElem ::= (DesignatorCommaElem1) Designator:D1 COMMA {: RESULT=new DesignatorCommaElem1(D1); RESULT.setLine(D1left); :}
 					| (DesignatorCommaElem2) COMMA {: RESULT=new DesignatorCommaElem2(); :}
 					;
-
-NumConstList ::= (NumConstDecl) COMMA NUMBERCONST:N1 {: RESULT=new NumConstDecl(N1); RESULT.setLine(N1left); :}
-				| (NoNumConstList) {: RESULT=new NoNumConstList(); :}
-				;
 
 ActPars ::= (ActParsDecl) Expr:t ExprCommaList:E1 {: RESULT=new ActParsDecl(t, E1); RESULT.setLine(tleft); :}
 		| (NoActPars) {: RESULT=new NoActPars(); :}
@@ -360,18 +357,15 @@ Factor ::= (FactorDesignator) Designator:D1 {: RESULT=new FactorDesignator(D1); 
 		| (FactorExpr) LPAREN Expr:t RPAREN {: RESULT=new FactorExpr(t); RESULT.setLine(tleft); :}
 		;
 		
-Designator ::= (Designator) DesignatorDecl:D1 DesignatorOrList:D2 {: RESULT=new Designator(D1, D2); RESULT.setLine(D1left); :};
+Designator ::= (DesignatorBasicDecl) DesignatorDecl:D1 {: RESULT=new DesignatorBasicDecl(D1); RESULT.setLine(D1left); :}
+			| (DesignatorObjectField) Designator:D1 DOT IDENT:fieldName {: RESULT=new DesignatorObjectField(D1, fieldName); RESULT.setLine(D1left); :}
+			| (DesignatorIndexing) ArrayDesignatorDecl:A1 LSBRACE Expr:t RSBRACE {: RESULT=new DesignatorIndexing(A1, t); RESULT.setLine(A1left); :}
+			;
+			
+ArrayDesignatorDecl ::= (ArrayDesignatorDecl) Designator:D1 {: RESULT=new ArrayDesignatorDecl(D1); RESULT.setLine(D1left); :};
 			
 DesignatorDecl ::= (DesignatorDeclNamespace) IDENT:namespaceName TWODOT IDENT:varName {: RESULT=new DesignatorDeclNamespace(namespaceName, varName); RESULT.setLine(namespaceNameleft); :}
 				| (DesignatorDeclBasic) IDENT:varName {: RESULT=new DesignatorDeclBasic(varName); RESULT.setLine(varNameleft); :}
-				;
-
-DesignatorOr ::= (DesignatorOrArrayIndex) LSBRACE Expr:t RSBRACE {: RESULT=new DesignatorOrArrayIndex(t); RESULT.setLine(tleft); :}
-				| (DesignatorOrObjectField) DOT IDENT:fieldName {: RESULT=new DesignatorOrObjectField(fieldName); RESULT.setLine(fieldNameleft); :}
-				;
-
-DesignatorOrList ::= (DesignatorOrListDecl) DesignatorOrList:D1 DesignatorOr:D2 {: RESULT=new DesignatorOrListDecl(D1, D2); RESULT.setLine(D1left); :}
-				| (NoDesignatorOrList) {: RESULT=new NoDesignatorOrList(); :}
 				;
 
 ExprOrActPars ::= (ExprOrActParsExpr) LSBRACE Expr:t RSBRACE {: RESULT=new ExprOrActParsExpr(t); RESULT.setLine(tleft); :}

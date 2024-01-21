@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 17/0/2024 20:36:30
+// 21/0/2024 21:47:4
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -33,9 +33,9 @@ public interface Visitor {
     public void visit(FormParsCommaList FormParsCommaList);
     public void visit(DesignatorCommaElem DesignatorCommaElem);
     public void visit(Mulop Mulop);
+    public void visit(NumConstList NumConstList);
     public void visit(DesignatorStatement DesignatorStatement);
     public void visit(DesignatorStatementSemi DesignatorStatementSemi);
-    public void visit(NumConstList NumConstList);
     public void visit(VarDeclTmpList VarDeclTmpList);
     public void visit(NamespaceList NamespaceList);
     public void visit(Addop Addop);
@@ -53,6 +53,7 @@ public interface Visitor {
     public void visit(ConstDeclTmpList ConstDeclTmpList);
     public void visit(SquareBracesList SquareBracesList);
     public void visit(ActPars ActPars);
+    public void visit(Designator Designator);
     public void visit(VarDeclList VarDeclList);
     public void visit(CondFact CondFact);
     public void visit(DesignatorStatementCommaList DesignatorStatementCommaList);
@@ -72,13 +73,12 @@ public interface Visitor {
     public void visit(Label Label);
     public void visit(ExprOrActParsActPars ExprOrActParsActPars);
     public void visit(ExprOrActParsExpr ExprOrActParsExpr);
-    public void visit(NoDesignatorOrList NoDesignatorOrList);
-    public void visit(DesignatorOrListDecl DesignatorOrListDecl);
-    public void visit(DesignatorOrObjectField DesignatorOrObjectField);
-    public void visit(DesignatorOrArrayIndex DesignatorOrArrayIndex);
     public void visit(DesignatorDeclBasic DesignatorDeclBasic);
     public void visit(DesignatorDeclNamespace DesignatorDeclNamespace);
-    public void visit(Designator Designator);
+    public void visit(ArrayDesignatorDecl ArrayDesignatorDecl);
+    public void visit(DesignatorIndexing DesignatorIndexing);
+    public void visit(DesignatorObjectField DesignatorObjectField);
+    public void visit(DesignatorBasicDecl DesignatorBasicDecl);
     public void visit(FactorExpr FactorExpr);
     public void visit(FactorNew FactorNew);
     public void visit(FactorBoolConst FactorBoolConst);
@@ -110,8 +110,6 @@ public interface Visitor {
     public void visit(ExprCommaDecl ExprCommaDecl);
     public void visit(NoActPars NoActPars);
     public void visit(ActParsDecl ActParsDecl);
-    public void visit(NoNumConstList NoNumConstList);
-    public void visit(NumConstDecl NumConstDecl);
     public void visit(DesignatorCommaElem2 DesignatorCommaElem2);
     public void visit(DesignatorCommaElem1 DesignatorCommaElem1);
     public void visit(NoDesignatorCommaList NoDesignatorCommaList);
@@ -138,7 +136,8 @@ public interface Visitor {
     public void visit(EmptyStmt EmptyStmt);
     public void visit(ForStmtNoCondFact ForStmtNoCondFact);
     public void visit(ForStmtCondFact ForStmtCondFact);
-    public void visit(PrintStmt PrintStmt);
+    public void visit(PrintStmtWidth PrintStmtWidth);
+    public void visit(PrintStmtNoWidth PrintStmtNoWidth);
     public void visit(ReadStmt ReadStmt);
     public void visit(ReturnStmt ReturnStmt);
     public void visit(ReturnStmtExpr ReturnStmtExpr);

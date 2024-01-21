@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 17/0/2024 20:36:30
+// 21/0/2024 21:47:4
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -33,9 +33,9 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(FormParsCommaList FormParsCommaList) { }
     public void visit(DesignatorCommaElem DesignatorCommaElem) { }
     public void visit(Mulop Mulop) { }
+    public void visit(NumConstList NumConstList) { }
     public void visit(DesignatorStatement DesignatorStatement) { }
     public void visit(DesignatorStatementSemi DesignatorStatementSemi) { }
-    public void visit(NumConstList NumConstList) { }
     public void visit(VarDeclTmpList VarDeclTmpList) { }
     public void visit(NamespaceList NamespaceList) { }
     public void visit(Addop Addop) { }
@@ -53,6 +53,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ConstDeclTmpList ConstDeclTmpList) { }
     public void visit(SquareBracesList SquareBracesList) { }
     public void visit(ActPars ActPars) { }
+    public void visit(Designator Designator) { }
     public void visit(VarDeclList VarDeclList) { }
     public void visit(CondFact CondFact) { }
     public void visit(DesignatorStatementCommaList DesignatorStatementCommaList) { }
@@ -72,13 +73,12 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Label Label) { visit(); }
     public void visit(ExprOrActParsActPars ExprOrActParsActPars) { visit(); }
     public void visit(ExprOrActParsExpr ExprOrActParsExpr) { visit(); }
-    public void visit(NoDesignatorOrList NoDesignatorOrList) { visit(); }
-    public void visit(DesignatorOrListDecl DesignatorOrListDecl) { visit(); }
-    public void visit(DesignatorOrObjectField DesignatorOrObjectField) { visit(); }
-    public void visit(DesignatorOrArrayIndex DesignatorOrArrayIndex) { visit(); }
     public void visit(DesignatorDeclBasic DesignatorDeclBasic) { visit(); }
     public void visit(DesignatorDeclNamespace DesignatorDeclNamespace) { visit(); }
-    public void visit(Designator Designator) { visit(); }
+    public void visit(ArrayDesignatorDecl ArrayDesignatorDecl) { visit(); }
+    public void visit(DesignatorIndexing DesignatorIndexing) { visit(); }
+    public void visit(DesignatorObjectField DesignatorObjectField) { visit(); }
+    public void visit(DesignatorBasicDecl DesignatorBasicDecl) { visit(); }
     public void visit(FactorExpr FactorExpr) { visit(); }
     public void visit(FactorNew FactorNew) { visit(); }
     public void visit(FactorBoolConst FactorBoolConst) { visit(); }
@@ -110,8 +110,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ExprCommaDecl ExprCommaDecl) { visit(); }
     public void visit(NoActPars NoActPars) { visit(); }
     public void visit(ActParsDecl ActParsDecl) { visit(); }
-    public void visit(NoNumConstList NoNumConstList) { visit(); }
-    public void visit(NumConstDecl NumConstDecl) { visit(); }
     public void visit(DesignatorCommaElem2 DesignatorCommaElem2) { visit(); }
     public void visit(DesignatorCommaElem1 DesignatorCommaElem1) { visit(); }
     public void visit(NoDesignatorCommaList NoDesignatorCommaList) { visit(); }
@@ -138,7 +136,8 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(EmptyStmt EmptyStmt) { visit(); }
     public void visit(ForStmtNoCondFact ForStmtNoCondFact) { visit(); }
     public void visit(ForStmtCondFact ForStmtCondFact) { visit(); }
-    public void visit(PrintStmt PrintStmt) { visit(); }
+    public void visit(PrintStmtWidth PrintStmtWidth) { visit(); }
+    public void visit(PrintStmtNoWidth PrintStmtNoWidth) { visit(); }
     public void visit(ReadStmt ReadStmt) { visit(); }
     public void visit(ReturnStmt ReturnStmt) { visit(); }
     public void visit(ReturnStmtExpr ReturnStmtExpr) { visit(); }
