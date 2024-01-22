@@ -8,7 +8,7 @@ program MJProgram
 			void tvoja()
 				char sg;
 			{
-			
+				sg = 'k';
 			}
 			
 			int moja()
