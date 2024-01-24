@@ -1,39 +1,15 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/0/2024 21:47:4
+// 24/0/2024 23:47:6
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class MulopFactorElem implements SyntaxNode {
+public abstract class MulopFactorElem implements SyntaxNode {
 
     private SyntaxNode parent;
+
     private int line;
-    private Mulop Mulop;
-    private Factor Factor;
-
-    public MulopFactorElem (Mulop Mulop, Factor Factor) {
-        this.Mulop=Mulop;
-        if(Mulop!=null) Mulop.setParent(this);
-        this.Factor=Factor;
-        if(Factor!=null) Factor.setParent(this);
-    }
-
-    public Mulop getMulop() {
-        return Mulop;
-    }
-
-    public void setMulop(Mulop Mulop) {
-        this.Mulop=Mulop;
-    }
-
-    public Factor getFactor() {
-        return Factor;
-    }
-
-    public void setFactor(Factor Factor) {
-        this.Factor=Factor;
-    }
 
     public SyntaxNode getParent() {
         return parent;
@@ -51,46 +27,11 @@ public class MulopFactorElem implements SyntaxNode {
         this.line=line;
     }
 
-    public void accept(Visitor visitor) {
-        visitor.visit(this);
-    }
+    public abstract void accept(Visitor visitor);
+    public abstract void childrenAccept(Visitor visitor);
+    public abstract void traverseTopDown(Visitor visitor);
+    public abstract void traverseBottomUp(Visitor visitor);
 
-    public void childrenAccept(Visitor visitor) {
-        if(Mulop!=null) Mulop.accept(visitor);
-        if(Factor!=null) Factor.accept(visitor);
-    }
-
-    public void traverseTopDown(Visitor visitor) {
-        accept(visitor);
-        if(Mulop!=null) Mulop.traverseTopDown(visitor);
-        if(Factor!=null) Factor.traverseTopDown(visitor);
-    }
-
-    public void traverseBottomUp(Visitor visitor) {
-        if(Mulop!=null) Mulop.traverseBottomUp(visitor);
-        if(Factor!=null) Factor.traverseBottomUp(visitor);
-        accept(visitor);
-    }
-
-    public String toString(String tab) {
-        StringBuffer buffer=new StringBuffer();
-        buffer.append(tab);
-        buffer.append("MulopFactorElem(\n");
-
-        if(Mulop!=null)
-            buffer.append(Mulop.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        if(Factor!=null)
-            buffer.append(Factor.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        buffer.append(tab);
-        buffer.append(") [MulopFactorElem]");
-        return buffer.toString();
-    }
+    public String toString() { return toString(""); }
+    public abstract String toString(String tab);
 }

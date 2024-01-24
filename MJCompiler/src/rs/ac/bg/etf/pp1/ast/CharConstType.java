@@ -1,23 +1,23 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/0/2024 21:47:4
+// 24/0/2024 23:47:5
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class CharConstType extends ConstType {
 
-    private String C1;
+    private Character C1;
 
-    public CharConstType (String C1) {
+    public CharConstType (Character C1) {
         this.C1=C1;
     }
 
-    public String getC1() {
+    public Character getC1() {
         return C1;
     }
 
-    public void setC1(String C1) {
+    public void setC1(Character C1) {
         this.C1=C1;
     }
 

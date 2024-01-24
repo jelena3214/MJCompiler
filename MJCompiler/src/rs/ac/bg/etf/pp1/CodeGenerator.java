@@ -9,6 +9,7 @@ import rs.ac.bg.etf.pp1.ast.DesignatorBasicDecl;
 import rs.ac.bg.etf.pp1.ast.DesignatorStatementAssign;
 import rs.ac.bg.etf.pp1.ast.DesignatorStatementDec;
 import rs.ac.bg.etf.pp1.ast.DesignatorStatementInc;
+import rs.ac.bg.etf.pp1.ast.ExprAddopTerm;
 import rs.ac.bg.etf.pp1.ast.ExprDash;
 import rs.ac.bg.etf.pp1.ast.FactorBoolConst;
 import rs.ac.bg.etf.pp1.ast.FactorCharConst;
@@ -27,6 +28,7 @@ import rs.ac.bg.etf.pp1.ast.PrintStmtWidth;
 import rs.ac.bg.etf.pp1.ast.ReadStmt;
 import rs.ac.bg.etf.pp1.ast.ReturnStmt;
 import rs.ac.bg.etf.pp1.ast.ReturnStmtExpr;
+import rs.ac.bg.etf.pp1.ast.TermMulopFactorDecl;
 import rs.ac.bg.etf.pp1.ast.VisitorAdaptor;
 import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.Tab;
@@ -87,19 +89,29 @@ public class CodeGenerator extends VisitorAdaptor {
     }
 	
 	public void visit(PrintStmtWidth print) {
+		Struct exprType = print.getExpr().struct;
 		int width = print.getN1();
 		
 		Code.loadConst(width);
+		
+		if (exprType == Tab.charType) {
+    		Code.put(Code.bprint);
+    	}
+    	else {
+    		Code.put(Code.print);
+    	}
 	}
 	
 	public void visit(PrintStmtNoWidth print) {
 		Struct exprType = print.getExpr().struct;
     	
     	if (exprType == Tab.charType) {
-    		Code.loadConst(1); 
+    		Code.loadConst(1);
+    		Code.put(Code.bprint);
     	}
     	else {
-    		Code.loadConst(5); 
+    		Code.loadConst(5);
+    		Code.put(Code.print);
     	}
 	}
 	
@@ -114,14 +126,13 @@ public class CodeGenerator extends VisitorAdaptor {
 		if(mulop instanceof MulopMod)Code.put(Code.rem);
 	}
 	
-	
 	public void visit(FactorNumConst fact) {
     	int constant = fact.getN1();
     	Code.loadConst(constant);
     }
     
     public void visit(FactorCharConst fact) {
-    	char constValue = fact.getC1().charAt(0);
+    	char constValue = fact.getC1();
     	int constant = constValue;
     	Code.loadConst(constant);
     }
@@ -155,6 +166,27 @@ public class CodeGenerator extends VisitorAdaptor {
     
     public void visit(ExprDash expr) {
     	Code.put(Code.neg);
+    }
+    
+    public void visit(ExprAddopTerm node) {
+    	Addop operation = node.getAddop();
+    	if (operation instanceof AddopPlus) {
+    		Code.put(Code.add);
+    	}
+    	else if (operation instanceof AddopMinus) {
+    		Code.put(Code.sub);
+    	}
+    }
+    
+    public void visit(TermMulopFactorDecl term) {
+    	Mulop operation = term.getMulop();
+    	if (operation instanceof MulopMultiply) {
+    		Code.put(Code.mul);
+    	}else if (operation instanceof MulopDiv) {
+    		Code.put(Code.div);
+    	}else if (operation instanceof MulopMod) {
+    		Code.put(Code.rem);
+    	}
     }
     
     public void visit(MethodTypeDecl meth) {
@@ -224,7 +256,7 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	//TODO check
 	public void visit(DesignatorBasicDecl designator){
-		Code.load(designator.obj);
+//		Code.load(designator.obj);
 //		SyntaxNode parent = designator.getParent();
 //		
 //		if(Assignment.class != parent.getClass() && FuncCall.class != parent.getClass() && ProcCall.class != parent.getClass()){

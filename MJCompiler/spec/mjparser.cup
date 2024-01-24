@@ -56,7 +56,7 @@ nonterminal StaticInitializer, Statement;
 nonterminal VarDeclList, StatementList, FormPars;
 nonterminal DesignatorStmtList, CondFactList, ActPars, Assignop;
 nonterminal ExprCommaList, CondTermList, Relop;
-nonterminal AddopTermList, AddopTermElem, Addop, MulopFactorList, MulopFactorElem;
+nonterminal Addop, MulopFactorList, MulopFactorElem;
 nonterminal Mulop, ExprOrActPars, DesignatorOr, DesignatorOrList, Label, ExprCommaElem;
 nonterminal DesignatorCommaList, DesignatorCommaElem, DesignatorList1, DesignatorStatementCommaList, DesignatorStatementCommaElem;
 nonterminal VarDeclTmpList, VarDeclComma, VarDeclSemi, VarDeclTmp, ConstDeclTmpList, ConstDeclComma, ConstDeclSemi, ConstDeclTmp;
@@ -70,7 +70,7 @@ terminal LPAREN, RPAREN, VOID, DOT, TWODOT, IF, ELSE, BREAK, CONTINUE, RETURN, R
 terminal String IDENT;
 terminal String NAMESPACE;
 terminal Integer NUMBERCONST;
-terminal String CHARCONST;
+terminal Character CHARCONST;
 terminal Boolean BOOLCONST;
 terminal GREATER, GREATEREQUAL, LESS, LESSEQUAL, PLUS, MINUS, MULTIPLY, DIV, MOD;
 
@@ -286,24 +286,15 @@ CondFactElem ::= (CondFactElem) AND CondFact:t;
 CondFact ::= (CondFactExpr) Expr:type
 		| (CondFactExprRelop) Expr:t1 Relop Expr:t2
 		;
+		
+Expr ::= (ExprTermBasic) Term:termType
+	  |	 (ExprDash)	MINUS Term:termType
+	  |	 (ExprAddopTerm) Expr Addop Term:termType
+	  ;
 
-Expr ::= (ExprDash) MINUS Term:termType AddopTermList
-		| (ExprNoDash) Term:termType AddopTermList
-		;
-			
-AddopTermList ::= (AddopTermDecl) AddopTermList AddopTermElem
-				| (NoAddopTermList)
-				;
-
-AddopTermElem ::= (AddopTermElem) Addop Term:t;
-
-Term ::= (Term) Factor:t MulopFactorList;
-
-MulopFactorList ::= (MulopFactorDecl) MulopFactorList MulopFactorElem
-				| (NoMulopFactorList)
-				;
-				
-MulopFactorElem ::= (MulopFactorElem) Mulop Factor:t;
+Term ::= (TermFactor) Factor:t
+	  |  (TermMulopFactorDecl) Term:termType Mulop Factor:t
+	  ;
 
 Factor ::= (FactorDesignator) Designator
 		| (FactorDesignatorMethod) Designator LPAREN ActPars RPAREN

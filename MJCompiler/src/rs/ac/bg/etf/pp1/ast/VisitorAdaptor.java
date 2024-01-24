@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/0/2024 21:47:4
+// 24/0/2024 23:47:6
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -22,7 +22,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Expr Expr) { }
     public void visit(MulopFactorList MulopFactorList) { }
     public void visit(AssignOperation AssignOperation) { }
-    public void visit(AddopTermList AddopTermList) { }
+    public void visit(MulopFactorElem MulopFactorElem) { }
     public void visit(VarDecl VarDecl) { }
     public void visit(MethodTypeName MethodTypeName) { }
     public void visit(DeclListElem DeclListElem) { }
@@ -34,8 +34,8 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DesignatorCommaElem DesignatorCommaElem) { }
     public void visit(Mulop Mulop) { }
     public void visit(NumConstList NumConstList) { }
-    public void visit(DesignatorStatement DesignatorStatement) { }
     public void visit(DesignatorStatementSemi DesignatorStatementSemi) { }
+    public void visit(DesignatorStatement DesignatorStatement) { }
     public void visit(VarDeclTmpList VarDeclTmpList) { }
     public void visit(NamespaceList NamespaceList) { }
     public void visit(Addop Addop) { }
@@ -58,6 +58,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(CondFact CondFact) { }
     public void visit(DesignatorStatementCommaList DesignatorStatementCommaList) { }
     public void visit(ExprOrActPars ExprOrActPars) { }
+    public void visit(Term Term) { }
     public void visit(MulopMod MulopMod) { visit(); }
     public void visit(MulopDiv MulopDiv) { visit(); }
     public void visit(MulopMultiply MulopMultiply) { visit(); }
@@ -86,15 +87,11 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(FactorNumConst FactorNumConst) { visit(); }
     public void visit(FactorDesignatorMethod FactorDesignatorMethod) { visit(); }
     public void visit(FactorDesignator FactorDesignator) { visit(); }
-    public void visit(MulopFactorElem MulopFactorElem) { visit(); }
-    public void visit(NoMulopFactorList NoMulopFactorList) { visit(); }
-    public void visit(MulopFactorDecl MulopFactorDecl) { visit(); }
-    public void visit(Term Term) { visit(); }
-    public void visit(AddopTermElem AddopTermElem) { visit(); }
-    public void visit(NoAddopTermList NoAddopTermList) { visit(); }
-    public void visit(AddopTermDecl AddopTermDecl) { visit(); }
-    public void visit(ExprNoDash ExprNoDash) { visit(); }
+    public void visit(TermMulopFactorDecl TermMulopFactorDecl) { visit(); }
+    public void visit(TermFactor TermFactor) { visit(); }
+    public void visit(ExprAddopTerm ExprAddopTerm) { visit(); }
     public void visit(ExprDash ExprDash) { visit(); }
+    public void visit(ExprTermBasic ExprTermBasic) { visit(); }
     public void visit(CondFactExprRelop CondFactExprRelop) { visit(); }
     public void visit(CondFactExpr CondFactExpr) { visit(); }
     public void visit(CondFactElem CondFactElem) { visit(); }

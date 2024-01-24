@@ -71,8 +71,6 @@ nonterminal Assignop Assignop;
 nonterminal ExprCommaList ExprCommaList;
 nonterminal CondTermList CondTermList;
 nonterminal Relop Relop;
-nonterminal AddopTermList AddopTermList;
-nonterminal AddopTermElem AddopTermElem;
 nonterminal Addop Addop;
 nonterminal MulopFactorList MulopFactorList;
 nonterminal MulopFactorElem MulopFactorElem;
@@ -113,7 +111,7 @@ terminal LPAREN, RPAREN, VOID, DOT, TWODOT, IF, ELSE, BREAK, CONTINUE, RETURN, R
 terminal String IDENT;
 terminal String NAMESPACE;
 terminal Integer NUMBERCONST;
-terminal String CHARCONST;
+terminal Character CHARCONST;
 terminal Boolean BOOLCONST;
 terminal GREATER, GREATEREQUAL, LESS, LESSEQUAL, PLUS, MINUS, MULTIPLY, DIV, MOD;
 
@@ -329,24 +327,15 @@ CondFactElem ::= (CondFactElem) AND CondFact:t {: RESULT=new CondFactElem(t); RE
 CondFact ::= (CondFactExpr) Expr:type {: RESULT=new CondFactExpr(type); RESULT.setLine(typeleft); :}
 		| (CondFactExprRelop) Expr:t1 Relop:R1 Expr:t2 {: RESULT=new CondFactExprRelop(t1, R1, t2); RESULT.setLine(t1left); :}
 		;
+		
+Expr ::= (ExprTermBasic) Term:termType {: RESULT=new ExprTermBasic(termType); RESULT.setLine(termTypeleft); :}
+	  |	 (ExprDash)	MINUS Term:termType {: RESULT=new ExprDash(termType); RESULT.setLine(termTypeleft); :}
+	  |	 (ExprAddopTerm) Expr:E1 Addop:A2 Term:termType {: RESULT=new ExprAddopTerm(E1, A2, termType); RESULT.setLine(E1left); :}
+	  ;
 
-Expr ::= (ExprDash) MINUS Term:termType AddopTermList:A1 {: RESULT=new ExprDash(termType, A1); RESULT.setLine(termTypeleft); :}
-		| (ExprNoDash) Term:termType AddopTermList:A1 {: RESULT=new ExprNoDash(termType, A1); RESULT.setLine(termTypeleft); :}
-		;
-			
-AddopTermList ::= (AddopTermDecl) AddopTermList:A1 AddopTermElem:A2 {: RESULT=new AddopTermDecl(A1, A2); RESULT.setLine(A1left); :}
-				| (NoAddopTermList) {: RESULT=new NoAddopTermList(); :}
-				;
-
-AddopTermElem ::= (AddopTermElem) Addop:A1 Term:t {: RESULT=new AddopTermElem(A1, t); RESULT.setLine(A1left); :};
-
-Term ::= (Term) Factor:t MulopFactorList:M1 {: RESULT=new Term(t, M1); RESULT.setLine(tleft); :};
-
-MulopFactorList ::= (MulopFactorDecl) MulopFactorList:M1 MulopFactorElem:M2 {: RESULT=new MulopFactorDecl(M1, M2); RESULT.setLine(M1left); :}
-				| (NoMulopFactorList) {: RESULT=new NoMulopFactorList(); :}
-				;
-				
-MulopFactorElem ::= (MulopFactorElem) Mulop:M1 Factor:t {: RESULT=new MulopFactorElem(M1, t); RESULT.setLine(M1left); :};
+Term ::= (TermFactor) Factor:t {: RESULT=new TermFactor(t); RESULT.setLine(tleft); :}
+	  |  (TermMulopFactorDecl) Term:termType Mulop:M1 Factor:t {: RESULT=new TermMulopFactorDecl(termType, M1, t); RESULT.setLine(termTypeleft); :}
+	  ;
 
 Factor ::= (FactorDesignator) Designator:D1 {: RESULT=new FactorDesignator(D1); RESULT.setLine(D1left); :}
 		| (FactorDesignatorMethod) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new FactorDesignatorMethod(D1, A2); RESULT.setLine(D1left); :}

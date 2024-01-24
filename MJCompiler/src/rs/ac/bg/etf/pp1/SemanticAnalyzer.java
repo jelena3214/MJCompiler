@@ -74,12 +74,13 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 				String message = "Deklarisana globalna promenljiva "+ varDecl.getVarName();
 				if(currentNamespace != null) {
 					message += " iz namespace-a " + currentNamespace.getName();
+					nVars++;
 				}
 				report_info(message, varDecl);
 			}else {
 				// TODO Provera da li se neki parametar u funkciji vec zove tako
 				if(currentMethodParamNames != null && currentMethodParamNames.contains(varNode.getName())) {
-					report_error("Ime lokalne promenljive se poklapa sa imenom fomrmalnog parametra.", varDecl);
+					report_error("Ime lokalne promenljive se poklapa sa imenom formalnog parametra.", varDecl);
 				}
 				report_info("Deklarisana lokalna promenljiva "+ varDecl.getVarName() + " u metodi " + currentMethod.getName(), varDecl);
 			}
@@ -94,6 +95,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			//lokalna promenljiva
 			if(currentMethod != null) {
 				n.setLevel(1);
+			}else {
+				n.setLevel(0);
 			}
 		}else {
 			report_error("Promeljiva " + varDecl.getVarName() + " se opet deklarise", varDecl);
@@ -127,7 +130,19 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			}
 			report_info(message, constDecl);
 			
-			Tab.insert(Obj.Con, constDecl.getTypeName(), currType);
+			Obj con = Tab.insert(Obj.Con, constDecl.getTypeName(), currType);
+			ConstType t = constDecl.getConstType();
+			if(t instanceof NumConstType) {
+				NumConstType nt = (NumConstType)t;
+				con.setAdr(nt.getN1());
+			}else if(t instanceof CharConstType) {
+				CharConstType nt = (CharConstType)t;
+				con.setAdr(nt.getC1());
+			}else {
+				BoolConstType nt = (BoolConstType)t;
+				con.setAdr(nt.getB1()==true?1:0);
+			}
+			
 		}else {
 			report_error("Konstanta " + constDecl.getTypeName() + " se opet deklarise", constDecl);
 		}
@@ -173,6 +188,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	methodParams.put(currentMethod.getName(), currMethodMap);
     	
     	currentMethod.setLevel(currParamInd);
+    	methodDecl.obj = currentMethod;
     	
     	returnFound = false;
     	currentMethod = null;
@@ -235,7 +251,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     		report_error("Main funkcija nije pronadjena!", null);
     	}
     	
-    	nVars = Tab.currentScope.getnVars();
+    	nVars += Tab.currentScope.getnVars();
     	Tab.chainLocalSymbols(program.getProgName().obj);
     	Tab.closeScope();
     }
@@ -643,27 +659,27 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	expr.struct = expr.getTerm().struct;
     }
     
-    public void visit(ExprNoDash expr) {
-    	if(!(expr.getAddopTermList() instanceof NoAddopTermList)) {
-    		if(expr.getTerm().struct != Tab.intType) {
-    			report_error("Greska tip mora biti tipa int", null);
-    		}
-    	}
+    public void visit(ExprTermBasic expr) {
     	expr.struct = expr.getTerm().struct;
     }
     
-    public void visit(AddopTermElem addopelem) {
-    	if(addopelem.getTerm().struct != Tab.intType) {
-    		report_error("Greska tip mora biti int", null);
-    	}
+    public void visit(ExprAddopTerm expr) {
+    	if(expr.getTerm().struct != Tab.intType) {
+			report_error("Greska tip mora biti tipa int", null);
+		}
+    	expr.struct = expr.getTerm().struct;
     }
     
-    public void visit(Term term) {
-    	if(term.getMulopFactorList() instanceof MulopFactorDecl && term.getFactor().struct != Tab.intType) {
+    public void visit(TermMulopFactorDecl term) {
+    	if(term.getFactor().struct != Tab.intType || term.getTerm().struct != Tab.intType) {
     		report_error("Greska tip mora biti int", null);
     	}
     	term.struct = term.getFactor().struct;
     }
+    
+    public void visit(TermFactor term) {
+		term.struct = term.getFactor().struct;
+	}
    
     
     public void visit(FactorNumConst fact) {
@@ -692,12 +708,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     
     public void visit(ExprOrActParsExpr expr) {
     	if(expr.getExpr().struct != Tab.intType) {
-    		report_error("Greska tip mora biti int", null);
-    	}
-    }
-    
-    public void visit(MulopFactorElem mulopElem) {
-    	if(mulopElem.getFactor().struct != Tab.intType) {
     		report_error("Greska tip mora biti int", null);
     	}
     }
