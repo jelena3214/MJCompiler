@@ -6,6 +6,7 @@ import rs.ac.bg.etf.pp1.ast.AddopMinus;
 import rs.ac.bg.etf.pp1.ast.AddopPlus;
 import rs.ac.bg.etf.pp1.ast.ArrayDesignatorDecl;
 import rs.ac.bg.etf.pp1.ast.DesignatorBasicDecl;
+import rs.ac.bg.etf.pp1.ast.DesignatorStatementAct;
 import rs.ac.bg.etf.pp1.ast.DesignatorStatementAssign;
 import rs.ac.bg.etf.pp1.ast.DesignatorStatementDec;
 import rs.ac.bg.etf.pp1.ast.DesignatorStatementInc;
@@ -14,6 +15,7 @@ import rs.ac.bg.etf.pp1.ast.ExprDash;
 import rs.ac.bg.etf.pp1.ast.FactorBoolConst;
 import rs.ac.bg.etf.pp1.ast.FactorCharConst;
 import rs.ac.bg.etf.pp1.ast.FactorDesignator;
+import rs.ac.bg.etf.pp1.ast.FactorDesignatorMethod;
 import rs.ac.bg.etf.pp1.ast.FactorNew;
 import rs.ac.bg.etf.pp1.ast.FactorNumConst;
 import rs.ac.bg.etf.pp1.ast.MethodDecl;
@@ -268,5 +270,45 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.load(arr.getDesignator().obj);
 	}
 
+	public void visit(DesignatorStatementAct meth) {
+		Obj des = meth.getDesignator().obj;
+		String funcName = des.getName();
+		int adr = des.getAdr();
+		int offset = adr - Code.pc;
+		
+		if(funcName.equals("len")) {
+			Code.put(Code.arraylength);
+			return;
+		}else if(funcName.equals("ord") || funcName.equals("chr")) {
+			return;
+		}
+		
+		
+		Code.put(Code.call);
+		Code.put2(offset);
+		
+		// clean the stack after if needed
+		if(des.getType() != Tab.noType) {
+			Code.put(Code.pop);
+		}
+	}
 	
+	public void visit(FactorDesignatorMethod meth) {
+		Obj des = meth.getDesignator().obj;
+		
+		String funcName = des.getName();
+		int adr = des.getAdr();
+		int offset = adr - Code.pc;
+		
+		if(funcName.equals("len")) {
+			Code.put(Code.arraylength);
+			return;
+		}else if(funcName.equals("ord") || funcName.equals("chr")) {
+			return;
+		}
+		
+		
+		Code.put(Code.call);
+		Code.put2(offset);
+	}
 }

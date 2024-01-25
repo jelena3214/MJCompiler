@@ -2,6 +2,13 @@ program Test
 	const int N = 2;
 	int g;
 	{
+		int k(int c)
+			int x;
+		{
+			print(c);
+			return 1;
+		}
+	
 		void main()
 			int x, y;
 			int niz[];
@@ -15,6 +22,7 @@ program Test
 			niz[0] = niz[1];
 			niz[1]++;
 			print(niz[1]);
+			k(7);
 		}
 		
 	
