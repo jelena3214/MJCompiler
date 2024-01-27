@@ -12,6 +12,7 @@ program Test
 		void main()
 			int x, y;
 			int niz[];
+			bool sbo;
 		{
 			g = N;
 			y = 53;
@@ -23,7 +24,24 @@ program Test
 			niz[1]++;
 			print(niz[1]);
 			k(7);
+			sbo = true;
+			print(sbo);
+			
+			if(N == 4 || sbo){
+				print(3);
+			}else{
+				print(7);
+			}
+			
+			if(sbo && N == 2)
+				if(N == 5) print(1);
+				else print(-1);
+			
+			for(x = 0; x < 4; x++){
+				if(x == 2) continue;
+				print(x);
+			}
+			 	
 		}
-		
 	
 	}

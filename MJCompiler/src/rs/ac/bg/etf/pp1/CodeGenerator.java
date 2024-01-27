@@ -1,15 +1,28 @@
 package rs.ac.bg.etf.pp1;
 
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
 import rs.ac.bg.etf.pp1.ast.Addop;
 import rs.ac.bg.etf.pp1.ast.AddopMinus;
 import rs.ac.bg.etf.pp1.ast.AddopPlus;
 import rs.ac.bg.etf.pp1.ast.ArrayDesignatorDecl;
+import rs.ac.bg.etf.pp1.ast.BeforeForBody;
+import rs.ac.bg.etf.pp1.ast.BeforeForCond;
+import rs.ac.bg.etf.pp1.ast.BeforeForUpdate;
+import rs.ac.bg.etf.pp1.ast.BreakStmt;
+import rs.ac.bg.etf.pp1.ast.CondFact;
+import rs.ac.bg.etf.pp1.ast.CondFactExprRelop;
+import rs.ac.bg.etf.pp1.ast.ContinueStmt;
+import rs.ac.bg.etf.pp1.ast.CondFactExpr;
 import rs.ac.bg.etf.pp1.ast.DesignatorBasicDecl;
 import rs.ac.bg.etf.pp1.ast.DesignatorStatementAct;
 import rs.ac.bg.etf.pp1.ast.DesignatorStatementAssign;
 import rs.ac.bg.etf.pp1.ast.DesignatorStatementDec;
 import rs.ac.bg.etf.pp1.ast.DesignatorStatementInc;
+import rs.ac.bg.etf.pp1.ast.ElseStatement;
 import rs.ac.bg.etf.pp1.ast.ExprAddopTerm;
 import rs.ac.bg.etf.pp1.ast.ExprDash;
 import rs.ac.bg.etf.pp1.ast.FactorBoolConst;
@@ -18,6 +31,9 @@ import rs.ac.bg.etf.pp1.ast.FactorDesignator;
 import rs.ac.bg.etf.pp1.ast.FactorDesignatorMethod;
 import rs.ac.bg.etf.pp1.ast.FactorNew;
 import rs.ac.bg.etf.pp1.ast.FactorNumConst;
+import rs.ac.bg.etf.pp1.ast.ForStmtBegin;
+import rs.ac.bg.etf.pp1.ast.IfNoErr;
+import rs.ac.bg.etf.pp1.ast.IfStmt;
 import rs.ac.bg.etf.pp1.ast.MethodDecl;
 import rs.ac.bg.etf.pp1.ast.MethodTypeDecl;
 import rs.ac.bg.etf.pp1.ast.MethodTypeVoid;
@@ -25,11 +41,26 @@ import rs.ac.bg.etf.pp1.ast.Mulop;
 import rs.ac.bg.etf.pp1.ast.MulopDiv;
 import rs.ac.bg.etf.pp1.ast.MulopMod;
 import rs.ac.bg.etf.pp1.ast.MulopMultiply;
+import rs.ac.bg.etf.pp1.ast.NoElseStatement;
+import rs.ac.bg.etf.pp1.ast.PatchAnd;
+import rs.ac.bg.etf.pp1.ast.PatchOr;
+import rs.ac.bg.etf.pp1.ast.PatchToElse;
 import rs.ac.bg.etf.pp1.ast.PrintStmtNoWidth;
 import rs.ac.bg.etf.pp1.ast.PrintStmtWidth;
 import rs.ac.bg.etf.pp1.ast.ReadStmt;
+import rs.ac.bg.etf.pp1.ast.Relop;
+import rs.ac.bg.etf.pp1.ast.RelopGreater;
+import rs.ac.bg.etf.pp1.ast.RelopGreaterEqual;
+import rs.ac.bg.etf.pp1.ast.RelopLess;
+import rs.ac.bg.etf.pp1.ast.RelopLessEqual;
+import rs.ac.bg.etf.pp1.ast.RelopNoEqual;
+import rs.ac.bg.etf.pp1.ast.RelopTwoEqual;
 import rs.ac.bg.etf.pp1.ast.ReturnStmt;
 import rs.ac.bg.etf.pp1.ast.ReturnStmtExpr;
+import rs.ac.bg.etf.pp1.ast.StartIf;
+import rs.ac.bg.etf.pp1.ast.ForStmtCondFact;
+import rs.ac.bg.etf.pp1.ast.ForStmtNoCondFact;
+import rs.ac.bg.etf.pp1.ast.SyntaxNode;
 import rs.ac.bg.etf.pp1.ast.TermMulopFactorDecl;
 import rs.ac.bg.etf.pp1.ast.VisitorAdaptor;
 import rs.etf.pp1.mj.runtime.Code;
@@ -42,6 +73,18 @@ public class CodeGenerator extends VisitorAdaptor {
 	private boolean returnFound = false;
 	
 	private int mainPc = -1;
+	
+	private static Stack<List<Integer>> patchOrStack = new Stack<>();
+    private static Stack<List<Integer>> patchAndStack = new Stack<>();
+    private static Stack<List<Integer>> patchElseStack = new Stack<>();
+    // za cuvanje adrese ako uslov nije ispunjen
+    private static Stack<List<Integer>> patchForExit = new Stack<>();
+    // za cuvanje adrese uslova i adrese azuriranja promenljive
+    private static Stack<List<Integer>> patchForJumps = new Stack<>();
+    private static Stack<List<Integer>> patchForStatement = new Stack<>();
+    
+    
+    private boolean forStart = false;
 	
 	public int getMainPc(){
 		return mainPc;
@@ -311,4 +354,161 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.call);
 		Code.put2(offset);
 	}
+	
+	public void visit(CondFactExprRelop cond) {
+		if(!forStart)patchAndStack.peek().add(Code.pc + 1);
+		else patchForExit.peek().add(Code.pc + 1);
+		
+		Relop relop = cond.getRelop();
+		int operCode = -1;
+		
+		if(relop instanceof RelopTwoEqual) operCode = Code.eq;
+		if(relop instanceof RelopNoEqual) operCode = Code.ne;
+		if(relop instanceof RelopGreater) operCode = Code.gt;
+		if(relop instanceof RelopGreaterEqual) operCode = Code.ge;
+		if(relop instanceof RelopLess) operCode = Code.lt;
+		if(relop instanceof RelopLessEqual) operCode = Code.le;
+		
+		Code.putFalseJump(operCode, 0);
+		
+		if(forStart) {
+	    	forStart = false;
+		}
+	}
+	
+	public void visit(CondFactExpr cond) {
+		// mora da bude bool, andujemo sa 1
+		Code.loadConst(1);
+		patchAndStack.peek().add(Code.pc + 1);
+		Code.putFalseJump(Code.eq, 0);
+	}
+	
+	public void visit(PatchAnd node) {
+		// ct pre ovog OR je bio TRUE ispunjen uslov idemo na then
+		patchOrStack.peek().add(Code.pc + 1);
+		Code.putJump(0);
+	
+		// (cf and cf and cf ...) pre OR je false ide na sledeci deo
+		while(!patchAndStack.peek().isEmpty()) {
+			Code.fixup(patchAndStack.peek().remove(0));
+		}
+	}
+	
+	public void visit(PatchOr node) {
+    	// (cf and cf and ..) or (cf and ..) ako je bilo koji TRUE idemo na then
+    	
+    	while(!patchOrStack.peek().isEmpty()) {
+    		Code.fixup(patchOrStack.peek().remove(0));
+    	}
+    }
+	
+	public void visit(PatchToElse node) {
+		// jmp na liniju nakon else 
+    	patchElseStack.peek().add(Code.pc + 1); // jmp = 1 byte
+    	Code.putJump(0);
+    	
+    	// ako ni jedan (cg and cf ...) nije bio ispunjen ovde ide na else
+    	while(!patchAndStack.peek().isEmpty()) {
+    		Code.fixup(patchAndStack.peek().remove(0));
+    	}
+    }
+	
+	public void visit(StartIf ifstmt) {
+		patchOrStack.push(new ArrayList<>());
+    	patchAndStack.push(new ArrayList<>());
+    	patchElseStack.push(new ArrayList<>());
+	}
+	
+	public void visit(IfNoErr node) {
+    	
+    	if(node.getElseStatementList() instanceof NoElseStatement) {
+    		// ako nije ispunjen popunjavamo da vode na posle ifa
+    		while(!patchAndStack.peek().isEmpty()) {
+        		Code.fixup(patchAndStack.peek().remove(0));
+        	}
+    		
+    		// kraj ovog ifa
+    		patchOrStack.pop();
+        	patchAndStack.pop();
+        	patchElseStack.pop();
+    	}
+    	
+    }
+    
+    public void visit(ElseStatement node) {
+    	while(!patchElseStack.peek().isEmpty()) {
+    		Code.fixup(patchElseStack.peek().remove(0));
+    	}
+    	
+    	// kraj ovog ifa
+    	patchOrStack.pop();
+    	patchAndStack.pop();
+    	patchElseStack.pop();
+    }
+    
+    
+	public void visit(ForStmtBegin forstmt) {
+		forStart = true;
+		patchForExit.add(new ArrayList<>());
+		patchForJumps.add(new ArrayList<>());
+		patchForStatement.add(new ArrayList<>());
+	}
+    
+    
+    public void visit(BeforeForCond bf) {
+    	// pamtimo adresu uslova
+    	patchForJumps.peek().add(Code.pc);
+    }
+    
+    public void visit(BeforeForUpdate bfu) {
+    	// da skocimo na telo fora
+    	patchForStatement.peek().add(Code.pc + 1); // jmp = 1 byte
+    	Code.putJump(0);
+    	patchForJumps.peek().add(Code.pc);
+    }
+    
+    public void visit(BeforeForBody bfb) {
+    	// jer tada imamo uslov zapravo, ako je samo 1 element tu  to je adresa update dela
+    	if(patchForJumps.peek().size() > 1)Code.putJump(patchForJumps.peek().get(0));
+    	while(!patchForStatement.peek().isEmpty()) {
+    		Code.fixup(patchForStatement.peek().remove(0));
+    	}
+    }
+    
+    public void visit(ForStmtCondFact forCond) {
+    	// skacemo na uslov deo
+    	Code.putJump(patchForJumps.peek().get(1));
+    	
+    	while(!patchForExit.peek().isEmpty()) {
+    		Code.fixup(patchForExit.peek().remove(0));
+    	}
+    	
+    	patchForExit.pop();
+    	patchForJumps.pop();
+    	patchForStatement.pop();
+    	
+    }
+    
+    public void visit(ForStmtNoCondFact forCond) {
+    	// skacemo na update deo
+    	Code.putJump(patchForJumps.peek().get(0));
+    	
+    	while(!patchForExit.peek().isEmpty()) {
+    		Code.fixup(patchForExit.peek().remove(0));
+    	}
+    	
+    	patchForStatement.pop();
+    	patchForExit.pop();
+    	patchForJumps.pop();
+    }
+    
+    public void visit(BreakStmt breakSt) {
+    	patchForExit.peek().add(Code.pc + 1);
+    	Code.putJump(0);
+    }
+    
+    public void visit(ContinueStmt continueSt) {
+    	// vracamo se na update deo
+    	Code.putJump(patchForJumps.peek().get(1));
+    }
 }

@@ -56,14 +56,14 @@ nonterminal StaticInitializer, Statement;
 nonterminal VarDeclList, StatementList, FormPars;
 nonterminal DesignatorStmtList, CondFactList, ActPars, Assignop;
 nonterminal ExprCommaList, CondTermList, Relop;
-nonterminal Addop, MulopFactorList, MulopFactorElem;
-nonterminal Mulop, ExprOrActPars, DesignatorOr, DesignatorOrList, Label, ExprCommaElem;
-nonterminal DesignatorCommaList, DesignatorCommaElem, DesignatorList1, DesignatorStatementCommaList, DesignatorStatementCommaElem;
+nonterminal Addop, StartIf;
+nonterminal Mulop, ExprOrActPars, Label, ExprCommaElem;
+nonterminal DesignatorCommaList, DesignatorCommaElem, DesignatorStatementCommaList, DesignatorStatementCommaElem;
 nonterminal VarDeclTmpList, VarDeclComma, VarDeclSemi, VarDeclTmp, ConstDeclTmpList, ConstDeclComma, ConstDeclSemi, ConstDeclTmp;
-nonterminal FormParsBasic, FormParsCommaList, FormParsComma, AssignOperation, IfStatement, VarDeclType, ConstDeclType, ForStmtBegin, DesignatorStatementSemi;
+nonterminal FormParsBasic, FormParsCommaList, FormParsComma, IfStatement, VarDeclType, ConstDeclType, ForStmtBegin, DesignatorStatementSemi, PatchAnd, PatchOr, PatchToElse, BeforeForCond, BeforeForUpdate, BeforeForBody;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Expr, Term, Factor, ConstType, NamespaceName, CondFact, CondFactElem, CondTermElem, CondTerm, Condition;
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodTypeName, MethodDecl, Designator, DesignatorStatement, DesignatorDecl, NumConstList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodTypeName, MethodDecl, Designator, DesignatorStatement, DesignatorDecl;
 
 terminal PROG, LBRACE, RBRACE, TWOEQUAL, NOTEQUAL, CONST, SEMI, EQUAL, LSBRACE, RSBRACE, COMMA, OR, AND;
 terminal LPAREN, RPAREN, VOID, DOT, TWODOT, IF, ELSE, BREAK, CONTINUE, RETURN, READ, PRINT, FOR, TWOPLUS, TWOMINUS, NEW, STATIC;
@@ -209,23 +209,33 @@ Statement ::= (IfStmt) IfStatement
 			| (ReadStmt) READ LPAREN Designator RPAREN SEMI
 			| (PrintStmtNoWidth) PRINT LPAREN Expr:t RPAREN SEMI
 			| (PrintStmtWidth) PRINT LPAREN Expr:t COMMA NUMBERCONST RPAREN SEMI
-			| (ForStmtCondFact) ForStmtBegin DesignatorStmtList SEMI CondFact SEMI DesignatorStmtList RPAREN Statement
-			| (ForStmtNoCondFact) ForStmtBegin DesignatorStmtList SEMI SEMI DesignatorStmtList RPAREN Statement
+			| (ForStmtCondFact) ForStmtBegin DesignatorStmtList BeforeForCond CondFact BeforeForUpdate DesignatorStmtList BeforeForBody Statement
+			| (ForStmtNoCondFact) ForStmtBegin DesignatorStmtList SEMI BeforeForUpdate DesignatorStmtList BeforeForBody Statement
 			| (EmptyStmt) LBRACE RBRACE
 			| (Stmt) LBRACE Statement StatementList RBRACE
 			;
             
 ForStmtBegin ::= (ForStmtBegin) FOR LPAREN;
-            
 
-IfStatement ::= (IfNoErr) IF LPAREN Condition RPAREN Statement ElseStatementList
-				| (IfErr) IF LPAREN error RPAREN:l {: parser.report_error("Oporavak od greske u 'Condition' konstrukciji na liniji " + lleft + " preskacemo do prvog \')\'", null); :}		
+BeforeForCond ::= (BeforeForCond) SEMI;
+
+BeforeForUpdate ::= (BeforeForUpdate) SEMI;
+
+BeforeForBody ::= (BeforeForBody) RPAREN;
+            
+StartIf ::= (StartIf) IF;
+
+IfStatement ::= (IfNoErr) StartIf LPAREN Condition PatchOr RPAREN Statement ElseStatementList
+				| (IfErr) StartIf LPAREN error RPAREN:l {: parser.report_error("Oporavak od greske u 'Condition' konstrukciji na liniji " + lleft + " preskacemo do prvog \')\'", null); :}		
 				Statement ElseStatementList		
             	;
 
-ElseStatementList ::= (ElseStatement) ELSE Statement
+ElseStatementList ::= (ElseStatement) PatchToElse Statement
                     | (NoElseStatement)
                     ;
+
+PatchToElse ::= (PatchToElse) ELSE;
+
 
 DesignatorStmtList ::= (DesignatorStmtDecl) DesignatorStatement DesignatorStatementCommaList
                     | (NoDesignatorStmtList)
@@ -273,13 +283,17 @@ CondTermList ::= (CondTermDecl) CondTermList CondTermElem:t
 				| (NoCondTermList)
 				;
 	
-CondTermElem ::= (CondTermElem) OR CondTerm:t;
+CondTermElem ::= (CondTermElem) PatchAnd OR CondTerm:t;
 
 CondTerm ::= (CondTerm) CondFact:t CondFactList;
 
 CondFactList ::= (CondFactDecl) CondFactList CondFactElem:t
 				| (NoCondFactList)
 				;
+				
+PatchAnd ::= (PatchAnd);
+
+PatchOr ::= (PatchOr);
 				
 CondFactElem ::= (CondFactElem) AND CondFact:t;
 

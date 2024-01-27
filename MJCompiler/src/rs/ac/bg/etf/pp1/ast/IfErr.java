@@ -1,20 +1,31 @@
 // generated with ast extension for cup
 // version 0.8
-// 24/0/2024 23:47:6
+// 27/0/2024 21:36:19
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class IfErr extends IfStatement {
 
+    private StartIf StartIf;
     private Statement Statement;
     private ElseStatementList ElseStatementList;
 
-    public IfErr (Statement Statement, ElseStatementList ElseStatementList) {
+    public IfErr (StartIf StartIf, Statement Statement, ElseStatementList ElseStatementList) {
+        this.StartIf=StartIf;
+        if(StartIf!=null) StartIf.setParent(this);
         this.Statement=Statement;
         if(Statement!=null) Statement.setParent(this);
         this.ElseStatementList=ElseStatementList;
         if(ElseStatementList!=null) ElseStatementList.setParent(this);
+    }
+
+    public StartIf getStartIf() {
+        return StartIf;
+    }
+
+    public void setStartIf(StartIf StartIf) {
+        this.StartIf=StartIf;
     }
 
     public Statement getStatement() {
@@ -38,17 +49,20 @@ public class IfErr extends IfStatement {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(StartIf!=null) StartIf.accept(visitor);
         if(Statement!=null) Statement.accept(visitor);
         if(ElseStatementList!=null) ElseStatementList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(StartIf!=null) StartIf.traverseTopDown(visitor);
         if(Statement!=null) Statement.traverseTopDown(visitor);
         if(ElseStatementList!=null) ElseStatementList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(StartIf!=null) StartIf.traverseBottomUp(visitor);
         if(Statement!=null) Statement.traverseBottomUp(visitor);
         if(ElseStatementList!=null) ElseStatementList.traverseBottomUp(visitor);
         accept(visitor);
@@ -58,6 +72,12 @@ public class IfErr extends IfStatement {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("IfErr(\n");
+
+        if(StartIf!=null)
+            buffer.append(StartIf.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
 
         if(Statement!=null)
             buffer.append(Statement.toString("  "+tab));
