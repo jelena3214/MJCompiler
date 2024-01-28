@@ -10,8 +10,9 @@ program Test
 		}
 	
 		void main()
-			int x, y;
+			int x, y, z;
 			int niz[];
+			int niz2[];
 			bool sbo;
 		{
 			g = N;
@@ -41,7 +42,18 @@ program Test
 				if(x == 2) continue;
 				print(x);
 			}
-			 	
+			
+			niz2 = new int[4];
+			
+			niz2[0] = 4;
+			niz2[1] = 5;
+			
+			[*niz] = niz2;
+			
+			print(eol);
+			print(niz[0]);
+			print(niz[1]);
+			
 		}
 	
 	}

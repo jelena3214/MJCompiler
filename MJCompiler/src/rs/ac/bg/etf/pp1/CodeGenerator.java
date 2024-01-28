@@ -9,6 +9,8 @@ import rs.ac.bg.etf.pp1.ast.Addop;
 import rs.ac.bg.etf.pp1.ast.AddopMinus;
 import rs.ac.bg.etf.pp1.ast.AddopPlus;
 import rs.ac.bg.etf.pp1.ast.ArrayDesignatorDecl;
+import rs.ac.bg.etf.pp1.ast.DesignatorStatementExpr;
+import rs.ac.bg.etf.pp1.ast.DesignatorStatementExpr1;
 import rs.ac.bg.etf.pp1.ast.BeforeForBody;
 import rs.ac.bg.etf.pp1.ast.BeforeForCond;
 import rs.ac.bg.etf.pp1.ast.BeforeForUpdate;
@@ -16,8 +18,11 @@ import rs.ac.bg.etf.pp1.ast.BreakStmt;
 import rs.ac.bg.etf.pp1.ast.CondFact;
 import rs.ac.bg.etf.pp1.ast.CondFactExprRelop;
 import rs.ac.bg.etf.pp1.ast.ContinueStmt;
+import rs.ac.bg.etf.pp1.ast.Designator;
 import rs.ac.bg.etf.pp1.ast.CondFactExpr;
 import rs.ac.bg.etf.pp1.ast.DesignatorBasicDecl;
+import rs.ac.bg.etf.pp1.ast.DesignatorCommaElem1;
+import rs.ac.bg.etf.pp1.ast.DesignatorCommaElem2;
 import rs.ac.bg.etf.pp1.ast.DesignatorStatementAct;
 import rs.ac.bg.etf.pp1.ast.DesignatorStatementAssign;
 import rs.ac.bg.etf.pp1.ast.DesignatorStatementDec;
@@ -73,6 +78,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	private boolean returnFound = false;
 	
 	private int mainPc = -1;
+	private int skipCnt = 0;
 	
 	private static Stack<List<Integer>> patchOrStack = new Stack<>();
     private static Stack<List<Integer>> patchAndStack = new Stack<>();
@@ -82,7 +88,7 @@ public class CodeGenerator extends VisitorAdaptor {
     // za cuvanje adrese uslova i adrese azuriranja promenljive
     private static Stack<List<Integer>> patchForJumps = new Stack<>();
     private static Stack<List<Integer>> patchForStatement = new Stack<>();
-    
+    private static List<Obj> specDesignatorList = new ArrayList<>();
     
     private boolean forStart = false;
 	
@@ -510,5 +516,114 @@ public class CodeGenerator extends VisitorAdaptor {
     public void visit(ContinueStmt continueSt) {
     	// vracamo se na update deo
     	Code.putJump(patchForJumps.peek().get(1));
+    }
+    
+    // Bez onih pre
+    public void visit(DesignatorStatementExpr des) {
+    	Obj arr1 = des.getDesignator().obj;
+    	Obj arr2 = des.getDesignator1().obj;
+    	
+    	// len(arr1)
+    	Code.load(arr1);
+    	Code.put(Code.arraylength);
+    	
+    	// len(arr2)
+    	Code.load(arr2);
+    	Code.put(Code.arraylength);
+    	
+    	Code.put(Code.jcc + Code.lt); 	// 3 bytes
+    	Code.put2(5); 					// skip trap (3 + 2)
+    	
+    	// arr1 < arr2
+    	Code.put(Code.trap); 			// 2 bytes
+    	Code.put(2);
+    	
+    	// TODO prebacivanje iz niza u niz
+    	Code.load(arr1);
+    	Code.put(Code.arraylength);
+    	Code.loadConst(0);
+    	
+    	int adrJump = Code.pc;
+    	Code.put(Code.dup);
+    	Code.put(Code.dup);
+    	Code.load(arr1);
+    	Code.put(Code.dup_x2);
+    	Code.put(Code.pop);
+    	Code.load(arr2);
+    	Code.put(Code.dup_x1);
+    	Code.put(Code.pop);
+    	Code.put(Code.aload);
+    	Code.put(Code.astore);
+    	
+    	Code.loadConst(1);
+    	Code.put(Code.add);
+    	   	
+    	Code.put(Code.jcc + Code.ne);
+    	Code.put2(adrJump-Code.pc + 1);
+    }
+    
+    public void visit(DesignatorStatementExpr1 des) {
+    	Obj arr1 = des.getDesignator().obj;
+    	Obj arr2 = des.getDesignator1().obj;
+    	int num = specDesignatorList.size();
+    	
+    	// len(arr2)
+    	Code.load(arr2);
+    	Code.put(Code.arraylength);
+    	Code.loadConst(num-skipCnt);
+		
+		Code.put(Code.jcc + Code.ge); 	// 3 bytes
+    	Code.put2(5); 					// skip trap (3 + 2)
+    	
+    	// len(arr2) < broj promenljivih
+    	Code.put(Code.trap); 			// 2 bytes
+    	Code.put(2);
+    	
+    	// len(arr1)
+    	Code.load(arr1);
+    	Code.put(Code.arraylength);
+    	
+    	// len(arr2)
+    	Code.load(arr2);
+    	Code.put(Code.arraylength);
+    	
+    	Code.loadConst(num-skipCnt);
+		Code.put(Code.sub);
+    	
+    	Code.put(Code.jcc + Code.ge); 	// 3 bytes
+    	Code.put2(5); 					// skip trap (3 + 2)
+    	
+    	// arr1 < arr2 - br promenljivih
+    	Code.put(Code.trap); 			// 2 bytes
+    	Code.put(2);
+    	
+    	// prvo promenljive popunjavamo
+    	
+    	for(int i = 0; i < num; i++) {
+    		Obj nextObj = specDesignatorList.remove(0);
+    		if(nextObj.getName().equals("skip"))continue;
+    		Code.load(arr2);
+    		Code.loadConst(i);
+    		Code.put(Code.aload);
+    		
+    		Code.store(nextObj);
+    	}
+    	
+    	
+    	
+    	// TODO prebacivanje iz niza u niz
+    	
+    	
+    	skipCnt = 0;
+    }
+    
+    public void visit(DesignatorCommaElem1 el) {
+    	specDesignatorList.add(el.getDesignator().obj);
+    }
+    
+    // skip elem, jer moze [a,b,,*y] = x;
+    public void visit(DesignatorCommaElem2 el) {
+    	specDesignatorList.add(new Obj(0,"skip", new Struct(Struct.None)));
+    	skipCnt++;
     }
 }
