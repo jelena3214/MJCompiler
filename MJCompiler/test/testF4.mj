@@ -44,13 +44,20 @@ program Test
 			}
 			
 			niz2 = new int[4];
+			niz = new int[2];
 			
 			niz2[0] = 4;
 			niz2[1] = 5;
+			niz2[2] = 6;
+			niz2[3] = 7;
+			niz[0] = 3;
+			niz[1] = 3;
 			
-			[*niz] = niz2;
+			[x,y,*niz] = niz2;
 			
 			print(eol);
+			print(x);
+			print(y);
 			print(niz[0]);
 			print(niz[1]);
 			

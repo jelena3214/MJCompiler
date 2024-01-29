@@ -68,20 +68,27 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	// TODO dodati deo da sme da postoji lokalna i globalna promenljiva sa istim imenom?
 	public void visit(VarDeclTmp varDecl){
 		varDeclCount++;
-		Obj varNode = Tab.find(varDecl.getVarName());
-		if(varNode == Tab.noObj || varNode.getLevel() != nVars) {
+		String namespacePart = "";
+		
+		if(currentNamespace != null) {
+			namespacePart = currentNamespace.getName() + "::";
+		}
+		
+		Obj varNode = Tab.find(namespacePart + varDecl.getVarName());
+		
+		// Okej je da ne postoji ili da postoji globalna promenljiva ali mi definisemo lokalnu
+		if(varNode == Tab.noObj || (varNode.getLevel() == 0 && currentMethod != null)) {
 			if(currentMethod == null) {
 				String message = "Deklarisana globalna promenljiva "+ varDecl.getVarName();
 				if(currentNamespace != null) {
 					message += " iz namespace-a " + currentNamespace.getName();
-					nVars++;
 				}
 				report_info(message, varDecl);
 			}else {
 				// TODO Provera da li se neki parametar u funkciji vec zove tako
-				if(currentMethodParamNames != null && currentMethodParamNames.contains(varNode.getName())) {
-					report_error("Ime lokalne promenljive se poklapa sa imenom formalnog parametra.", varDecl);
-				}
+//				if(currentMethodParamNames != null && currentMethodParamNames.contains(varNode.getName())) {
+//					report_error("Ime lokalne promenljive se poklapa sa imenom formalnog parametra.", varDecl);
+//				}
 				report_info("Deklarisana lokalna promenljiva "+ varDecl.getVarName() + " u metodi " + currentMethod.getName(), varDecl);
 			}
 			Struct type = currType;
@@ -89,8 +96,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 				type = new Struct(Struct.Array, currType);
 				isCurrVarArray = false;
 			}
-			
-			Obj n = Tab.insert(Obj.Var, varDecl.getVarName(), type);
+		
+			Obj n = Tab.insert(Obj.Var, namespacePart + varDecl.getVarName(), type);
 			
 			//lokalna promenljiva
 			if(currentMethod != null) {
@@ -117,20 +124,27 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	
     
 	public void visit(ConstDeclTmp constDecl){
+		String namespacePart = "";
+		if(currentNamespace != null) {
+			namespacePart = currentNamespace.getName() + "::";
+		}
+		
 		varDeclCount++;
 		if(!constDecl.getConstType().struct.equals(currType)) {
 			report_error("Konstanta " + constDecl.getTypeName() + " nije istog tipa kao dodeljena vrednost", constDecl);
 		}
 		
-		Obj constNode = Tab.find(constDecl.getTypeName());
-		if(constNode == Tab.noObj || constNode.getLevel() != nVars) {
+		Obj constNode = Tab.find(namespacePart + constDecl.getTypeName());
+		// Ako ne postoji jer moze biti samo globalna
+		if(constNode == Tab.noObj || constNode.getLevel() != 0) {
 			String message = "Deklarisana globalna konstanta "+ constDecl.getTypeName();
 			if(currentNamespace != null) {
 				message += " iz namespace-a " + currentNamespace.getName();
 			}
 			report_info(message, constDecl);
 			
-			Obj con = Tab.insert(Obj.Con, constDecl.getTypeName(), currType);
+			Obj con = Tab.insert(Obj.Con, namespacePart + constDecl.getTypeName(), currType);
+			
 			ConstType t = constDecl.getConstType();
 			if(t instanceof NumConstType) {
 				NumConstType nt = (NumConstType)t;
@@ -153,7 +167,11 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	
 	// Helper function
 	private Obj methodDeclarationVisit(Struct methType, String methName) {
-		currentMethod = Tab.insert(Obj.Meth, methName, methType);
+		String namespacePart = "";
+		if(currentNamespace != null) {
+			namespacePart = currentNamespace.getName() + "::";
+		}
+		currentMethod = Tab.insert(Obj.Meth, namespacePart + methName, methType);
 		Tab.openScope();
 		currParamInd = 0;
 		currMethodMap = new HashMap<>();
@@ -205,14 +223,14 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	public void visit(NamespaceName namespaceName) {
 		Obj namespaceObj = Tab.find("namespace");
 		currentNamespace = Tab.insert(namespaceObj.getKind(), namespaceName.getNamespaceName(), namespaceObj.getType());
-		Tab.openScope();
+		//Tab.openScope();
 		
 		report_info("Obradjuje se namespace " + namespaceName.getNamespaceName(), null);
 	}
 	
 	public void visit(NamespaceDecl namespaceDecl) {
-		Tab.chainLocalSymbols(currentNamespace);
-    	Tab.closeScope();
+		//Tab.chainLocalSymbols(currentNamespace);
+    	//Tab.closeScope();
     	currentNamespace = null;
 	}
 	
@@ -238,7 +256,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	methodParams.put("chr", chrMethodMap);
     	
     	Map<Integer, Integer> lenMethodMap = new HashMap<>();
-    	lenMethodMap.put(0, 12);
+    	lenMethodMap.put(0, 16);
     	methodParams.put("len", lenMethodMap);
     	
     	
@@ -279,7 +297,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     
     //TODO proveri za level
     public void visit(FormalParamsBasic form) {
-    	// Proveravamo da nije promenljiva metode ili vec definisan parametar funkcije sa istim imenom
+    	String namespacePart = "";
+    	// Proveravamo da nije vec definisan parametar funkcije sa istim imenom
 		if(!currentMethodParamNames.contains(form.getVarName())) {
 			currentMethodParamNames.add(form.getVarName());
 			Struct type = form.getType().struct;
@@ -290,7 +309,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 				kind += 10;
 				isCurrVarArray = false;
 			}
-			Obj ob = Tab.insert(Obj.Var, form.getVarName(), type);
+			
+			if(currentNamespace != null) {
+				namespacePart = currentNamespace.getName() + "::";
+			}
+			
+			Obj ob = Tab.insert(Obj.Var, namespacePart + form.getVarName(), type);
 			
 			ob.setLevel(1);
 			
@@ -322,22 +346,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
     
     public void visit(TypeNamespaceIdent type){
-    	Obj typeNode = Tab.find(type.getTypeName());
+    	String fullName = type.getNamespaceName() + "::" + type.getTypeName();
+    	Obj typeNode = Tab.find(fullName);
     	if(typeNode == Tab.noObj){
     		report_error("Nije pronadjen tip " + type.getTypeName() + " u tabeli simbola! ", null);
     		type.struct = Tab.noType;
     	}else{
-    		Obj namespaceNode = Tab.find(type.getNamespaceName());
-    		if(namespaceNode == Tab.noObj ||  namespaceNode.getType().getKind() != Struct.Interface) {
-    			report_error("Nije pronadjen namespace " + namespaceNode.getName() + " u tabeli simbola! ", null);
-    			type.struct = Tab.noType;
-    			return;
-    		}
-    		if(!namespaceNode.getLocalSymbols().contains(typeNode)) {
-    			report_error("Nije pronadjen tip " + type.getTypeName() + " u tom namespace-u! ", null);
-    			type.struct = Tab.noType;
-    			return;
-    		}
     		if(Obj.Type == typeNode.getKind()){
     			type.struct = typeNode.getType();
     			report_info("Pronadjen tip "+ typeNode.getName(), null);
@@ -590,8 +604,11 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     }
     
-    //int - 1, char - 2, bool - 5, int[] - 11, char[] - 12, bool[] - 15
+    //int - 1, char - 2, bool - 5, int[] - 11, char[] - 12, bool[] - 15, 16 BILO KOJI NIZ(int ili char)
     public boolean checkTypeForParam(int mapType, Struct type) {
+    	if(mapType == 16 && type.getKind() == Struct.Array && type.getElemType().getKind() != Struct.Bool) {
+    		return true;
+    	}
     	if(mapType < 10 && type.getKind() == Struct.Array) {
     		return false;
     	}else if(mapType > 10 && type.getKind() != Struct.Array) {
@@ -826,7 +843,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     
     
     public void visit(DesignatorDeclBasic designatorType) {
-    	Obj node = Tab.find(designatorType.getVarName());
+    	String namespacePart = "";
+    	// Ako smo u namespaceu onda se pozivaju bez imena namespacea
+    	if(currentNamespace != null) {
+    		namespacePart = currentNamespace.getName() + "::";
+    	}
+    	Obj node = Tab.find(namespacePart + designatorType.getVarName());
     	currDesignator = node;
     	if(node == Tab.noObj) {
     		report_error("Greska: Ime " + designatorType.getVarName() + " nije deklarisano!", designatorType);
@@ -852,14 +874,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			return;
 		}
 		
-		Obj typeNode = null;
-		for(Obj node: namespaceNode.getLocalSymbols()) {
-			if(node.getName().equals(desingatorType.getVarName())) {
-				typeNode = node;
-			}
-		}
+		String fullName = desingatorType.getNamespaceName() + "::" + desingatorType.getVarName();
+		Obj typeNode = Tab.find(fullName);
 		
-		if(typeNode == null) {
+		if(typeNode == Tab.noObj) {
 			report_error("Nije pronadjena promenljiva " + typeNode.getName() + " u tom namespace-u! ", null);
 			desingatorType.obj = Tab.noObj;
 			return;

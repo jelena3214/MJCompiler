@@ -67,6 +67,7 @@ import rs.ac.bg.etf.pp1.ast.ForStmtCondFact;
 import rs.ac.bg.etf.pp1.ast.ForStmtNoCondFact;
 import rs.ac.bg.etf.pp1.ast.SyntaxNode;
 import rs.ac.bg.etf.pp1.ast.TermMulopFactorDecl;
+import rs.ac.bg.etf.pp1.ast.VarDeclTmp;
 import rs.ac.bg.etf.pp1.ast.VisitorAdaptor;
 import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.Tab;
@@ -79,6 +80,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	private int mainPc = -1;
 	private int skipCnt = 0;
+	private int varCnt = 0;
 	
 	private static Stack<List<Integer>> patchOrStack = new Stack<>();
     private static Stack<List<Integer>> patchAndStack = new Stack<>();
@@ -531,7 +533,7 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.load(arr2);
     	Code.put(Code.arraylength);
     	
-    	Code.put(Code.jcc + Code.lt); 	// 3 bytes
+    	Code.put(Code.jcc + Code.ge); 	// 3 bytes
     	Code.put2(5); 					// skip trap (3 + 2)
     	
     	// arr1 < arr2
@@ -539,8 +541,7 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.put(2);
     	
     	// TODO prebacivanje iz niza u niz
-    	Code.load(arr1);
-    	Code.put(Code.arraylength);
+    	
     	Code.loadConst(0);
     	
     	int adrJump = Code.pc;
@@ -557,9 +558,15 @@ public class CodeGenerator extends VisitorAdaptor {
     	
     	Code.loadConst(1);
     	Code.put(Code.add);
+    	Code.put(Code.dup);
+    	
+    	Code.load(arr2);
+    	Code.put(Code.arraylength);
     	   	
     	Code.put(Code.jcc + Code.ne);
     	Code.put2(adrJump-Code.pc + 1);
+    	
+    	Code.put(Code.pop);
     }
     
     public void visit(DesignatorStatementExpr1 des) {
@@ -577,7 +584,7 @@ public class CodeGenerator extends VisitorAdaptor {
     	
     	// len(arr2) < broj promenljivih
     	Code.put(Code.trap); 			// 2 bytes
-    	Code.put(2);
+    	Code.put(8);
     	
     	// len(arr1)
     	Code.load(arr1);
@@ -586,8 +593,7 @@ public class CodeGenerator extends VisitorAdaptor {
     	// len(arr2)
     	Code.load(arr2);
     	Code.put(Code.arraylength);
-    	
-    	Code.loadConst(num-skipCnt);
+    	Code.loadConst(num);
 		Code.put(Code.sub);
     	
     	Code.put(Code.jcc + Code.ge); 	// 3 bytes
@@ -595,13 +601,15 @@ public class CodeGenerator extends VisitorAdaptor {
     	
     	// arr1 < arr2 - br promenljivih
     	Code.put(Code.trap); 			// 2 bytes
-    	Code.put(2);
+    	Code.put(7);
     	
     	// prvo promenljive popunjavamo
     	
     	for(int i = 0; i < num; i++) {
     		Obj nextObj = specDesignatorList.remove(0);
-    		if(nextObj.getName().equals("skip"))continue;
+    		if(nextObj.getName().equals("skip")) {
+    			continue;
+    		}
     		Code.load(arr2);
     		Code.loadConst(i);
     		Code.put(Code.aload);
@@ -609,11 +617,39 @@ public class CodeGenerator extends VisitorAdaptor {
     		Code.store(nextObj);
     	}
     	
-    	
-    	
     	// TODO prebacivanje iz niza u niz
     	
+    	Code.loadConst(0);
+    	Code.loadConst(num);
     	
+    	int adrJump = Code.pc;
+    	Code.put(Code.dup2);
+    	Code.load(arr1);
+    	Code.put(Code.dup_x2);
+    	Code.put(Code.pop);
+    	Code.load(arr2);
+    	Code.put(Code.dup_x1);
+    	Code.put(Code.pop);
+    	Code.put(Code.aload);
+    	Code.put(Code.astore);
+    	
+    	Code.loadConst(1);
+    	Code.put(Code.add);
+    	Code.put(Code.dup_x1);
+    	Code.put(Code.pop);
+    	Code.loadConst(1);
+    	Code.put(Code.add);
+    	Code.put(Code.dup_x1);
+    	Code.put(Code.pop);
+    	Code.put(Code.dup);
+    	
+    	Code.load(arr2);
+    	Code.put(Code.arraylength);
+    	   	
+    	Code.put(Code.jcc + Code.ne);
+    	Code.put2(adrJump-Code.pc + 1);
+    	Code.put(Code.pop);
+    	Code.put(Code.pop);
     	skipCnt = 0;
     }
     
@@ -623,7 +659,8 @@ public class CodeGenerator extends VisitorAdaptor {
     
     // skip elem, jer moze [a,b,,*y] = x;
     public void visit(DesignatorCommaElem2 el) {
-    	specDesignatorList.add(new Obj(0,"skip", new Struct(Struct.None)));
     	skipCnt++;
+    	specDesignatorList.add(new Obj(0,"skip", new Struct(Struct.None)));
     }
+
 }
