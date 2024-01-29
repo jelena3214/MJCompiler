@@ -603,10 +603,11 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.put(Code.trap); 			// 2 bytes
     	Code.put(7);
     	
-    	// prvo promenljive popunjavamo
+    	// prvo promenljive popunjavamo u obrnutom redosledu zbog elemenata niza
     	
-    	for(int i = 0; i < num; i++) {
-    		Obj nextObj = specDesignatorList.remove(0);
+    	for(int i = num-1; i >= 0; i--) {
+    		int lastElem = specDesignatorList.size() - 1;
+    		Obj nextObj = specDesignatorList.remove(lastElem);
     		if(nextObj.getName().equals("skip")) {
     			continue;
     		}
