@@ -577,12 +577,12 @@ public class CodeGenerator extends VisitorAdaptor {
     	// len(arr2)
     	Code.load(arr2);
     	Code.put(Code.arraylength);
-    	Code.loadConst(num-skipCnt);
+    	Code.loadConst(num);
 		
-		Code.put(Code.jcc + Code.ge); 	// 3 bytes
+		Code.put(Code.jcc + Code.gt); 	// 3 bytes
     	Code.put2(5); 					// skip trap (3 + 2)
     	
-    	// len(arr2) < broj promenljivih
+    	// len(arr2) <= broj promenljivih
     	Code.put(Code.trap); 			// 2 bytes
     	Code.put(8);
     	

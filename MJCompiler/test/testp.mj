@@ -1,7 +1,40 @@
 program MJProgram
 
 	namespace sizes{
-	{}
+		char a;
+		int moja;
+	{
+		void proba(int a, char b, bool t, int niz[]){
+		}
+		
+		void moja1(int a)
+			int kkl[];
+		{
+			kkl = null;
+			proba(1, 'k', false, sizes::kkl);
+			a = 1;
+		}
+	}
+	}
+int moja;
+const int tt = 1, bb = 5;
+{
+
+	void main()
+		int niz[];
+		char tt1[];
+	{
+		//sizes::a = 'k';
+		niz = new int[moja];
+		niz[3] = 5;
+		//niz = 4;
+		//sizes::moja1(niz[3]);
+		[moja, niz[5], *niz] = niz;
+		//print(niz);
+		
+		if(1==4){
+		}
+		
 	}
 
-{}
+}
