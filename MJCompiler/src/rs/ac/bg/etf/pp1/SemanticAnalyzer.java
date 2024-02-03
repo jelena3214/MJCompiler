@@ -628,6 +628,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	if(mapType < 10 && type.getKind() == Struct.Array) {
     		return false;
     	}else if(mapType > 10 && type.getKind() != Struct.Array) {
+    		// za dodelu null nizu
+    		if(type.getKind() == Struct.Class) return true;
     		return false;
     	}else {
     		if(type.getKind() == Struct.Array) {
@@ -797,31 +799,42 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
     
     public void visit(CondFactExprRelop cond) {
-    	if(cond.getExpr().struct.getKind() == Struct.Array && cond.getExpr1().struct.getKind() != Struct.Array) {
-    		if(!cond.getExpr1().struct.compatibleWith(cond.getExpr().struct.getElemType())) {
-        		report_error("Tipovi nisu kompatibilni pri poredjenju!", cond);
-        		cond.struct = Tab.find("null").getType();
-        		return;
-        	}
-    	}else if(cond.getExpr().struct.getKind() != Struct.Array && cond.getExpr1().struct.getKind() == Struct.Array) {
-    		if(!cond.getExpr().struct.compatibleWith(cond.getExpr1().struct.getElemType())) {
-        		report_error("Tipovi nisu kompatibilni pri poredjenju!", cond);
-        		cond.struct = Tab.find("null").getType();
-        		return;
-        	}
-    	}else {
-    		if(!cond.getExpr().struct.compatibleWith(cond.getExpr1().struct)) {
-        		report_error("Tipovi nisu kompatibilni pri poredjenju!", cond);
-        		cond.struct = Tab.find("null").getType();
-        		return;
-        	}
-    	}
+//    	if(cond.getExpr().struct.getKind() == Struct.Array && cond.getExpr1().struct.getKind() != Struct.Array) {
+//    		if(!cond.getExpr1().struct.compatibleWith(cond.getExpr().struct.getElemType())) {
+//        		report_error("Tipovi nisu kompatibilni pri poredjenju!", cond);
+//        		cond.struct = Tab.find("null").getType();
+//        		return;
+//        	}
+//    	}else if(cond.getExpr().struct.getKind() != Struct.Array && cond.getExpr1().struct.getKind() == Struct.Array) {
+//    		if(!cond.getExpr().struct.compatibleWith(cond.getExpr1().struct.getElemType())) {
+//        		report_error("Tipovi nisu kompatibilni pri poredjenju!", cond);
+//        		cond.struct = Tab.find("null").getType();
+//        		return;
+//        	}
+//    	}else {
+//    		if(!cond.getExpr().struct.compatibleWith(cond.getExpr1().struct)) {
+//        		report_error("Tipovi nisu kompatibilni pri poredjenju!", cond);
+//        		cond.struct = Tab.find("null").getType();
+//        		return;
+//        	}
+//    	}
     	
+    	Struct leftExpr = cond.getExpr().struct;
+		int leftKind = leftExpr.getKind();
+		Struct rightExpr = cond.getExpr1().struct;
+		int rightKind = leftExpr.getKind();
+		
+		if (!leftExpr.compatibleWith(rightExpr)) {
+			cond.struct = Tab.noType;
+			report_error("Tipovi nisu kompatibilni pri poredjenju!", cond);
+    		return;
+		}
     	
-    	if(cond.getExpr().struct.getKind() == Struct.Array
-    			&& cond.getExpr1().struct.getKind() == Struct.Array
+    	// Za porednjenje nizova i null
+    	if((leftKind == Struct.Array || leftKind == Struct.Class
+    			&& rightKind == Struct.Array || rightKind == Struct.Class)
     			&& (!(cond.getRelop() instanceof RelopTwoEqual) && !(cond.getRelop() instanceof RelopNoEqual))){
-    		report_error("Za poredjenje nizova se moze koristiti samo == ili !=!", cond);
+    		report_error("Za poredjenje nizova se moze koristiti samo == ili !=", cond);
     		cond.struct = Tab.find("null").getType();
     		return;
     	}
@@ -833,6 +846,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     public void visit(CondFactElem cond) {
     	if(cond.getCondFact().struct.getKind() != Struct.Bool) {
     		report_error("Izraz mora biti bool tipa u CondFactElem", cond);
+    		cond.struct = Tab.find("null").getType();
+    		return;
     	}
     	cond.struct = Tab.find("bool").getType();
     }
@@ -840,6 +855,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     public void visit(CondTermElem cond) {
     	if(cond.getCondTerm().struct.getKind() != Struct.Bool) {
     		report_error("Izraz mora biti bool tipa u CondTermElem", cond);
+    		cond.struct = Tab.find("null").getType();
+    		return;
     	}
     	
     	cond.struct = Tab.find("bool").getType();
@@ -848,6 +865,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     public void visit(Condition cond) {
     	if(cond.getCondTerm().struct.getKind() != Struct.Bool) {
     		report_error("Izraz mora biti bool tipa u Condition", cond);
+    		cond.struct = Tab.find("null").getType();
+    		return;
     	}
     	
     	cond.struct = Tab.find("bool").getType();
@@ -856,6 +875,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     public void visit(CondTerm cond) {
     	if(cond.getCondFact().struct.getKind() != Struct.Bool) {
     		report_error("Izraz mora biti bool tipa u CondTerm", cond);
+    		cond.struct = Tab.find("null").getType();
+    		return;
     	}
     	
     	cond.struct = Tab.find("bool").getType();
@@ -923,11 +944,13 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     public void visit(DesignatorIndexing designator) {
     	Obj des = designator.getArrayDesignatorDecl().getDesignator().obj;
     	if(designator.getExpr().struct != Tab.intType) {
-    		report_error("Promenljiva za indeksiranje niza nije odgovarajuceg tipa " + designator.getExpr(), designator);
+    		report_error("Promenljiva za indeksiranje niza nije odgovarajuceg tipa", designator);
+    		designator.obj = Tab.noObj;
     		return;
     	}
     	if(des.getType().getKind() != Struct.Array) {
     		report_error("Promenljiva " + des.getName() + " nije tipa niza", designator);
+    		designator.obj = Tab.noObj;
     		return;
     	}
 

@@ -168,16 +168,16 @@ public class CodeGenerator extends VisitorAdaptor {
     	}
 	}
 	
-	public void visit(Addop addop) {
-		if(addop instanceof AddopPlus)Code.put(Code.add);
-		if(addop instanceof AddopMinus)Code.put(Code.sub);
-	}
-	
-	public void visit(Mulop mulop) {
-		if(mulop instanceof MulopMultiply)Code.put(Code.mul);
-		if(mulop instanceof MulopDiv)Code.put(Code.div);
-		if(mulop instanceof MulopMod)Code.put(Code.rem);
-	}
+//	public void visit(Addop addop) {
+//		if(addop instanceof AddopPlus)Code.put(Code.add);
+//		if(addop instanceof AddopMinus)Code.put(Code.sub);
+//	}
+//	
+//	public void visit(Mulop mulop) {
+//		if(mulop instanceof MulopMultiply)Code.put(Code.mul);
+//		if(mulop instanceof MulopDiv)Code.put(Code.div);
+//		if(mulop instanceof MulopMod)Code.put(Code.rem);
+//	}
 	
 	public void visit(FactorNumConst fact) {
     	int constant = fact.getN1();
@@ -415,7 +415,7 @@ public class CodeGenerator extends VisitorAdaptor {
     	patchElseStack.peek().add(Code.pc + 1); // jmp = 1 byte
     	Code.putJump(0);
     	
-    	// ako ni jedan (cg and cf ...) nije bio ispunjen ovde ide na else
+    	// ako ni jedan (cf and cf ...) nije bio ispunjen ovde ide na else
     	while(!patchAndStack.peek().isEmpty()) {
     		Code.fixup(patchAndStack.peek().remove(0));
     	}

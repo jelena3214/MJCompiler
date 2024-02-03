@@ -1,0 +1,42 @@
+program MJProgram
+{
+	
+	int k(int u, int uu) 
+		char uj;
+	{
+		uj = ';';
+		print(u);
+		print(uj);
+		return 1;
+	}
+	
+	int svoja(int k[]){
+		k = null;
+		if(k == null)print(5);
+		return 3;
+	}
+	
+	
+	
+	void main() 
+		char c;
+		int id;
+		int j;
+		int niz1[];
+		int niz2[];
+	{
+		niz1 = new int[4];
+		niz1[0]++;
+		print(niz1[0], 6);
+		niz2 = null;
+		svoja(niz1);
+		
+		for(id = 0; id < 3; id++){
+			print(id);
+			for(j = 0; j < 3; j++){
+				if(j == 2)break;
+				print(j);
+			}
+		}
+	}
+}
