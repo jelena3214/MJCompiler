@@ -1,15 +1,15 @@
 program MJProgram
-	int x, z, -yy[];
+	int x, z, -yy[], niz[];
 	const int id = -0, y = 7;
 	const char cc = 'j';
 {
-	void main(int y, int k, -int y) 
+	void main(int y, int k, -int t) 
 		char c;
 	{
-		[*Unpacking::niz3] = niz;
+		[*Unpacking::niz3] = -niz;
 		x = y + 2 + ;
 		if(x << ){
-			print(a);
+			print(y);
 		}
 	}
 }

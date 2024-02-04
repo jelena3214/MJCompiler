@@ -890,7 +890,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	String namespacePart = "";
     	// Ako smo u namespaceu onda se pozivaju bez imena namespacea
     	if(currentNamespace != null && !designatorType.getVarName().equals("null") && !designatorType.getVarName().equals("len")
-    			&& !designatorType.getVarName().equals("ord") && !designatorType.getVarName().equals("chr")) {
+    			&& !designatorType.getVarName().equals("ord") && !designatorType.getVarName().equals("chr") && !designatorType.getVarName().equals("eol")) {
     		namespacePart = currentNamespace.getName() + "::";
     	}
     	Obj node = Tab.find(namespacePart + designatorType.getVarName());

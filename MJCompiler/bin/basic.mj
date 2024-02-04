@@ -1,19 +1,9 @@
 program MJProgram
 {
 	
-	int k(int u, int uu) 
-		char uj;
-	{
-		uj = ';';
-		print(u);
-		print(uj);
-		return 1;
-	}
-	
 	int svoja(int k[]){
 		k = null;
-		if(k == null)print(5);
-		return 3;
+		if(k != null)return 2;
 	}
 	
 	
@@ -30,13 +20,6 @@ program MJProgram
 		print(niz1[0], 6);
 		niz2 = null;
 		svoja(niz1);
-		
-		for(id = 0; id < 3; id++){
-			print(id);
-			for(j = 0; j < 3; j++){
-				if(j == 2)break;
-				print(j);
-			}
-		}
+	
 	}
 }

@@ -282,27 +282,25 @@ public class CodeGenerator extends VisitorAdaptor {
 		Struct methStruct = methodDecl.obj.getType();
 		
 		// fali return
-		if (methStruct != Tab.noType && !returnFound) {
+		if (methStruct != Tab.noType) {
 			Code.put(Code.trap);
 			Code.put(1);
 		}
-		else if (methStruct == Tab.noType && !returnFound) {
+		else {
 			Code.put(Code.exit);
 			Code.put(Code.return_);
 		}
-		
-		returnFound = false;
 	}
 	
 	public void visit(ReturnStmtExpr returnExpr){
-		returnFound = true;
+//		returnFound = true;
 		Code.put(Code.exit);
 		Code.put(Code.return_);
 		
 	}
 	
 	public void visit(ReturnStmt returnNoExpr){
-		returnFound = true;
+//		returnFound = true;
 		Code.put(Code.exit);
 		Code.put(Code.return_);
 	}

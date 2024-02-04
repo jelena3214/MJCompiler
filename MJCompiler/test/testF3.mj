@@ -33,6 +33,7 @@ program Test
 			read(pp);
 			print(p, 2);
 			i = len(pp);
+			
 			// Greska u broju parametra
 			i = s(pp);
 			
@@ -44,6 +45,9 @@ program Test
 			
 			//Promenljiva nije tipa niz
 			i[1] = 1;
+			
+			// Greska fale argumenti
+			funk(pp);
 		}
 		
 	
