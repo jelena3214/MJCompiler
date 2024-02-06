@@ -217,8 +217,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	Tab.closeScope();
     	
     	// Nema formalne parametre
-    	if(currParamInd == 0) currMethodMap = null;
-    	methodParams.put(currentMethod.getName(), currMethodMap);
+//    	if(currParamInd == 0) currMethodMap = null;
+//    	methodParams.put(currentMethod.getName(), currMethodMap);
     	
     	currentMethod.setLevel(currParamInd);
     	methodDecl.obj = currentMethod;
@@ -229,7 +229,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	currMethodMap = null;
     	currentMethodParamNames = null;
     }
-    
     
     // ----------------------------- NAMESPACE ---------------------------------------------
     
@@ -605,7 +604,17 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     public void visit(FormParamsList form) {
     	if(currentMethod != null && currentMethod.getName().equals("main")) {
     		report_error("Main metoda ne sme imati parametre", form);
+    		return;
     	}
+    	
+    	// gotovo parsiranje formalnih parametara
+    	methodParams.put(currentMethod.getName(), currMethodMap);
+    }
+    
+    public void visit(FormParamsEmpty fp) {
+    	// Nema formalne parametre
+    	currMethodMap = null;
+    	methodParams.put(currentMethod.getName(), currMethodMap);
     }
     
     public String getType(int t) {

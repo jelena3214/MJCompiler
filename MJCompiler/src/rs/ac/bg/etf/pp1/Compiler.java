@@ -21,7 +21,7 @@ import rs.etf.pp1.symboltable.Tab;
 public class Compiler {
 
 	static {
-		DOMConfigurator.configure(Log4JUtils.instance().findLoggerConfigFile());
+		DOMConfigurator.configure("config/log4j.xml");
 		Log4JUtils.instance().prepareLogFile(Logger.getRootLogger());
 	}
 	

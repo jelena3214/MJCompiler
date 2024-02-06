@@ -531,11 +531,13 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.load(arr2);
     	Code.put(Code.arraylength);
     	
-    	Code.put(Code.jcc + Code.ge); 	// 3 bytes
-    	Code.put2(5); 					// skip trap (3 + 2)
+    	// 3B jump
+    	Code.put(Code.jcc + Code.ge);
+    	Code.put2(5);
     	
     	// arr1 < arr2
-    	Code.put(Code.trap); 			// 2 bytes
+    	// 2B trap
+    	Code.put(Code.trap);
     	Code.put(2);
     	
     	// TODO prebacivanje iz niza u niz
@@ -577,11 +579,11 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.put(Code.arraylength);
     	Code.loadConst(num);
 		
-		Code.put(Code.jcc + Code.gt); 	// 3 bytes
-    	Code.put2(5); 					// skip trap (3 + 2)
+		Code.put(Code.jcc + Code.gt);
+    	Code.put2(5);
     	
     	// len(arr2) <= broj promenljivih
-    	Code.put(Code.trap); 			// 2 bytes
+    	Code.put(Code.trap);
     	Code.put(8);
     	
     	// len(arr1)
@@ -594,11 +596,11 @@ public class CodeGenerator extends VisitorAdaptor {
     	Code.loadConst(num);
 		Code.put(Code.sub);
     	
-    	Code.put(Code.jcc + Code.ge); 	// 3 bytes
-    	Code.put2(5); 					// skip trap (3 + 2)
+    	Code.put(Code.jcc + Code.ge);
+    	Code.put2(5);
     	
     	// arr1 < arr2 - br promenljivih
-    	Code.put(Code.trap); 			// 2 bytes
+    	Code.put(Code.trap);
     	Code.put(7);
     	
     	// prvo promenljive popunjavamo u obrnutom redosledu zbog elemenata niza
