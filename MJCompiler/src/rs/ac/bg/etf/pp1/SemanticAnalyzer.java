@@ -629,9 +629,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     }
     
-    //int - 1, char - 2, bool - 5, int[] - 11, char[] - 12, bool[] - 15, 16 BILO KOJI NIZ(int ili char)
+    //int - 1, char - 2, bool - 5, int[] - 11, char[] - 12, bool[] - 15, 16 BILO KOJI NIZ(int ili char ili bool)
     public boolean checkTypeForParam(int mapType, Struct type) {
-    	if(mapType == 16 && type.getKind() == Struct.Array && type.getElemType().getKind() != Struct.Bool) {
+    	if(mapType == 16 && type.getKind() == Struct.Array) {
     		return true;
     	}
     	if(mapType < 10 && type.getKind() == Struct.Array) {

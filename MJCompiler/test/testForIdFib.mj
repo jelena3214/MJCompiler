@@ -1,3 +1,4 @@
+//0    1    0
 //0    0    2    2    4    4    6    6    8    8
 //5
 
@@ -20,8 +21,18 @@ const char c = 'f';
 		int x, i;
 		bool b;
 		int arr[];
+		bool ar[];
 		
 	{
+		ar = new bool[3];
+		ar[1] = true;
+		
+		for(i=0; i < len(ar); i++){
+			print(ar[i]);
+		}
+		
+		print(eol);
+		
 		x = 5;
 		
 		if(x == 5 && b == false){
