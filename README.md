@@ -1,0 +1,1 @@
+Implementation of a fully functional compiler which includes phases of lexical, syntax and semantic analysis and bytecode generation. MicroJava is an object-oriented programming language that includes some of the most important Java concepts such as: objects and elementary types, derivation, polymorphism, loops and many other functionalities.
